@@ -1,0 +1,41 @@
+/sdcard/:
+total 60760
+drwxrwx--x 17 root sdcard_rw    4096 1969-12-31 18:00 .
+drwx--x--x  4 root sdcard_rw    4096 1969-12-31 18:01 ..
+drwxrwx--x  2 root sdcard_rw    4096 1969-12-31 18:01 Alarms
+drwxrwx--x  3 root sdcard_rw    4096 2023-11-15 17:50 Android
+drwxrwx--x  2 root sdcard_rw    4096 1969-12-31 18:01 DCIM
+drwxrwx--x  2 root sdcard_rw    4096 1969-12-31 18:01 Download
+drwxrwx--x  2 root sdcard_rw    4096 2024-02-18 14:50 EasyOpenCV
+drwxrwx--x  8 root sdcard_rw    4096 2026-11-06 17:59 FIRST
+drwxrwx--x  2 root sdcard_rw    4096 1969-12-31 18:01 Movies
+drwxrwx--x  2 root sdcard_rw    4096 1969-12-31 18:01 Music
+drwxrwx--x  2 root sdcard_rw    4096 1969-12-31 18:01 Notifications
+drwxrwx--x  2 root sdcard_rw    4096 1969-12-31 18:00 OTA-Updates
+drwxrwx--x  2 root sdcard_rw    4096 1969-12-31 18:01 Pictures
+drwxrwx--x  2 root sdcard_rw    4096 1969-12-31 18:01 Podcasts
+drwxrwx--x  2 root sdcard_rw    4096 1969-12-31 18:01 Ringtones
+drwxrwx--x  4 root sdcard_rw    4096 2023-11-15 17:51 RoadRunner
+-rw-rw----  1 root sdcard_rw  665297 1969-12-31 18:00 UpdaterLog.txt
+-rw-rw----  1 root sdcard_rw 1210034 2026-11-15 10:23 WifiLog.txt
+-rw-rw----  1 root sdcard_rw 4194380 1969-12-31 18:01 WifiLog.txt.1
+-rw-rw----  1 root sdcard_rw 4194399 2025-01-06 18:29 WifiLog.txt.2
+-rw-rw----  1 root sdcard_rw 3931167 2026-11-15 10:23 robotControllerLog.txt
+-rw-rw----  1 root sdcard_rw 4194385 2026-11-11 18:12 robotControllerLog.txt.1
+-rw-rw----  1 root sdcard_rw 4194426 1969-12-31 18:00 robotControllerLog.txt.2
+-rw-rw----  1 root sdcard_rw 4194442 1969-12-31 18:00 robotControllerLog.txt.3
+-rw-rw----  1 root sdcard_rw 4194372 1969-12-31 18:00 robotControllerLog.txt.4
+drwxrwx--x  2 root sdcard_rw    4096 2026-11-15 10:03 tmp
+
+/sdcard/FIRST/:
+total 80
+drwxrwx--x  8 root sdcard_rw 4096 2026-11-06 17:59 .
+drwxrwx--x 17 root sdcard_rw 4096 1969-12-31 18:00 ..
+drwxrwx--x  2 root sdcard_rw 4096 1969-12-31 18:02 ExternalLibraries
+drwxrwx--x  2 root sdcard_rw 4096 2026-11-06 18:03 blocks
+-rw-rw----  1 root sdcard_rw  414 2026-11-08 09:24 config_hex.xml
+drwxrwx--x  3 root sdcard_rw 4096 2026-11-03 18:57 dairy
+drwxrwx--x  9 root sdcard_rw 4096 2026-11-15 10:01 java
+drwxrwx--x  2 root sdcard_rw 4096 2026-11-15 10:17 matchlogs
+-rw-rw----  1 root sdcard_rw  877 2026-11-15 10:19 test1.xml
+drwxrwx--x  4 root sdcard_rw 4096 1969-12-31 18:02 updates

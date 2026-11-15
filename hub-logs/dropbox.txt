@@ -1,0 +1,119 @@
+Drop box contents: 3 entries
+
+========================================
+2026-11-15 10:16:37 system_app_strictmode (text, 3511 bytes)
+Process: com.rockchips.android.leanbacklauncher
+Flags: 0x3ac8be45
+Package: com.rockchips.android.leanbacklauncher v2 (1.2)
+Build: FIRST/ch_v1_box/rk3328_box:7.1.2/NHG47K/rev05081324:userdebug/release-keys
+System-App: true
+Uptime-Millis: 62550
+Loop-Violation-Number: 1
+Animations-Running: 10
+Duration-Millis: 14
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=18874375 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1293)
+	at java.io.UnixFileSystem.checkAccess(UnixFileSystem.java:249)
+	at java.io.File.exists(File.java:780)
+	at android.app.ContextImpl.getDataDir(ContextImpl.java:1938)
+	at android.app.ContextImpl.getPreferencesDir(ContextImpl.java:466)
+	at android.app.ContextImpl.getSharedPreferencesPath(ContextImpl.java:627)
+	at android.app.ContextImpl.getSharedPreferences(ContextImpl.java:345)
+	at android.content.ContextWrapper.getSharedPreferences(ContextWrapper.java:164)
+	at android.preference.PreferenceManager.getDefaultSharedPreferences(PreferenceManager.java:487)
+	at com.rockchips.android.leanbacklauncher.util.Util.getWidgetId(Util.java:99)
+	at com.rockchips.android.leanbacklauncher.MainActivity.addWidget(MainActivity.java:1041)
+	at com.rockchips.android.leanbacklauncher.MainActivity.-wrap3(MainActivity.java)
+	at com.rockchips.android.leanbacklauncher.MainActivity$C01603.handleMessage(MainActivity.java:215)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:154)
+	at android.app.ActivityThread.main(ActivityThread.java:6121)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:905)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:795)
+
+Process: com.rockchips.android.leanbacklauncher
+Flags: 0x3ac8be45
+Package: com.rockchips.android.leanbacklauncher v2 (1.2)
+Build: FIRST/ch_v1_box/rk3328_box:7.1.2/NHG47K/rev05081324:userdebug/release-keys
+System-App: true
+Uptime-Millis: 62551
+Loop-Violation-Number: 2
+Animations-Running: 10
+Duration-Millis: 13
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=18874375 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1293)
+	at java.io.UnixFileSystem.checkAccess(UnixFileSystem.java:249)
+	at java.io.File.exists(File.java:780)
+	at android.app.ContextImpl.ensurePrivateDirExists(ContextImpl.java:512)
+	at android.app.ContextImpl.getPreferencesDir(ContextImpl.java:468)
+	at android.app.ContextImpl.getSharedPreferencesPath(ContextImpl.java:627)
+	at android.app.ContextImpl.getSharedPreferences(ContextImpl.java:345)
+	at android.content.ContextWrapper.getSharedPreferences(ContextWrapper.java:164)
+	at android.preference.PreferenceManager.getDefaultSharedPreferences(PreferenceManager.java:487)
+	at com.rockchips.android.leanbacklauncher.util.Util.getWidgetId(Util.java:99)
+	at com.rockchips.android.leanbacklauncher.MainActivity.addWidget(MainActivity.java:1041)
+	at com.rockchips.android.leanbacklauncher.MainActivity.-wrap3(MainActivity.java)
+	at com.rockchips.android.leanbacklauncher.MainActivity$C01603.handleMessage(MainActivity.java:215)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:154)
+	at android.app.ActivityThread.main(ActivityThread.java:6121)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:905)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:795)
+
+
+========================================
+2026-11-15 10:17:51 system_app_strictmode (text, 1161 bytes)
+Process: com.rockchips.android.leanbacklauncher
+Flags: 0x3ac8be45
+Package: com.rockchips.android.leanbacklauncher v2 (1.2)
+Build: FIRST/ch_v1_box/rk3328_box:7.1.2/NHG47K/rev05081324:userdebug/release-keys
+System-App: true
+Uptime-Millis: 135935
+Loop-Violation-Number: 1
+Duration-Millis: 2
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=18874375 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1293)
+	at java.io.UnixFileSystem.checkAccess(UnixFileSystem.java:249)
+	at java.io.File.exists(File.java:780)
+	at com.rockchips.android.leanbacklauncher.MainActivity$MyBroadcastReceiver.onReceive(MainActivity.java:271)
+	at android.app.LoadedApk$ReceiverDispatcher$Args.run(LoadedApk.java:1122)
+	at android.os.Handler.handleCallback(Handler.java:755)
+	at android.os.Handler.dispatchMessage(Handler.java:95)
+	at android.os.Looper.loop(Looper.java:154)
+	at android.app.ActivityThread.main(ActivityThread.java:6121)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:905)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:795)
+
+
+========================================
+2026-11-15 10:19:18 system_app_strictmode (text, 1161 bytes)
+Process: com.rockchips.android.leanbacklauncher
+Flags: 0x3ac8be45
+Package: com.rockchips.android.leanbacklauncher v2 (1.2)
+Build: FIRST/ch_v1_box/rk3328_box:7.1.2/NHG47K/rev05081324:userdebug/release-keys
+System-App: true
+Uptime-Millis: 223630
+Loop-Violation-Number: 1
+Duration-Millis: 1
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=18874375 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1293)
+	at java.io.UnixFileSystem.checkAccess(UnixFileSystem.java:249)
+	at java.io.File.exists(File.java:780)
+	at com.rockchips.android.leanbacklauncher.MainActivity$MyBroadcastReceiver.onReceive(MainActivity.java:263)
+	at android.app.LoadedApk$ReceiverDispatcher$Args.run(LoadedApk.java:1122)
+	at android.os.Handler.handleCallback(Handler.java:755)
+	at android.os.Handler.dispatchMessage(Handler.java:95)
+	at android.os.Looper.loop(Looper.java:154)
+	at android.app.ActivityThread.main(ActivityThread.java:6121)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:905)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:795)
+
+

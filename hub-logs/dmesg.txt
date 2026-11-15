@@ -1,0 +1,1890 @@
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.245 (rev@android-dev-vm-1) (gcc version 4.9 20150123 (prerelease) (GCC) ) #18 SMP PREEMPT Thu May 8 13:13:30 CDT 2025
+[    0.000000] CPU: AArch64 Processor [410fd034] revision 4
+[    0.000000] Machine: rockchip,rk3328
+[    0.000000] rockchip_uboot_logo_setup: mem: 0x0000000002000000@0x000000003dc00000, offset:0x0000000001000000
+[    0.000000] hdmi init vic is 65536
+[    0.000000] cvbs init tve.format is 1
+[    0.000000] cvbs init tve.format is 1
+[    0.000000] cvbs init tve.format is 1
+[    0.000000] rockchip_uboot_mem_reserve: reserve 0x0000000002000000@0x000000003dc00000 for uboot logo
+[    0.000000] rockchip_ion_reserve
+[    0.000000] ion heap(cma): base(0) size(0) align(0)
+[    0.000000] ion heap(vmalloc): base(0) size(0) align(0)
+[    0.000000] cma: CMA: reserved 16 MiB at 3cc00000
+[    0.000000] On node 0 totalpages: 253952
+[    0.000000]   DMA zone: 3577 pages used for memmap
+[    0.000000]   DMA zone: 0 pages reserved
+[    0.000000]   DMA zone: 253952 pages, LIFO batch:31
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.0 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] PERCPU: Embedded 12 pages/cpu @ffffffc03fd39000 s18752 r8192 d22208 u49152
+[    0.000000] pcpu-alloc: s18752 r8192 d22208 u49152 alloc=12*4096
+[    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 250375
+[    0.000000] Kernel command line: rockchip_jtag earlyprintk=uart8250-32bit,0xff130000 console=ttyFIQ0 androidboot.baseband=N/A androidboot.selinux=permissive androidboot.hardware=rk30board androidboot.console=ttyFIQ0 init=/init mtdparts=rk29xxnand:0x00002000@0x00002000(uboot),0x00004000@0x00004000(trust),0x00002000@0x00008000(misc),0x00000800@0x0000A000(baseparamer),0x00007800@0x0000A800(resource),0x00010000@0x00012000(kernel),0x00010000@0x00022000(boot),0x00010000@0x00032000(recovery),0x00020000@0x00042000(backup),0x00040000@0x00062000(cache),0x00008000@0x000A2000(metadata),0x00002000@0x000AA000(kpanic),0x00300000@0x000AC000(system),-@0x003AC000(userdata) storagemedia=emmc uboot_logo=0x02000000@0x3dc00000:0x01000000 loader.timestamp=2025-05-08_13:12:02 hdmi.vic=65536 tve.format=1 SecureBootCheckOk=0
+[    0.000000] rockchip jtag enabled
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes)
+[    0.000000] Memory: 130MB 862MB = 992MB total
+[    0.000000] Memory: 930492k/930492k available, 85316k reserved
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vmalloc : 0xffffff8000000000 - 0xffffffbbffff0000   (245759 MB)
+[    0.000000]     vmemmap : 0xffffffbc00007000 - 0xffffffbc00e00000   (    13 MB)
+[    0.000000]     modules : 0xffffffbffc000000 - 0xffffffc000000000   (    64 MB)
+[    0.000000]     memory  : 0xffffffc000000000 - 0xffffffc03fe00000   (  1022 MB)
+[    0.000000]       .init : 0xffffffc000e46000 - 0xffffffc000ea7940   (   391 kB)
+[    0.000000]       .text : 0xffffffc000080000 - 0xffffffc000e45a24   ( 14103 kB)
+[    0.000000]       .data : 0xffffffc000ea8000 - 0xffffffc0010ae148   (  2073 kB)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] 	RCU dyntick-idle grace-period acceleration is enabled.
+[    0.000000] NR_IRQS:64 nr_irqs:64 0
+[    0.000000] Architected cp15 timer(s) running at 24.00MHz (phys).
+[    1.163233] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=80000)
+[    1.163248] pid_max: default: 32768 minimum: 301
+[    1.163343] Security Framework initialized
+[    1.163360] SELinux:  Initializing.
+[    1.163411] SELinux:  Starting in permissive mode
+[    1.163441] Mount-cache hash table entries: 256
+[    1.163998] Initializing cgroup subsys debug
+[    1.164009] Initializing cgroup subsys freezer
+[    1.164423] /cpus/cpu@0: Missing clock-frequency property
+[    1.164456] /cpus/cpu@1: Missing clock-frequency property
+[    1.164485] /cpus/cpu@2: Missing clock-frequency property
+[    1.164515] /cpus/cpu@3: Missing clock-frequency property
+[    1.164527] hw perfevents: enabled with arm/armv8-pmuv3 PMU driver, 7 counters available
+[    1.165889] last_log: 0x000000000a200000 map to 0xffffff8000006000 and copy to 0xffffff8000088000, size 0x80000 early 0x128b (version 3.1)
+[    1.192277] CPU1: Booted secondary processor
+[    1.195534] CPU2: Booted secondary processor
+[    1.202101] CPU3: Booted secondary processor
+[    1.202188] Brought up 4 CPUs
+[    1.202205] SMP: Total of 4 processors activated (192.00 BogoMIPS).
+[    1.202900] devtmpfs: initialized
+[    1.207369] pinctrl core: initialized pinctrl subsystem
+[    1.207649] regulator-dummy: no parameters
+[    1.217076] NET: Registered protocol family 16
+[    1.217955] ion_snapshot: 0x3b4c8000 map to 0xffffff8000109000 and copy to 0xffffffc00118b720 (version 0.1)
+[    1.218352] Registered FIQ tty driver
+[    1.218930] vdso: 2 pages (1 code, 1 data) at base ffffffc000ead000
+[    1.218953] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    1.220726] software IO TLB [mem 0x3b000000-0x3b400000] (4MB) mapped at [ffffffc03ae00000-ffffffc03b1fffff]
+[    1.221629] DMA: preallocated 256 KiB pool for atomic allocations
+[    1.221646] rockchip sip version v2
+[    1.222892] rk3368_init_rockchip_pmu_ops: could not find pmu dt node
+[    1.222926] rk_clk_tree_init start!
+[    1.237458] rk_get_uboot_display_flag: uboot_logo_on = 1
+[    1.237519] rkclk_init_clks: cnt_parent = 12
+[    1.237866] rkclk_init_clks: cnt_rate = 29
+[    1.239874] rkclk: warning: clk_rate < 1*MHZ or > 2000*MHZ
+[    1.240581] rkclk: warning: clk_rate < 1*MHZ or > 2000*MHZ
+[    1.255796] syscon ff100000.syscon: regmap [mem 0xff100000-0xff100fff] registered
+[    1.256367] syscon ff140000.syscon: regmap [mem 0xff140000-0xff140fff] registered
+[    1.258370] rk_iommu ff330200.h265e_mmu: (h265e) Enter
+[    1.258547] rk_iommu ff330200.h265e_mmu: IOVMM: Created 0x3ffff000 B IOVMM from 0x10000000.
+[    1.258566] rk_iommu ff330200.h265e_mmu: (h265e) Initialized
+[    1.258962] rk_iommu ff340800.vepu_mmu: (vepu) Enter
+[    1.259043] rk_iommu ff340800.vepu_mmu: IOVMM: Created 0x3ffff000 B IOVMM from 0x10000000.
+[    1.259060] rk_iommu ff340800.vepu_mmu: (vepu) Initialized
+[    1.259673] rk_iommu ff350800.vpu_mmu: (vpu) Enter
+[    1.259758] rk_iommu ff350800.vpu_mmu: IOVMM: Created 0x3ffff000 B IOVMM from 0x10000000.
+[    1.259776] rk_iommu ff350800.vpu_mmu: (vpu) Initialized
+[    1.260167] rk_iommu ff360480.vdec_mmu: (vdec) Enter
+[    1.260252] rk_iommu ff360480.vdec_mmu: IOVMM: Created 0x3ffff000 B IOVMM from 0x10000000.
+[    1.260270] rk_iommu ff360480.vdec_mmu: (vdec) Initialized
+[    1.260738] rk_iommu ff373f00.vopb_mmu: (vopb) Enter
+[    1.260818] rk_iommu ff373f00.vopb_mmu: IOVMM: Created 0x3ffff000 B IOVMM from 0x10000000.
+[    1.260835] rk_iommu ff373f00.vopb_mmu: (vopb) Initialized
+[    1.261357] rk_iommu ff3a0800.iep_mmu: (iep) Enter
+[    1.261434] rk_iommu ff3a0800.iep_mmu: IOVMM: Created 0x3ffff000 B IOVMM from 0x10000000.
+[    1.261451] rk_iommu ff3a0800.iep_mmu: (iep) Initialized
+[    1.262225] syscon ff440000.syscon: regmap [mem 0xff440000-0xff440fff] registered
+[    1.262527] syscon ff450000.syscon: regmap [mem 0xff450000-0xff450fff] registered
+[    1.262813] syscon ff460000.syscon: regmap [mem 0xff460000-0xff460fff] registered
+[    1.264667] syscon ff720000.syscon: regmap [mem 0xff720000-0xff722fff] registered
+[    1.264854] syscon ff780000.syscon: regmap [mem 0xff780000-0xff782fff] registered
+[    1.265145] syscon ff790000.syscon: regmap [mem 0xff790000-0xff7902ff] registered
+[    1.265956] gpiochip_add: registered GPIOs 0 to 31 on device: gpio0
+[    1.266027] gpiochip_add: registered GPIOs 32 to 63 on device: gpio1
+[    1.266102] gpiochip_add: registered GPIOs 64 to 95 on device: gpio2
+[    1.266169] gpiochip_add: registered GPIOs 96 to 127 on device: gpio3
+[    1.277885] console [ttyFIQ0] enabled
+[    1.278144] Registered fiq debugger ttyFIQ0
+[    1.278520] process version: 0
+[    1.278668] channel:0, lkg:14
+[    1.278687] target-temp:95
+[    1.278728] channel:2, lkg:11
+[    1.278764] channel:2, lkg:11
+[    1.278803] channel:2, lkg:11
+[    1.278820] target-temp:110
+[    1.333860] bio: create slab <bio-0> at 0
+[    1.334499] Rockchip hdmi driver version 2.0
+[    1.334687] mpp venc_srv.19: mpp_probe enter
+[    1.334726] mpp venc_srv.19: init success
+[    1.335411] of_get_named_gpio_flags exited with status 42
+[    1.335582] hub-pwr: no parameters
+[    1.335876] of_get_named_gpio_flags exited with status 27
+[    1.335997] usbwifi: no parameters
+[    1.336224] of_get_named_gpio_flags exited with status 43
+[    1.336335] host-vbus: no parameters
+[    1.337869] SCSI subsystem initialized
+[    1.338114] usbcore: registered new interface driver usbfs
+[    1.338173] usbcore: registered new interface driver hub
+[    1.338356] usbcore: registered new device driver usb
+[    1.338815] of_get_named_gpio_flags: can't parse gpios property
+[    1.338863] of_get_named_gpio_flags exited with status 2
+[    1.340499] rk3x-i2c ff160000.i2c: Initialized RK3xxx I2C bus at ffffff800026e000
+[    1.341185] media: Linux media interface: v0.10
+[    1.341248] Linux video capture interface: v2.00
+[    1.341331] pps_core: LinuxPPS API ver. 1 registered
+[    1.341348] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.341379] PTP clock support registered
+[    1.341447] i2c-core: driver [bq24296] using legacy suspend method
+[    1.341464] i2c-core: driver [bq24296] using legacy resume method
+[    1.342880] Rockchip ion module is successfully loaded (v1.1)
+[    1.343616] Advanced Linux Sound Architecture Driver Initialized.
+[    1.344140] Bluetooth: Core ver 2.16
+[    1.344201] NET: Registered protocol family 31
+[    1.344218] Bluetooth: HCI device and connection manager initialized
+[    1.344281] Bluetooth: HCI socket layer initialized
+[    1.344303] Bluetooth: L2CAP socket layer initialized
+[    1.344340] Bluetooth: SCO socket layer initialized
+[    1.344654] cfg80211: Calling CRDA to update world regulatory domain
+[    1.347123] rk816_i2c_probe,line=785
+[    1.347432] pmic is rk805, chip version is 8051
+[    1.347596] pmic on/off source: on=0x40, off=0x0
+[    1.350138] of_get_named_gpio_flags exited with status 70
+[    1.350195] of_get_named_gpio_flags exited with status 90
+[    1.350252] rk816_i2c_probe: rk816_pmic_sleep=0
+[    1.351001] rk816_regulator_probe: compatible rk805
+[    1.352856] vdd_logic: 712 <--> 1350 mV at 1100 mV 
+[    1.354128] vdd_arm: 712 <--> 1350 mV at 1225 mV 
+[    1.355377] vcc_ddr: 1200 mV 
+[    1.356926] vcc_io: 3300 mV 
+[    1.358526] vdd_18: 1800 mV 
+[    1.360088] vcc_18emmc: 1800 mV 
+[    1.361667] vdd_11: 1100 mV 
+[    1.362084] rk816_i2c_probe success
+[    1.362134] i2c-core: driver [rk816] using legacy suspend method
+[    1.362150] i2c-core: driver [rk816] using legacy resume method
+[    1.362213] i2c-core: driver [rk818] using legacy suspend method
+[    1.362229] i2c-core: driver [rk818] using legacy resume method
+[    1.363036] rk816_rtc_probe,line=463
+[    1.363073] rk8xx-rtc: probe of rk8xx-rtc failed with error -22
+[    1.363483] rockchip-i2s ff000000.i2s: i2s0 has no mclk
+[    1.366029] Switching to clocksource arch_sys_counter
+[    1.398044] rga: Module initialized.
+[    1.398631] rga2 ff390000.rga: rga ion client create success!
+[    1.398843] rga: Driver loaded succesfully
+[    1.399198] fb disp policy is box
+[    1.399215] uboot-logo-on:1
+[    1.399263] rk-fb rockchip-fb: rk fb ion client create success!
+[    1.399283] rk-fb rockchip-fb: rockchip framebuffer driver probe
+[    1.399950] can't find screen_init node
+[    1.399972] rk-screen rk_screen.18: rockchip screen probe success
+[    1.401178] rk322xh-lcdc ff370000.vop: vop_dev->regs=0xffffff800027c000
+[    1.401254] rk322xh-lcdc vop0: can't find power_ctr node for lcdc0
+[    1.401614] graphics fb0: rockchip framebuffer registerd:fb0
+[    1.402065] graphics fb1: rockchip framebuffer registerd:fb1
+[    1.402317] graphics fb2: rockchip framebuffer registerd:fb2
+[    1.402533] graphics fb3: rockchip framebuffer registerd:fb3
+[    1.402761] graphics fb4: rockchip framebuffer registerd:fb4
+[    1.402941] rk322xh-lcdc vop0: failed to get vop hclk_noc source
+[    1.404292] rk322xh-lcdc vop0: lcdc0: dclk:594000000>>fps:112 
+[    1.412822] alloc_buffer:ion_phy_addr=0x10000000
+[    1.417476] fb0:phy:10000000>>vir:ffffff8000286000>>len:0xb00000
+[    1.444132] rk_iommu ff373f00.vopb_mmu: rockchip_iommu_attach_device: Attached new IOMMU with pgtable 0x3b581000
+[    1.444189] rk322xh-lcdc vop0: lcdc0 probe ok, iommu enabled
+[    1.446565] NET: Registered protocol family 2
+[    1.447530] TCP established hash table entries: 8192 (order: 5, 131072 bytes)
+[    1.447787] TCP bind hash table entries: 8192 (order: 5, 131072 bytes)
+[    1.448048] TCP: Hash tables configured (established 8192 bind 8192)
+[    1.448226] TCP: reno registered
+[    1.448253] UDP hash table entries: 512 (order: 2, 16384 bytes)
+[    1.448311] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)
+[    1.448649] NET: Registered protocol family 1
+[    1.449054] RPC: Registered named UNIX socket transport module.
+[    1.449075] RPC: Registered udp transport module.
+[    1.449089] RPC: Registered tcp transport module.
+[    1.449103] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    1.449305] rk816_gpio_probe: compatible rk805
+[    1.449326] gpiochip_find_base: found new base at 254
+[    1.449446] gpiochip_add: registered GPIOs 254 to 255 on device: rk8xx-gpio
+[    1.449468] rk8xx-gpio rk8xx-gpio: driver success
+[    1.450517] Unpacking initramfs...
+[    1.582285] Freeing initrd memory: 1652K (ffffffc0049f0000 - ffffffc004b8d000)
+[    1.583821] rknandbase v1.0 2014-03-31
+[    1.584400] rknand_driver:ret = 0
+[    1.584798] vcodec_service: No noc aclk reset resource define
+[    1.584817] vcodec_service: No noc hclk reset resource define
+[    1.584833] vcodec_service: No core reset resource define
+[    1.584849] vcodec_service: No cabac reset resource define
+[    1.584967] vcodec vpu_combo.20: failed on clk_get clk_cabac
+[    1.585084] vcodec vpu_combo.20: do not have pd_video
+[    1.585138] vcodec_service: probe device ff350000.vpu_service
+[    1.585194] vcodec_service: checking hw id 0
+[    1.586186] vcodec_service: probe device ff351000.avsd
+[    1.586246] vcodec_service: checking hw id 6731
+[    1.587074] vcodec_service: init success
+[    1.588243] vcodec ff360000.rkvdec: do not have pd_video
+[    1.588291] vcodec_service: probe device ff360000.rkvdec
+[    1.588335] DVFS ERR:	dvfs_target: aclk_rkvdec is disable, set rate error
+[    1.588387] vcodec_service: checking hw id 3410
+[    1.589048] DVFS ERR:	dvfs_target: aclk_rkvdec is disable, set rate error
+[    1.590113] vcodec_service: init success
+[    1.592795] Initialise system trusted keyring
+[    1.592908] audit: initializing netlink socket (disabled)
+[    1.592967] type=2000 audit(0.433:1): initialized
+[    1.598152] VFS: Disk quotas dquot_6.5.2
+[    1.598395] Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    1.600684] NFS: Registering the id_resolver key type
+[    1.600769] Key type id_resolver registered
+[    1.600786] Key type id_legacy registered
+[    1.601251] fuse init (API version 7.22)
+[    1.602624] SELinux:  Registering netfilter hooks
+[    1.603057] 
+[    1.603057] TEE Core Framework initialization (ver 1:0.1)
+[    1.603113] TEE armv7 Driver initialization
+[    1.603637] tz_tee_probe: name="armv7sec", id=0, pdev_name="armv7sec.0"
+[    1.603659] TEE core: Alloc the misc device "opteearmtz00" (id=0)
+[    1.604217] TEE Core: Register the misc device "opteearmtz00" (id=0,minor=58)
+[    1.606417] Key type asymmetric registered
+[    1.606444] Asymmetric key parser 'x509' registered
+[    1.606676] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+[    1.606698] io scheduler noop registered
+[    1.606823] io scheduler cfq registered (default)
+[    1.607872] of_get_named_gpio_flags exited with status 0
+[    1.611012] rockchip-u3phy ff470000.usb3-phy: Rockchip u3phy initialized successfully
+[    1.613168] reset hdmi
+[    1.613477] rockchip-hdmiv2 ff3c0000.hdmi: rockchip hdmiv2 probe success.
+[    1.614241] iep: failed to find iep power down clock source.
+[    1.614823] iep ion client create success!
+[    1.614846] IEP Power ON
+[    1.615435] rk_iommu ff3a0800.iep_mmu: rockchip_iommu_attach_device: Attached new IOMMU with pgtable 0x3b584000
+[    1.615458] IEP Power OFF
+[    1.615487] IEP Driver loaded succesfully
+[    1.615683] Module initialized.
+[    1.616233] cvbs connect to lcdc0
+[    1.616253] switch:en=1,lcdc_id=0,screen type=5,cur type=1
+[    1.616267] data space: 0, color mode: 2
+[    1.616323] rk322xh-lcdc vop0: lcdc0: dclk:594000000>>fps:52 
+[    1.616374] rk3036-tve ff373e00.tve: rockchip,rk322xh-tve tv encoder probe ok
+[    1.616791] probe device ff330000.h265e
+[    1.617195] mpp_dev ff330000.h265e: try to get iommu dev rockchip,h265e_mmu
+[    1.617825] mpp_dev ff330000.h265e: resource ready, register device
+[    1.618115] probe device ff340000.vepu
+[    1.618431] mpp_dev ff340000.vepu: try to get iommu dev rockchip,vepu_mmu
+[    1.619041] mpp_dev ff340000.vepu: resource ready, register device
+[    1.621425] dma-pl330 ff1f0000.pdma: Loaded driver for PL330 DMAC-2364208
+[    1.621459] dma-pl330 ff1f0000.pdma: 	DBUFF-128x8bytes Num_Chans-8 Num_Peri-20 Num_Events-16
+[    1.622117] rk_serial.c v1.8 2014-03-04
+[    1.622619] ff110000.serial: ttyS0 at MMIO 0xff110000 (irq = 87) is a rk29_serial.0
+[    1.622921] serial ff110000.serial: membase ffffff8001dae000
+[    1.623266] ff120000.serial: ttyS1 at MMIO 0xff120000 (irq = 88) is a rk29_serial.1
+[    1.623518] serial ff120000.serial: membase ffffff8001dba000
+[    1.623932] [drm] Initialized drm 1.1.0 20060810
+[    1.627171] loop: module loaded
+[    1.627608] zram: Created 1 device(s)
+[    1.627800] i2c-core: driver [mpu6050B1] using legacy suspend method
+[    1.627818] i2c-core: driver [mpu6050B1] using legacy resume method
+[    1.627837] mpu_init: Probe name mpu6050B1
+[    1.628013] ak8963_mod_init: Probe name ak8963_mod
+[    1.629269] SCSI Media Changer driver v0.25 
+[    1.629732] tun: Universal TUN/TAP device driver, 1.6
+[    1.629750] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    1.630349] PPP generic driver version 2.4.2
+[    1.630497] PPP BSD Compression module registered
+[    1.630513] PPP Deflate Compression module registered
+[    1.630552] PPP MPPE Compression module registered
+[    1.630569] NET: Registered protocol family 24
+[    1.630621] SLIP: version 0.8.4-NET3.019-NEWTTY (dynamic channels, max=256) (6 bit encapsulation enabled).
+[    1.630638] CSLIP: code copyright 1989 Regents of the University of California.
+[    1.630656] Rockchip WiFi SYS interface (V1.00) ... 
+[    1.630698] RTW: module init start
+[    1.630713] RTW: rtl8821cu v5.8.1_34171.20190628_COEX20190509-4141
+[    1.630728] RTW: build time: May  8 2025 13:13:11
+[    1.630741] RTW: rtl8821cu BT-Coex version = COEX20190509-4141
+[    1.630803] RTW: rtw_inetaddr_notifier_register
+[    1.630881] usbcore: registered new interface driver rtl8821cu
+[    1.630898] RTW: module init ret=0
+[    1.630972] usbcore: registered new interface driver catc
+[    1.631025] usbcore: registered new interface driver kaweth
+[    1.631042] pegasus: v0.9.3 (2013/04/25), Pegasus/Pegasus II USB Ethernet driver
+[    1.631094] usbcore: registered new interface driver pegasus
+[    1.631147] usbcore: registered new interface driver rtl8150
+[    1.631164] hso: drivers/net/usb/hso.c: Option Wireless
+[    1.631263] usbcore: registered new interface driver hso
+[    1.631319] usbcore: registered new interface driver asix
+[    1.631371] usbcore: registered new interface driver ax88179_178a
+[    1.631424] usbcore: registered new interface driver cdc_ether
+[    1.631476] usbcore: registered new interface driver cdc_eem
+[    1.631527] usbcore: registered new interface driver dm9601
+[    1.631589] usbcore: registered new interface driver dm9620
+[    1.631651] usbcore: registered new interface driver smsc75xx
+[    1.631711] usbcore: registered new interface driver smsc95xx
+[    1.631764] usbcore: registered new interface driver gl620a
+[    1.631872] usbcore: registered new interface driver net1080
+[    1.631931] usbcore: registered new interface driver plusb
+[    1.631985] usbcore: registered new interface driver rndis_host
+[    1.632038] usbcore: registered new interface driver cdc_subset
+[    1.632094] usbcore: registered new interface driver zaurus
+[    1.632149] usbcore: registered new interface driver MOSCHIP usb-ethernet driver
+[    1.632229] usbcore: registered new interface driver int51x1
+[    1.632287] usbcore: registered new interface driver kalmia
+[    1.632340] usbcore: registered new interface driver ipheth
+[    1.632395] usbcore: registered new interface driver sierra_net
+[    1.632447] usbcore: registered new interface driver cx82310_eth
+[    1.632508] usbcore: registered new interface driver cdc_ncm
+[    1.632566] usbcore: registered new interface driver qmi_wwan
+[    1.632620] usbcore: registered new interface driver cdc_mbim
+[    1.634509] phy phy-ff470000.usb3-phy.1: u3phy u2 power on
+[    1.634561] phy phy-ff470000.usb3-phy.2: u3phy u3 power on
+[    1.635368] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    1.635413] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1
+[    1.636675] xhci-hcd xhci-hcd.0.auto: irq 99, io mem 0xff600000
+[    1.636785] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.636808] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.636828] usb usb1: Product: xHCI Host Controller
+[    1.636847] usb usb1: Manufacturer: Linux 3.10.245 xhci-hcd
+[    1.636865] usb usb1: SerialNumber: xhci-hcd.0.auto
+[    1.637394] xHCI xhci_add_endpoint called for root hub
+[    1.637410] xHCI xhci_check_bandwidth called for root hub
+[    1.637545] hub 1-0:1.0: USB hub found
+[    1.637583] hub 1-0:1.0: 1 port detected
+[    1.637808] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    1.637842] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 2
+[    1.637947] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003
+[    1.637971] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.637991] usb usb2: Product: xHCI Host Controller
+[    1.638009] usb usb2: Manufacturer: Linux 3.10.245 xhci-hcd
+[    1.638028] usb usb2: SerialNumber: xhci-hcd.0.auto
+[    1.638410] xHCI xhci_add_endpoint called for root hub
+[    1.638425] xHCI xhci_check_bandwidth called for root hub
+[    1.638556] hub 2-0:1.0: USB hub found
+[    1.638587] hub 2-0:1.0: 1 port detected
+[    1.638826] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.638844] ehci-platform: EHCI generic platform driver
+[    1.639381] ehci-platform ff5c0000.usb: EHCI Host Controller
+[    1.639420] ehci-platform ff5c0000.usb: new USB bus registered, assigned bus number 3
+[    1.639997] ehci-platform ff5c0000.usb: irq 48, io mem 0xff5c0000
+[    1.648231] ehci-platform ff5c0000.usb: USB 2.0 started, EHCI 1.00
+[    1.648338] usb usb3: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.648362] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.648382] usb usb3: Product: EHCI Host Controller
+[    1.648401] usb usb3: Manufacturer: Linux 3.10.245 ehci_hcd
+[    1.648420] usb usb3: SerialNumber: ff5c0000.usb
+[    1.648996] hub 3-0:1.0: USB hub found
+[    1.649030] hub 3-0:1.0: 1 port detected
+[    1.649654] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    1.649672] ohci-platform: OHCI generic platform driver
+[    1.649982] ohci-platform ff5d0000.usb: Generic Platform OHCI controller
+[    1.650021] ohci-platform ff5d0000.usb: new USB bus registered, assigned bus number 4
+[    1.650094] ohci-platform ff5d0000.usb: irq 49, io mem 0xff5d0000
+[    1.704725] usb usb4: New USB device found, idVendor=1d6b, idProduct=0001
+[    1.704754] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.704776] usb usb4: Product: Generic Platform OHCI controller
+[    1.704797] usb usb4: Manufacturer: Linux 3.10.245 ohci_hcd
+[    1.704815] usb usb4: SerialNumber: ff5d0000.usb
+[    1.705398] hub 4-0:1.0: USB hub found
+[    1.705432] hub 4-0:1.0: 1 port detected
+[    1.705862] usbcore: registered new interface driver cdc_acm
+[    1.705879] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    1.705957] usbcore: registered new interface driver usblp
+[    1.706018] usbcore: registered new interface driver cdc_wdm
+[    1.706169] usbcore: registered new interface driver usb-storage
+[    1.706227] usbcore: registered new interface driver ums-alauda
+[    1.706283] usbcore: registered new interface driver ums-cypress
+[    1.706347] usbcore: registered new interface driver ums-datafab
+[    1.706404] usbcore: registered new interface driver ums_eneub6250
+[    1.706459] usbcore: registered new interface driver ums-freecom
+[    1.706518] usbcore: registered new interface driver ums-isd200
+[    1.706572] usbcore: registered new interface driver ums-jumpshot
+[    1.706627] usbcore: registered new interface driver ums-karma
+[    1.706688] usbcore: registered new interface driver ums-onetouch
+[    1.706746] usbcore: registered new interface driver ums-sddr09
+[    1.706807] usbcore: registered new interface driver ums-sddr55
+[    1.706863] usbcore: registered new interface driver ums-usbat
+[    1.706992] usbcore: registered new interface driver usbserial
+[    1.707051] usbcore: registered new interface driver usbserial_generic
+[    1.707092] usbserial: USB Serial support registered for generic
+[    1.707153] usbcore: registered new interface driver option
+[    1.707197] usbserial: USB Serial support registered for GSM modem (1-port)
+[    1.707576] usbcore: registered new interface driver trancevibrator
+[    1.707595] usb20_otg: version 3.10a 21-DEC-2012
+[    1.708323] ffffff8002000040
+[    1.708344] Core Release: 3.10a
+[    1.708367] Setting default values for core params
+[    1.708541] Using Buffer DMA mode
+[    1.708557] Periodic Transfer Interrupt Enhancement - disabled
+[    1.708572] Multiprocessor Interrupt Enhancement - disabled
+[    1.708589] OTG VER PARAM: 0, OTG VER FLAG: 0
+[    1.708604] ^^^^^^^^^^^^^^^^^Device Mode
+[    1.708627] Dedicated Tx FIFOs mode
+[    1.708664] pcd_init otg_dev = ffffffc03976ea80
+[    1.807355] Using Buffer DMA mode
+[    1.807378] Periodic Transfer Interrupt Enhancement - disabled
+[    1.807395] Multiprocessor Interrupt Enhancement - disabled
+[    1.807413] OTG VER PARAM: 0, OTG VER FLAG: 0
+[    1.807427] ^^^^^^^^^^^^^^^^^Device Mode
+[    1.807480] usb20_otg ff580000.usb: DWC OTG Controller
+[    1.807521] usb20_otg ff580000.usb: new USB bus registered, assigned bus number 5
+[    1.807574] usb20_otg ff580000.usb: irq 55, io mem 0x00000000
+[    1.807664] usb usb5: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.807687] usb usb5: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.807707] usb usb5: Product: DWC OTG Controller
+[    1.807726] usb usb5: Manufacturer: Linux 3.10.245 dwc_otg_hcd
+[    1.807745] usb usb5: SerialNumber: ff580000.usb
+[    1.808311] hub 5-0:1.0: USB hub found
+[    1.808343] hub 5-0:1.0: 1 port detected
+[    1.808674] usb20_host: version 3.10a 21-DEC-2012
+[    1.809641] usbcore: registered new interface driver xpad
+[    1.809724] usbcore: registered new interface driver usb_acecad
+[    1.809790] usbcore: registered new interface driver aiptek
+[    1.809853] usbcore: registered new interface driver gtco
+[    1.809915] usbcore: registered new interface driver hanwang
+[    1.809976] usbcore: registered new interface driver kbtab
+[    1.810075] usbcore: registered new interface driver wacom
+[    1.811667] input: rk816_pwrkey as /devices/ff160000.i2c/i2c-1/1-0018/rk8xx-pwrkey/input/input0
+[    1.811899] rk805 register rk8xx_pwrkey driver
+[    1.811957] sensor_register_slave:mma8452,id=17
+[    1.811974] sensor_register_slave:lsm303d,id=22
+[    1.811990] sensor_register_slave:gs_mc3230,id=23
+[    1.812004] [Gsensor] gsensor_init
+[    1.812018] sensor_register_slave:mpu6880_acc,id=24
+[    1.812034] sensor_register_slave:mpu6500_acc,id=25
+[    1.812050] sensor_register_slave:bma2xx_acc,id=26
+[    1.812065] sensor_register_slave:cm3217,id=49
+[    1.812081] sensor_register_slave:cm3218,id=50
+[    1.812096] sensor_register_slave:ls_stk3410,id=58
+[    1.812495] sensor_register_slave:ps_stk3410,id=63
+[    1.812944] .. rk pwm remotectl v1.1 init
+[    1.813434] input: ff1b0030.pwm as /devices/ff1b0030.pwm/input/input1
+[    1.814127] i2c /dev entries driver
+[    1.814501] IR NEC protocol handler initialized
+[    1.814519] IR RC5(x) protocol handler initialized
+[    1.814534] IR RC6 protocol handler initialized
+[    1.814547] IR JVC protocol handler initialized
+[    1.814561] IR Sony protocol handler initialized
+[    1.814575] IR RC5 (streamzap) protocol handler initialized
+[    1.814590] IR SANYO protocol handler initialized
+[    1.814605] IR MCE Keyboard/mouse protocol handler initialized
+[    1.814840] usbcore: registered new interface driver uvcvideo
+[    1.814857] USB Video Class driver (1.1.1)
+[    1.814875] CamSys driver version: v0.34.0,  CamSys head file version: v0.13.0
+[    1.814893] E:camsys_soc_init(30): camsys_soc_init exit!
+[    1.816423] not find test_power_init dev node
+[    1.816481] i2c-core: driver [bq27320] using legacy suspend method
+[    1.816498] i2c-core: driver [bq27320] using legacy resume method
+[    1.819186] of_get_named_gpio_flags exited with status 90
+[    1.820214] thermal thermal_zone0: failed to read out thermal zone 0
+[    1.820811] device-mapper: uevent: version 1.0.3
+[    1.821168] device-mapper: ioctl: 4.24.0-ioctl (2013-01-15) initialised: dm-devel@redhat.com
+[    1.821520] Bluetooth: HCI UART driver ver 2.2
+[    1.821541] Bluetooth: HCI H4 protocol initialized
+[    1.821555] Bluetooth: HCILL protocol initialized
+[    1.821570] rtk_btusb: RTKBT_RELEASE_NAME: 20170324_BT_ANDROID_7.0
+[    1.821585] rtk_btusb: Realtek Bluetooth USB driver module init, version 4.1.4
+[    1.821600] rtk_btusb: Register usb char device interface for BT driver
+[    1.821853] usbcore: registered new interface driver rtk_btusb
+[    1.822752] DVFS LOG:	dvfs vd vd_logic fixed up setting: old 1100000 new 1050000.
+[    1.823520] DVFS LOG:	dvfs vd vd_arm fixed up setting: old 1225000 new 950000.
+[    1.823535] cpufreq version 1.0, suspend freq 1008 MHz
+[    1.824389] cpuidle: using governor ladder
+[    1.824408] cpuidle: using governor menu
+[    1.824801] Synopsys Designware Multimedia Card Interface Driver
+[    1.824817] MHSC version = Ver 2.00 2015-06-10
+[    1.825924] dwmmc_rockchip ff520000.rksdmmc: Version ID is 270a
+[    1.826005] dwmmc_rockchip ff520000.rksdmmc: failed to get hpclk_mmc
+[    1.826556] dwmmc_rockchip ff520000.rksdmmc: Using internal DMA controller.
+[    1.826899] dwmmc_rockchip ff520000.rksdmmc: dw_mci_init_slot: fmin=400000, fmax=150000000 [mmc0]
+[    1.826951] of_get_named_gpio_flags: can't parse gpios property
+[    1.838462] rk_sdmmc: BOOT dw_mci_setup_bus: argue clk_mmc workaround out 800000Hz for init[mmc0]
+[    1.851720] dwmmc_rockchip ff520000.rksdmmc: DW MMC controller at irq 46, 32 bit host data width, 256 deep fifo
+[    1.851748] dwmmc_rockchip ff520000.rksdmmc: 1 slots initialized
+[    1.852555] dwmmc_rockchip ff500000.rksdmmc: Version ID is 270a
+[    1.852629] dwmmc_rockchip ff500000.rksdmmc: failed to get hpclk_mmc
+[    1.855235] dwmmc_rockchip ff500000.rksdmmc: Using internal DMA controller.
+[    1.856527] dwmmc_rockchip ff500000.rksdmmc: dw_mci_init_slot: fmin=400000, fmax=37500000 [mmc1]
+[    1.856583] of_get_named_gpio_flags: can't parse gpios property
+[    1.858405] dwmmc_rockchip ff500000.rksdmmc: mmc1: No udbg pinctrl found!
+[    1.871371] mmc_host mmc1: Bus speed (slot 0) = 37500000Hz (slot req 400000Hz, actual 398936HZ div = 47)
+[    1.871398] rk_sdmmc: BOOT dw_mci_setup_bus: argue clk_mmc workaround out 800000Hz for init[mmc1]
+[    1.884521] dwmmc_rockchip ff500000.rksdmmc: DW MMC controller at irq 44, 32 bit host data width, 256 deep fifo
+[    1.884548] dwmmc_rockchip ff500000.rksdmmc: 1 slots initialized
+[    1.885280] rk3368-pinctrl pinctrl.26: pin gpio1-13 already requested by pinctrl.26; cannot claim for ff510000.rksdmmc
+[    1.885353] rk3368-pinctrl pinctrl.26: pin-45 (ff510000.rksdmmc) status -22
+[    1.885377] rk3368-pinctrl pinctrl.26: could not request pin 45 on device rockchip-pinctrl
+[    1.885397] dwmmc_rockchip ff510000.rksdmmc: Error applying setting, reverse things back
+[    1.885582] dwmmc_rockchip ff510000.rksdmmc: Version ID is 270a
+[    1.885694] dwmmc_rockchip ff510000.rksdmmc: failed to get hpclk_mmc
+[    1.886395] dwmmc_rockchip ff510000.rksdmmc: Using internal DMA controller.
+[    1.886826] dwmmc_rockchip ff510000.rksdmmc: dw_mci_init_slot: fmin=200000, fmax=150000000 [mmc2]
+[    1.886879] of_get_named_gpio_flags: can't parse gpios property
+[    1.887504] rk3368-pinctrl pinctrl.26: pin gpio1-13 already requested by pinctrl.26; cannot claim for ff510000.rksdmmc
+[    1.887533] rk3368-pinctrl pinctrl.26: pin-45 (ff510000.rksdmmc) status -22
+[    1.887554] rk3368-pinctrl pinctrl.26: could not request pin 45 on device rockchip-pinctrl
+[    1.887577] dwmmc_rockchip ff510000.rksdmmc: Error applying setting, reverse things back
+[    1.887597] dwmmc_rockchip ff510000.rksdmmc: mmc2: Idle pinctrl setting failed!
+[    1.887619] rk3368-pinctrl pinctrl.26: pin gpio1-13 already requested by pinctrl.26; cannot claim for ff510000.rksdmmc
+[    1.887677] rk3368-pinctrl pinctrl.26: pin-45 (ff510000.rksdmmc) status -22
+[    1.887700] rk3368-pinctrl pinctrl.26: could not request pin 45 on device rockchip-pinctrl
+[    1.887719] dwmmc_rockchip ff510000.rksdmmc: Error applying setting, reverse things back
+[    1.887740] dwmmc_rockchip ff510000.rksdmmc: mmc2:  Default pinctrl setting failed!
+[    1.897573] mmc0: BKOPS_EN bit is not set
+[    1.899832] rk_sdmmc: BOOT Bus speed=0Hz,Bus width=8bits.[mmc0]
+[    1.900792] rk_sdmmc: BOOT dw_mci_setup_bus: argue clk_mmc workaround out 800000Hz for init[mmc2]
+[    1.902582] mmc_host mmc0: Bus speed (slot 0) = 150000000Hz (slot req 150000000Hz, actual 150000000HZ div = 0)
+[    1.902616] rk_sdmmc: BOOT dw_mci_setup_bus: argue clk_mmc workaround out normal clock [mmc0]
+[    1.902658] [mmc0] tuning regsbase addr 0x390.
+[    1.902658] cmd/data error is normal in tuning, Please Ignore!!!
+[    1.903273] rk_sdmmc: ERROR data error, status 0x00000088 [mmc0]
+[    1.903364] rk_sdmmc: ERROR data error, status 0x00002000 [mmc0]
+[    1.950077] usb 3-1: new high-speed USB device number 2 using ehci-platform
+[    2.002455] dwmmc_rockchip ff520000.rksdmmc: descriptor is still owned by IDMAC.
+[    2.002505] dwmmc_rockchip ff520000.rksdmmc: dw_mci_submit_data_dma: fall back to PIO mode for current transfer
+[    2.002909] dwmmc_rockchip ff510000.rksdmmc: DW MMC controller at irq 45, 32 bit host data width, 256 deep fifo
+[    2.002936] dwmmc_rockchip ff510000.rksdmmc: 1 slots initialized
+[    2.003594] leds-gpio leds.35: pins are not configured from the driver
+[    2.003733] of_get_named_gpio_flags exited with status 254
+[    2.003793] of_get_named_gpio_flags exited with status 255
+[    2.003808] of_get_named_gpio_flags: can't parse gpios property
+[    2.003841] of_get_named_gpio_flags exited with status 254
+[    2.004055] leds-gpio leds.35: power-green     can_sleep:1 mode:23
+[    2.004074] dwmmc_rockchip ff520000.rksdmmc: Good phase range 0-90 (9 len)
+[    2.004090] dwmmc_rockchip ff520000.rksdmmc: Good phase range 135-259 (12 len)
+[    2.004105] dwmmc_rockchip ff520000.rksdmmc: Best phase range 135-259 (12 len)
+[    2.004118] dwmmc_rockchip ff520000.rksdmmc: Successfully tuned phase to 203
+[    2.004228] mmc0: new HS200 MMC card at address 0001
+[    2.004313] of_get_named_gpio_flags exited with status 255
+[    2.004486] leds-gpio leds.35: net-green       can_sleep:1 mode:05
+[    2.004572] of_get_named_gpio_flags: can't parse gpios property
+[    2.004594] leds-gpio leds.35: Skipping unavailable LED gpio -2 (ir)
+[    2.004998] mmcblk0: mmc0:0001 D9D16G 14.4 GiB 
+[    2.005195] hidraw: raw HID events driver (C) Jiri Kosina
+[    2.005406] mmcblk0rpmb: mmc0:0001 D9D16G partition 3 4.00 MiB
+[    2.006031]      uboot: 0x000400000 -- 0x000800000 (4 MB)
+[    2.006058]      trust: 0x000800000 -- 0x001000000 (8 MB)
+[    2.006076]       misc: 0x001000000 -- 0x001400000 (4 MB)
+[    2.006094] baseparamer: 0x001400000 -- 0x001500000 (1 MB)
+[    2.006112]   resource: 0x001500000 -- 0x002400000 (15 MB)
+[    2.006130]     kernel: 0x002400000 -- 0x004400000 (32 MB)
+[    2.006147]       boot: 0x004400000 -- 0x006400000 (32 MB)
+[    2.006165]   recovery: 0x006400000 -- 0x008400000 (32 MB)
+[    2.006182]     backup: 0x008400000 -- 0x00c400000 (64 MB)
+[    2.006199]      cache: 0x00c400000 -- 0x014400000 (128 MB)
+[    2.006217]   metadata: 0x014400000 -- 0x015400000 (16 MB)
+[    2.006235]     kpanic: 0x015400000 -- 0x015800000 (4 MB)
+[    2.006253]     system: 0x015800000 -- 0x075800000 (1536 MB)
+[    2.006271]   userdata: 0x075800000 -- 0x39cc00000 (12916 MB)
+[    2.009166] usbcore: registered new interface driver usbhid
+[    2.009194] usbhid: USB HID core driver
+[    2.009423] ashmem: initialized
+[    2.009677] logger: created 256K log 'log_main'
+[    2.009862] logger: created 256K log 'log_events'
+[    2.010042] logger: created 256K log 'log_radio'
+[    2.010236] logger: created 256K log 'log_system'
+[    2.011268] Rockchip DDR Initialize, verision: V1.01 20170517
+[    2.011298] current ATF version 0x101!
+[    2.011325] rockchip_ddr ddr.25: share memory addr=0x102000
+[    2.014197] rockchip_ddr_probe: success
+[    2.015977] --es8316_init--start--
+[    2.016950] of_get_named_gpio_flags: can't parse gpios property
+[    2.016976] rk322x-codec ff410000.codec: invalid spk ctl gpio
+[    2.040095] rk322x-audio rockchip_audio.33:  rk322x-hifi <-> ff010000.i2s mapping ok
+[    2.044265] rockchip-hdmi-i2s rockchip_hdmi_i2s.34:  rk-hdmi-i2s-hifi <-> ff000000.i2s mapping ok
+[    2.045259] u32 classifier
+[    2.045282]     Actions configured
+[    2.045301] Netfilter messages via NETLINK v0.30.
+[    2.045383] nf_conntrack version 0.5.0 (7410 buckets, 29640 max)
+[    2.045747] ctnetlink v0.93: registering with nfnetlink.
+[    2.045838] NF_TPROXY: Transparent proxy support initialized, version 4.1.0
+[    2.045851] NF_TPROXY: Copyright (c) 2006-2007 BalaBit IT Ltd.
+[    2.046205] xt_time: kernel timezone is -0000
+[    2.046480] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    2.046672] arp_tables: (C) 2002 David S. Miller
+[    2.046730] TCP: cubic registered
+[    2.046742] Initializing XFRM netlink socket
+[    2.047068] NET: Registered protocol family 10
+[    2.047813] mip6: Mobile IPv6
+[    2.047859] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[    2.048047] sit: IPv6 over IPv4 tunneling driver
+[    2.048631] NET: Registered protocol family 17
+[    2.048685] NET: Registered protocol family 15
+[    2.048780] Bridge firewalling registered
+[    2.048802] Ebtables v2.0 registered
+[    2.049215] Bluetooth: RFCOMM TTY layer initialized
+[    2.049292] Bluetooth: RFCOMM socket layer initialized
+[    2.049307] Bluetooth: RFCOMM ver 1.11
+[    2.049320] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    2.049332] Bluetooth: BNEP filters: protocol multicast
+[    2.049352] Bluetooth: BNEP socket layer initialized
+[    2.049365] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    2.049385] Bluetooth: HIDP socket layer initialized
+[    2.049472] l2tp_core: L2TP core driver, V2.0
+[    2.049494] l2tp_ppp: PPPoL2TP kernel driver, V2.0
+[    2.049507] 8021q: 802.1Q VLAN Support v1.8
+[    2.049560] [WLAN_RFKILL]: Enter rfkill_wlan_init
+[    2.049896] [WLAN_RFKILL]: Enter rfkill_wlan_probe
+[    2.049913] [WLAN_RFKILL]: can't find rockchip,grf property
+[    2.049926] [WLAN_RFKILL]: wlan_platdata_parse_dt: wifi_chip_type = rtl8821cu
+[    2.049940] [WLAN_RFKILL]: wlan_platdata_parse_dt: enable wifi power control.
+[    2.049953] [WLAN_RFKILL]: wlan_platdata_parse_dt: disable wifi io reference voltage control.
+[    2.049965] [WLAN_RFKILL]: wlan_platdata_parse_dt: wifi power controled by gpio.
+[    2.050083] of_get_named_gpio_flags exited with status 82
+[    2.050095] [WLAN_RFKILL]: wlan_platdata_parse_dt: get property: WIFI,poweren_gpio = 82, flags = 0.
+[    2.050107] of_get_named_gpio_flags: can't parse gpios property
+[    2.050118] of_get_named_gpio_flags: can't parse gpios property
+[    2.050146] of_get_named_gpio_flags exited with status 81
+[    2.050157] [WLAN_RFKILL]: wlan_platdata_parse_dt: get property: WIFI,host_wake_irq = 81, flags = 0.
+[    2.050170] [WLAN_RFKILL]: rfkill_wlan_probe: init gpio
+[    2.050226] [WLAN_RFKILL]: rockchip_wifi_voltage_select: this is rk3228h or rk3328 ,todo......!
+[    2.050240] [WLAN_RFKILL]: rockchip_wifi_power: 0
+[    2.050252] [BT_RFKILL]: rfkill_get_bt_power_state: rfkill-bt driver has not Successful initialized
+[    2.073193] usb 3-1: New USB device found, idVendor=05e3, idProduct=0608
+[    2.073219] usb 3-1: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+[    2.073236] usb 3-1: Product: USB2.0 Hub
+[    2.074072] hub 3-1:1.0: USB hub found
+[    2.074487] hub 3-1:1.0: 4 ports detected
+[    2.150162] [WLAN_RFKILL]: wifi shut off power.
+[    2.150213] [WLAN_RFKILL]: rockchip_wifi_ref_voltage: 0
+[    2.150237] [WLAN_RFKILL]: rockchip_wifi_ref_voltage: wifi io reference voltage control is disabled.
+[    2.160112] [WLAN_RFKILL]: rockchip_wifi_power: 1
+[    2.160142] [BT_RFKILL]: rfkill_get_bt_power_state: rfkill-bt driver has not Successful initialized
+[    2.160168] [WLAN_RFKILL]: rockchip_wifi_ref_voltage: 1
+[    2.160191] [WLAN_RFKILL]: rockchip_wifi_ref_voltage: wifi io reference voltage control is disabled.
+[    2.182907] usb 1-1: new high-speed USB device number 2 using xhci-hcd
+[    2.261668] [WLAN_RFKILL]: wifi turn on power. 82
+[    2.261703] mmc2:mmc host rescan start!
+[    2.261738] [WLAN_RFKILL]: Exit rfkill_wlan_probe
+[    2.261869] [BT_RFKILL]: Enter rfkill_rk_init
+[    2.262306] of_get_named_gpio_flags: can't parse gpios property
+[    2.262328] [BT_RFKILL]: bluetooth_platdata_parse_dt: uart_rts_gpios is unvalid.
+[    2.262472] of_get_named_gpio_flags exited with status 48
+[    2.262493] [BT_RFKILL]: bluetooth_platdata_parse_dt: get property: BT,power_gpio = 48.
+[    2.262518] of_get_named_gpio_flags: can't parse gpios property
+[    2.262571] of_get_named_gpio_flags exited with status 49
+[    2.262591] [BT_RFKILL]: bluetooth_platdata_parse_dt: get property: BT,wake_gpio = 49.
+[    2.262645] of_get_named_gpio_flags exited with status 80
+[    2.262666] [BT_RFKILL]: bluetooth_platdata_parse_dt: get property: BT,wake_host_irq = 80.
+[    2.262779] _gpio_request: gpio-0 (bt_default_rts) status -16
+[    2.262799] [BT_RFKILL]: Failed to get bt_default_rts gpio.
+[    2.262833] [BT_RFKILL]: Request irq for bt wakeup host
+[    2.263037] [BT_RFKILL]: ** disable irq
+[    2.263250] [BT_RFKILL]: bt_default device registered.
+[    2.263755] Key type dns_resolver registered
+[    2.267284] Registering SWP/SWPB emulation handler
+[    2.267331] rockchip_uboot_mem_late_init: Freeing uboot logo memory: 0x0000000002000000@0x000000003dc00000
+[    2.279715] ddrfreq: verion 1.2 20140526
+[    2.279802] ddrfreq: normal 786MHz performance 786MHz low_power 0MHz video_1080p 786MHz video_4k 786MHz dualview 786MHz idle 0MHz suspend 786MHz reboot 786MHz video_4k_10b 0MHz
+[    2.279867] ddrfreq: auto-freq=0
+[    2.279883] ddrfreq: auto-freq-table[0] 786MHz
+[    2.279930] ddrfreq: auto-freq-table[1] 786MHz
+[    2.312196] Loading compiled-in X.509 certificates
+[    2.312238] registered taskstats version 1
+[    2.312350] regulator-dummy: disabling
+[    2.312584] unable to find transceiver of type USB2 PHY
+[    2.312599] otg_wakelock_init: No USB transceiver found
+[    2.312705] pcd_pullup, is_on 0
+[    2.312768] file system registered
+[    2.313850] android_usb gadget: Mass Storage Function, version: 2009/09/11
+[    2.313870] android_usb gadget: Number of LUNs=2
+[    2.313884]  lun0: LUN: removable file: (no medium)
+[    2.313897]  lun1: LUN: removable file: (no medium)
+[    2.314197] android_usb gadget: android_usb ready
+[    2.314276] sensor_init: Probe name sensors
+[    2.314304] sensor-dev.c v1.4 add angle calculation support between two gsensors 2013-09-01
+[    2.314319] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    2.322092] rk3688_suspend_init: getting dev node error
+[    2.322129] I : [File] : drivers/gpu/arm/mali400/mali/linux/mali_kernel_linux.c; [Line] : 414; [Func] : mali_module_init(); svn_rev_string_from_arm of this mali_ko is '-69f65832876e', rk_ko_ver is '5', built at '13:12:44', on 'May  8 2025'.
+[    2.322276] mali-utgard ff300000.gpu: mali_platform_device->num_resources = 9
+[    2.322293] mali-utgard ff300000.gpu: resource[0].start = 0x0x00000000ff300000
+[    2.322309] mali-utgard ff300000.gpu: resource[1].start = 0x0x00000000ff300000
+[    2.322324] mali-utgard ff300000.gpu: resource[2].start = 0x0x000000000000007a
+[    2.322339] mali-utgard ff300000.gpu: resource[3].start = 0x0x0000000000000077
+[    2.322354] mali-utgard ff300000.gpu: resource[4].start = 0x0x000000000000007d
+[    2.322369] mali-utgard ff300000.gpu: resource[5].start = 0x0x0000000000000078
+[    2.322384] mali-utgard ff300000.gpu: resource[6].start = 0x0x0000000000000079
+[    2.322399] mali-utgard ff300000.gpu: resource[7].start = 0x0x000000000000007b
+[    2.322414] mali-utgard ff300000.gpu: resource[8].start = 0x0x000000000000007c
+[    2.322461] mali-utgard ff300000.gpu: freq: 200000000, min_threshold: 0, max_threshold: 70
+[    2.322479] mali-utgard ff300000.gpu: freq: 300000000, min_threshold: 70, max_threshold: 80
+[    2.322495] mali-utgard ff300000.gpu: freq: 400000000, min_threshold: 81, max_threshold: 90
+[    2.322512] mali-utgard ff300000.gpu: freq: 492000000, min_threshold: 92, max_threshold: 100
+[    2.322568] mali-utgard ff300000.gpu: initial freq = 200000000
+[    2.006335]  mmcblk0: p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14
+[    2.325152] Mali: Mali device driver loaded
+[    2.325648] usbcore: registered new interface driver snd-usb-audio
+[    2.325661] ALSA device list:
+[    2.325671]   #0: RK_RK322x
+[    2.325681]   #1: RK-HDMI-I2S
+[    2.325940] Freeing unused kernel memory: 388K (ffffffc000e46000 - ffffffc000ea7000)
+[    2.327767] init: init first stage started!
+[    2.333500] SELinux: 2048 avtab hash slots, 7884 rules.
+[    2.338429] SELinux: 2048 avtab hash slots, 7884 rules.
+[    2.338456] SELinux:  1 users, 2 roles, 735 types, 0 bools, 1 sens, 1024 cats
+[    2.338469] SELinux:  63 classes, 7884 rules
+[    2.340401] SELinux:  Completing initialization.
+[    2.340418] SELinux:  Setting up existing superblocks.
+[    2.340445] mmc_host mmc2: Bus speed (slot 0) = 150000000Hz (slot req 400000Hz, actual 398936HZ div = 188)
+[    2.340454] SELinux: initialized (dev sysfs, type sysfs), uses genfs_contexts
+[    2.340479] SELinux: initialized (dev rootfs, type rootfs), uses genfs_contexts
+[    2.340491] rk_sdmmc: BOOT dw_mci_setup_bus: argue clk_mmc workaround out 800000Hz for init[mmc2]
+[    2.340549] SELinux: initialized (dev bdev, type bdev), not configured for labeling
+[    2.340571] SELinux: initialized (dev proc, type proc), uses genfs_contexts
+[    2.340597] SELinux: initialized (dev tmpfs, type tmpfs), uses transition SIDs
+[    2.340630] SELinux: initialized (dev devtmpfs, type devtmpfs), uses transition SIDs
+[    2.340965] SELinux: initialized (dev debugfs, type debugfs), uses genfs_contexts
+[    2.359898] SELinux: initialized (dev sockfs, type sockfs), uses task SIDs
+[    2.359926] SELinux: initialized (dev pipefs, type pipefs), uses task SIDs
+[    2.359967] SELinux: initialized (dev anon_inodefs, type anon_inodefs), not configured for labeling
+[    2.359989] SELinux: initialized (dev devpts, type devpts), uses transition SIDs
+[    2.360022] SELinux: initialized (dev selinuxfs, type selinuxfs), uses genfs_contexts
+[    2.360084] SELinux: initialized (dev configfs, type configfs), uses genfs_contexts
+[    2.360099] SELinux: initialized (dev tmpfs, type tmpfs), uses transition SIDs
+[    2.360130] SELinux: initialized (dev sysfs, type sysfs), uses genfs_contexts
+[    2.376413] mmc_host mmc2: Bus speed (slot 0) = 150000000Hz (slot req 300000Hz, actual 300000HZ div = 250)
+[    2.376446] rk_sdmmc: BOOT dw_mci_setup_bus: argue clk_mmc workaround out 600000Hz for init[mmc2]
+[    2.402188] type=1403 audit(1.253:2): policy loaded auid=4294967295 ses=4294967295
+[    2.403068] init: (Initializing SELinux non-enforcing took 0.08s.)
+[    2.408270] init: init second stage started!
+[    2.415849] mmc_host mmc2: Bus speed (slot 0) = 150000000Hz (slot req 200000Hz, actual 200000HZ div = 375)
+[    2.415899] rk_sdmmc: BOOT dw_mci_setup_bus: argue clk_mmc workaround out 400000Hz for init[mmc2]
+[    2.415981] init: Setting ro.rk.soc=
+[    2.416176] init: OK,EMMC DRIVERS INIT OK
+[    2.416220] init: property_set("ro.boot.mode", "emmc") failed
+[    2.416355] init: property_set("ro.hardware", "rk30board") failed
+[    2.420536] init: Running restorecon...
+[    2.498426] init: waitpid failed: No child processes
+[    2.498769] init: (Loading properties from /default.prop took 0.00s.)
+[    2.501325] init: (Parsing /init.environ.rc took 0.00s.)
+[    2.501920] init: (Parsing /init.usb.rc took 0.00s.)
+[    2.503082] init: (Parsing init.rk30board.bootmode.emmc.rc took 0.00s.)
+[    2.504482] init: (Parsing init.rk30board.usb.rc took 0.00s.)
+[    2.504587] init: (Parsing init.rk30board.environment.rc took 0.00s.)
+[    2.504634] init: could not import file '/init.debug.rc' from 'init.rockchip.rc': No such file or directory
+[    2.504655] init: (Parsing init.rockchip.rc took 0.00s.)
+[    2.505205] init: (Parsing init.connectivity.rc took 0.00s.)
+[    2.505354] init: (Parsing init.box.samba.rc took 0.00s.)
+[    2.505401] init: could not import file 'init.rk3328.rc' from '/init.rk30board.rc': No such file or directory
+[    2.506011] init: (Parsing /init.ftc.rc took 0.00s.)
+[    2.506035] init: (Parsing /init.controlhub.rc took 0.00s.)
+[    2.506057] init: (Parsing init.box.rc took 0.00s.)
+[    2.506094] init: could not import file 'init.car.rc' from '/init.rk30board.rc': No such file or directory
+[    2.506153] init: (Parsing init.optee.rc took 0.00s.)
+[    2.506174] init: (Parsing /init.rk30board.rc took 0.00s.)
+[    2.507104] init: (Parsing /init.usb.configfs.rc took 0.00s.)
+[    2.507293] init: (Parsing /init.zygote64_32.rc took 0.00s.)
+[    2.507317] init: (Parsing /init.rc took 0.01s.)
+[    2.507911] init: Starting service 'ueventd'...
+[    2.510244] ueventd: ueventd started!
+[    2.511031] ueventd: invalid gid 'trace'
+[    2.511677] type=1400 audit(1.366:3): avc:  denied  { getattr } for  pid=1 comm="init" path="/sys/kernel/debug/tracing/trace_marker" dev="debugfs" ino=162 scontext=u:r:init:s0 tcontext=u:object_r:debugfs_trace_marker:s0 tclass=file permissive=1
+[    2.714022] ueventd: Coldboot took 0.20s.
+[    2.786404] vendor storage:20160801 ret = 0
+[    2.799528] usb 1-1: New USB device found, idVendor=046d, idProduct=08e5
+[    2.799547] usb 1-1: New USB device strings: Mfr=0, Product=2, SerialNumber=1
+[    2.799557] usb 1-1: Product: HD Pro Webcam C920
+[    2.799566] usb 1-1: SerialNumber: 0DB557EF
+[    2.803389] uvcvideo: Found UVC 1.00 device HD Pro Webcam C920 (046d:08e5)
+[    2.804218] input: HD Pro Webcam C920 as /devices/usb.24/ff600000.dwc3/xhci-hcd.0.auto/usb1/1-1/1-1:1.0/input/input2
+[    2.993162] init: Waiting for /dev/.coldboot_done...
+[    2.993256] init: Waiting for /dev/.coldboot_done took 0.00s.
+[    2.993314] init: /dev/hw_random not found
+[    2.994003] keychord: using input dev rk816_pwrkey for fevent
+[    2.994020] keychord: using input dev ff1b0030.pwm for fevent
+[    2.994655] SELinux: initialized (dev cgroup, type cgroup), uses genfs_contexts
+[    2.996439] SELinux: initialized (dev tmpfs, type tmpfs), uses transition SIDs
+[    3.000246] init: write_file: Unable to open '/proc/cpu/alignment': No such file or directory
+[    3.001506] SELinux: initialized (dev cgroup, type cgroup), uses genfs_contexts
+[    3.002653] SELinux: initialized (dev cgroup, type cgroup), uses genfs_contexts
+[    3.006322] init: write_file: Unable to open '/proc/sys/abi/swp': No such file or directory
+[    3.006568] pm policy 0 -> 1
+[    3.007222] type=1400 audit(1.870:4): avc:  denied  { setattr } for  pid=1 comm="init" name="init_gpio_pins.sh" dev="rootfs" ino=4647 scontext=u:r:init:s0 tcontext=u:object_r:rootfs:s0 tclass=file permissive=1
+[    3.007278] init: /dev/hw_random not found
+[    3.008014] fs_mgr: Warning: unknown flag resize
+[    3.015416] EXT4-fs (mmcblk0p13): mounted filesystem with ordered data mode. Opts: noauto_da_alloc
+[    3.015456] SELinux: initialized (dev mmcblk0p13, type ext4), uses xattr
+[    3.015575] fs_mgr: __mount(source=/dev/block/platform/ff520000.rksdmmc/by-name/system,target=/system,type=ext4)=0
+[    3.021933] EXT4-fs (mmcblk0p10): warning: maximal mount count reached, running e2fsck is recommended
+[    3.022382] EXT4-fs (mmcblk0p10): recovery complete
+[    3.022598] EXT4-fs (mmcblk0p10): mounted filesystem with ordered data mode. Opts: noauto_da_alloc,discard
+[    3.022625] SELinux: initialized (dev mmcblk0p10, type ext4), uses xattr
+[    3.022717] fs_mgr: __mount(source=/dev/block/platform/ff520000.rksdmmc/by-name/cache,target=/cache,type=ext4)=0
+[    3.023588] EXT4-fs (mmcblk0p11): Ignoring removed nomblk_io_submit option
+[    3.025422] EXT4-fs (mmcblk0p11): recovery complete
+[    3.025443] EXT4-fs (mmcblk0p11): mounted filesystem with ordered data mode. Opts: errors=remount-ro,nomblk_io_submit
+[    3.025467] SELinux: initialized (dev mmcblk0p11, type ext4), uses xattr
+[    3.025551] fs_mgr: check_fs(): mount(/dev/block/platform/ff520000.rksdmmc/by-name/metadata,/metadata,ext4)=0: Success
+[    3.026337] fs_mgr: check_fs(): unmount(/metadata) succeeded
+[    3.027648] fs_mgr: Running /system/bin/e2fsck on /dev/block/platform/ff520000.rksdmmc/by-name/metadata
+[    3.082042] type=1400 audit(1.946:5): avc:  denied  { getattr } for  pid=136 comm="e2fsck" path="/dev/block/mmcblk0p11" dev="tmpfs" ino=6271 scontext=u:r:fsck:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=1
+[    3.082248] type=1400 audit(1.946:6): avc:  denied  { read } for  pid=136 comm="e2fsck" name="mmcblk0p11" dev="tmpfs" ino=6271 scontext=u:r:fsck:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=1
+[    3.082281] type=1400 audit(1.946:7): avc:  denied  { open } for  pid=136 comm="e2fsck" path="/dev/block/mmcblk0p11" dev="tmpfs" ino=6271 scontext=u:r:fsck:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=1
+[    3.082375] type=1400 audit(1.946:8): avc:  denied  { write } for  pid=136 comm="e2fsck" name="mmcblk0p11" dev="tmpfs" ino=6271 scontext=u:r:fsck:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=1
+[    3.082424] type=1400 audit(1.946:9): avc:  denied  { ioctl } for  pid=136 comm="e2fsck" path="/dev/block/mmcblk0p11" dev="tmpfs" ino=6271 ioctlcmd=127c scontext=u:r:fsck:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=1
+[    3.088323] e2fsck: e2fsck 1.42.9 (28-Dec-2013)
+[    3.088323] 
+[    3.088377] e2fsck: /dev/block/platform/ff520000.rksdmmc/by-name/metadata: clean, 12/1024 files, 1103/4096 blocks (check in 4 mounts)
+[    3.088377] 
+[    3.090689] EXT4-fs (mmcblk0p11): mounted filesystem with ordered data mode. Opts: noauto_da_alloc,discard
+[    3.090719] SELinux: initialized (dev mmcblk0p11, type ext4), uses xattr
+[    3.090788] fs_mgr: __mount(source=/dev/block/platform/ff520000.rksdmmc/by-name/metadata,target=/metadata,type=ext4)=0
+[    3.091651] EXT4-fs (mmcblk0p14): Ignoring removed nomblk_io_submit option
+[    3.213420] EXT4-fs (mmcblk0p14): recovery complete
+[    3.213577] EXT4-fs (mmcblk0p14): mounted filesystem with ordered data mode. Opts: errors=remount-ro,nomblk_io_submit
+[    3.213605] SELinux: initialized (dev mmcblk0p14, type ext4), uses xattr
+[    3.213696] fs_mgr: check_fs(): mount(/dev/block/platform/ff520000.rksdmmc/by-name/userdata,/data,ext4)=0: Success
+[    3.216844] fs_mgr: check_fs(): unmount(/data) succeeded
+[    3.216901] fs_mgr: Running /system/bin/e2fsck on /dev/block/platform/ff520000.rksdmmc/by-name/userdata
+[    3.249047] e2fsck: e2fsck 1.42.9 (28-Dec-2013)
+[    3.249047] 
+[    3.249097] e2fsck: /dev/block/platform/ff520000.rksdmmc/by-name/userdata: clean, 2577/827392 files, 846916/3306496 blocks
+[    3.249097] 
+[    3.251655] EXT4-fs (mmcblk0p14): mounted filesystem with ordered data mode. Opts: noauto_da_alloc,discard,errors=panic
+[    3.251691] SELinux: initialized (dev mmcblk0p14, type ext4), uses xattr
+[    3.251772] fs_mgr: __mount(source=/dev/block/platform/ff520000.rksdmmc/by-name/userdata,target=/data,type=ext4)=0
+[    3.258421] init: (Parsing /system/etc/init/atrace.rc took 0.00s.)
+[    3.259210] init: (Parsing /system/etc/init/audioserver.rc took 0.00s.)
+[    3.259802] init: (Parsing /system/etc/init/bootanim.rc took 0.00s.)
+[    3.260434] init: (Parsing /system/etc/init/bootstat.rc took 0.00s.)
+[    3.261004] init: (Parsing /system/etc/init/cameraserver.rc took 0.00s.)
+[    3.261505] init: (Parsing /system/etc/init/debuggerd.rc took 0.00s.)
+[    3.261876] init: (Parsing /system/etc/init/debuggerd64.rc took 0.00s.)
+[    3.262272] init: (Parsing /system/etc/init/drmserver.rc took 0.00s.)
+[    3.262769] init: (Parsing /system/etc/init/dumpstate.rc took 0.00s.)
+[    3.263138] init: (Parsing /system/etc/init/gatekeeperd.rc took 0.00s.)
+[    3.263514] init: (Parsing /system/etc/init/init-debug.rc took 0.00s.)
+[    3.263862] init: (Parsing /system/etc/init/installd.rc took 0.00s.)
+[    3.264350] init: (Parsing /system/etc/init/keystore.rc took 0.00s.)
+[    3.264683] init: (Parsing /system/etc/init/lmkd.rc took 0.00s.)
+[    3.265412] init: (Parsing /system/etc/init/logcatd.rc took 0.00s.)
+[    3.266019] init: (Parsing /system/etc/init/logd.rc took 0.00s.)
+[    3.266590] init: (Parsing /system/etc/init/mdnsd.rc took 0.00s.)
+[    3.267110] init: (Parsing /system/etc/init/mediacodec.rc took 0.00s.)
+[    3.267623] init: (Parsing /system/etc/init/mediadrmserver.rc took 0.00s.)
+[    3.268142] init: (Parsing /system/etc/init/mediaextractor.rc took 0.00s.)
+[    3.268706] init: (Parsing /system/etc/init/mediaserver.rc took 0.00s.)
+[    3.269263] init: (Parsing /system/etc/init/mtpd.rc took 0.00s.)
+[    3.269770] init: (Parsing /system/etc/init/netd.rc took 0.00s.)
+[    3.270267] init: (Parsing /system/etc/init/perfprofd.rc took 0.00s.)
+[    3.270771] init: (Parsing /system/etc/init/racoon.rc took 0.00s.)
+[    3.271278] init: ignored duplicate definition of service 'ril-daemon'init: (Parsing /system/etc/init/rild.rc took 0.00s.)
+[    3.271892] init: (Parsing /system/etc/init/servicemanager.rc took 0.00s.)
+[    3.272416] init: (Parsing /system/etc/init/surfaceflinger.rc took 0.00s.)
+[    3.272948] init: (Parsing /system/etc/init/uncrypt.rc took 0.00s.)
+[    3.273489] init: (Parsing /system/etc/init/vdc.rc took 0.00s.)
+[    3.273931] init: (Parsing /system/etc/init/vold.rc took 0.00s.)
+[    3.275476] SELinux: initialized (dev functionfs, type functionfs), uses genfs_contexts
+[    3.276422] init: property_set("ro.board.platform", "rk3328") failed
+[    3.276723] init: property_set("ro.opengles.version", "196609") failed
+[    3.276899] init: property_set("ro.rk.screenoff_time", "2147483647") failed
+[    3.277089] init: property_set("ro.rk.screenshot_enable", "true") failed
+[    3.277237] init: (Loading properties from /system/build.prop took 0.00s.)
+[    3.277315] init: (Loading properties from /vendor/build.prop took 0.00s.)
+[    3.277346] init: (Loading properties from /factory/factory.prop took 0.00s.)
+[    3.277455] fs_mgr: Warning: unknown flag resize
+[    3.277555] init: /recovery not specified in fstab
+[    3.277657] init: Starting service 'healthd'...
+[    3.279287] init: Starting service 'drmservice'...
+[    3.280148] init: Starting service 'displayd'...
+[    3.280198] binder: 144:144 transaction failed 29189, size 0-0
+[    3.281301] init: Starting service 'tee-supplicant'...
+[    3.282285] init: Starting service 'zygote'...
+[    3.283037] init: Starting service 'zygote_secondary'...
+[    3.284092] init: Starting service 'lmkd'...
+[    3.284669] type=1400 audit(2.150:10): avc:  denied  { getattr } for  pid=146 comm="displayd" path="/vendor" dev="rootfs" ino=4674 scontext=u:r:displayd:s0 tcontext=u:object_r:rootfs:s0 tclass=lnk_file permissive=1
+[    3.285177] init: Starting service 'servicemanager'...
+[    3.286126] init: Starting service 'surfaceflinger'...
+[    3.287012] init: Starting service 'vold'...
+[    3.504179] init: avc:  denied  { set } for property=security.tee_supplicant pid=147 uid=0 gid=0 scontext=u:r:tee:s0 tcontext=u:object_r:default_prop:s0 tclass=property_service permissive=1
+[    3.516175] init: Service 'drmservice' (pid 145) exited with status 0
+[    3.525288] init: insmod: open("/system/lib/modules/ump.ko") failed: No such file or directoryinit: insmod: open("/system/lib/modules/mali.ko") failed: No such file or directoryinit: insmod: open("/system/lib/modules/mali_kbase.ko") failed: No such file or directoryinit: insmod: open("/system/lib/modules/rk30_mirroring.ko") failed: No such file or directoryinit: finit_module for "/system/lib/modules/rk29-ipp.ko" failed: Exec format errorinit: insmod: open("/system/lib/modules/pvrsrvkm.ko") failed: No such file or directoryinit: finit_module for "/drmboot.ko" failed: Exec format errorfs_mgr: Warning: unknown flag resize
+[    3.528864] zram0: detected capacity change from 0 to 533413888
+[    3.537900] dwc_otg_hcd_suspend, usb device mode
+[    3.557361] fs_mgr: Warning: unknown flag resize
+[    3.606713] usb 3-1.1: new high-speed USB device number 3 using ehci-platform
+[    3.612367] Adding 520908k swap on /dev/block/zram0.  Priority:-1 extents:1 across:520908k SS
+[    3.615238] init: Starting service 'debuggerd'...
+[    3.616360] init: Starting service 'debuggerd64'...
+[    3.618737] init: Not bootcharting.
+[    3.689346] usb 3-1.1: New USB device found, idVendor=0bda, idProduct=c820
+[    3.689366] usb 3-1.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    3.689375] usb 3-1.1: Product: 802.11ac NIC
+[    3.689384] usb 3-1.1: Manufacturer: Realtek
+[    3.689393] usb 3-1.1: SerialNumber: 123456
+[    3.690355] rtk_btusb: btusb_probe: usb_interface ffffffc03de3bc00, bInterfaceNumber 0, idVendor 0x0bda, idProduct 0x0000
+[    3.690370] rtk_btusb: btusb_probe: can wakeup = 1, may wakeup = 0
+[    3.690380] rtk_btusb: firmware_info_init: start
+[    3.690390] rtk_btusb: get_fw_table_entry: Product id = 0xc820, fw table entry size 49
+[    3.690399] rtk_btusb: firmware_info_init: Auto suspend is disabled
+[    3.690406] rtk_btusb: btusb_probe: download begining...
+[    3.690413] rtk_btusb: btusb_probe: download ending...
+[    3.690421] rtk_btusb: btusb_probe: Set HCI_QUIRK_RESET_ON_CLOSE
+[    3.690431] rtk_btusb: hci_register_dev: ffffffc03de3a400 name  bus 1
+[    3.690440] rtk_btusb: hci_register_dev: id 0, name hci0
+[    3.690450] rtk_btusb: btusb_probe: Check bt reset flag 0
+[    3.691513] RTW: 
+[    3.691513] usb_endpoint_descriptor(0):
+[    3.691530] RTW: bLength=7
+[    3.691536] RTW: bDescriptorType=5
+[    3.691542] RTW: bEndpointAddress=84
+[    3.691548] RTW: wMaxPacketSize=512
+[    3.691554] RTW: bInterval=0
+[    3.691560] RTW: RT_usb_endpoint_is_bulk_in = 4
+[    3.691566] RTW: 
+[    3.691566] usb_endpoint_descriptor(1):
+[    3.691576] RTW: bLength=7
+[    3.691582] RTW: bDescriptorType=5
+[    3.691587] RTW: bEndpointAddress=5
+[    3.691593] RTW: wMaxPacketSize=512
+[    3.691599] RTW: bInterval=0
+[    3.691605] RTW: RT_usb_endpoint_is_bulk_out = 5
+[    3.691611] RTW: 
+[    3.691611] usb_endpoint_descriptor(2):
+[    3.691743] RTW: bLength=7
+[    3.691754] RTW: bDescriptorType=5
+[    3.691777] RTW: bEndpointAddress=6
+[    3.691784] RTW: wMaxPacketSize=512
+[    3.691790] RTW: bInterval=0
+[    3.691813] RTW: RT_usb_endpoint_is_bulk_out = 6
+[    3.691820] RTW: 
+[    3.691820] usb_endpoint_descriptor(3):
+[    3.691829] RTW: bLength=7
+[    3.691835] RTW: bDescriptorType=5
+[    3.691841] RTW: bEndpointAddress=87
+[    3.691847] RTW: wMaxPacketSize=64
+[    3.691853] RTW: bInterval=3
+[    3.691859] RTW: RT_usb_endpoint_is_int_in = 7, Interval = 3
+[    3.691866] RTW: 
+[    3.691866] usb_endpoint_descriptor(4):
+[    3.691875] RTW: bLength=7
+[    3.691881] RTW: bDescriptorType=5
+[    3.691887] RTW: bEndpointAddress=8
+[    3.691893] RTW: wMaxPacketSize=512
+[    3.691898] RTW: bInterval=0
+[    3.691904] RTW: RT_usb_endpoint_is_bulk_out = 8
+[    3.691911] RTW: nr_endpoint=5, in_num=2, out_num=3
+[    3.691911] 
+[    3.691921] RTW: USB_SPEED_HIGH
+[    3.691929] RTW: CHIP TYPE: RTL8821C
+[    3.691960] RTW: loadparam, Select P2P interface: iface_id:1
+[    3.692006] RTW: [HALMAC]11692M
+[    3.692006] HALMAC_MAJOR_VER = 1
+[    3.692006] HALMAC_PROTOTYPE_VER = 6
+[    3.692006] HALMAC_MINOR_VER = 5
+[    3.692006] HALMAC_PATCH_VER = 5
+[    3.693650] RTW: Chip Version Info: CHIP_8821C_U3_1T1R_RomVer(2)
+[    3.693671] RTW: config_chip_out_EP OutEpQueueSel(0x07), OutEpNumber(3)
+[    3.693891] RTW: ERROR [HALMAC][ERR]Dump efuse in suspend
+[    3.806184] init: Starting service 'bootanim'...
+[    3.809267] rk322xh-lcdc vop0: blank mode:0
+[    3.973602] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_LOGICAL_EFUSE
+[    3.973650] RTW: HW EFUSE
+[    3.973660] RTW: 0x000: 29 81 00 BC  09 00 21 00  6E 04 A4 34  10 00 30 0B  
+[    3.973687] RTW: 0x010: FF FF FF FF  FF FF FF FF  FF FF FF 02  FF FF FF FF  
+[    3.973738] RTW: 0x020: FF FF 27 27  26 26 28 27  26 26 25 24  25 25 25 25  
+[    3.973765] RTW: 0x030: 02 FF FF FF  FF FF EC FF  FF FF 25 25  26 26 26 26  
+[    3.973791] RTW: 0x040: 25 25 26 26  26 02 FF FF  FF FF FF FF  FF FF FF FF  
+[    3.973821] RTW: 0x050: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.973848] RTW: 0x060: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.973874] RTW: 0x070: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.973900] RTW: 0x080: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.973926] RTW: 0x090: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.973953] RTW: 0x0A0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.973979] RTW: 0x0B0: FF FF FF FF  FF FF FF FF  7F 19 1D 00  FF FF FF FF  
+[    3.974650] RTW: 0x0C0: FF 21 00 41  00 00 00 00  00 FF 22 FF  FF FF FF FF  
+[    3.974728] RTW: 0x0D0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.974759] RTW: 0x0E0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.974785] RTW: 0x0F0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.974812] RTW: 0x100: DA 0B 20 C8  E3 46 02 0C  CF 89 32 FC  05 09 03 52  
+[    3.974838] RTW: 0x110: 65 61 6C 74  65 6B 0E 03  38 30 32 2E  31 31 61 63  
+[    3.974864] RTW: 0x120: 20 4E 49 43  08 03 31 32  33 34 35 36  FF FF FF FF  
+[    3.974891] RTW: 0x130: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.974917] RTW: 0x140: FF FF FF FF  00 00 31 0F  FF FF FF FF  FF FF FF FF  
+[    3.974943] RTW: 0x150: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.974970] RTW: 0x160: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.974996] RTW: 0x170: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.975023] RTW: 0x180: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.975049] RTW: 0x190: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.975075] RTW: 0x1A0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.975101] RTW: 0x1B0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.975128] RTW: 0x1C0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.975154] RTW: 0x1D0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.975180] RTW: 0x1E0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.975207] RTW: 0x1F0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    3.975237] RTW: EEPROM ID = 0x8129
+[    3.975244] RTW: EEPROM Version = 0
+[    3.975252] RTW: EEPROM Regulatory=0x01
+[    3.975260] RTW: EEPROM Board Type=0x01
+[    3.977349] RTW: EEPROM Enable BT-coex, ant_num=1
+[    3.977366] RTW: hal_com_config_channel_plan chplan:0x7F
+[    3.977374] RTW: EEPROM crystal_cap=0x19
+[    3.977381] RTW: EEPROM ThermalMeter=0x1d
+[    3.977387] RTW: EEPROM Customer ID=0x00
+[    3.977393] RTW: EEPROM SupportRemoteWakeup=0
+[    3.977400] RTW: EEPROM rfe_type=0x22
+[    3.977407] RTW: EEPROM PAType_2G is 0x0, ExternalPA_2G = 0
+[    3.977414] RTW: EEPROM PAType_5G is 0x0, external_pa_5g = 0
+[    3.977421] RTW: EEPROM LNAType_2G is 0x0, ExternalLNA_2G = 0
+[    3.977429] RTW: EEPROM LNAType_5G is 0x0, external_lna_5g = 0
+[    3.977435] RTW: EEPROM TypeGPA = 0x0
+[    3.977442] RTW: EEPROM TypeAPA = 0x0
+[    3.977448] RTW: EEPROM TypeGLNA = 0x0
+[    3.977454] RTW: EEPROM TypeALNA = 0x0
+[    3.977460] RTW: EEPROM tx_bbswing_24G =0x00
+[    3.977467] RTW: EEPROM tx_bbswing_5G =0x00
+[    3.977474] RTW: EEPROM USB Switch=0
+[    3.977480] RTW: EEPROM VID = 0x0BDA, PID = 0xC820
+[    3.990691] RTW: [HALMAC][ALWAYS]shall R reg twice!!
+[    3.991297] init: Starting service 'exec 1 (/system/bin/tzdatacheck)'...
+[    3.991933] RTW: SetHwReg: bMacPwrCtrlOn=1
+[    4.017454] init: Service 'exec 1 (/system/bin/tzdatacheck)' (pid 182) exited with status 0
+[    4.091681] RTW: _rtw_hal_set_fw_rsvd_page((null)) Get [ NOR ] RsvdPageNUm  ==>
+[    4.091703] RTW: LocPsPoll: 4
+[    4.091712] RTW: LocNullData: 5
+[    4.091720] RTW: LocQosNull: 6
+[    4.091727] RTW: LocBTQosNull: 7
+[    4.093427] RTW: _rtw_hal_set_fw_rsvd_page((null)) Get [ NOR ] RsvdPageNUm <==
+[    4.105943] RTW: WARN [HALMAC][WARN]the H2C ver. does not match halmac
+[    4.107910] RTW: rtl8821c_fw_dl Download Firmware from array success
+[    4.107929] RTW: NIC FW Version:24 SubVersion:2
+[    4.119475] RTW: SetHwReg: bMacPwrCtrlOn=0
+[    4.119495] RTW: hal_read_mac_hidden_rpt OK! (1, 13ms), fwdl:1, id:0x19
+[    4.120436] RTW: ERROR [HALMAC][ERR]Dump efuse in suspend
+[    4.121198] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[    4.121788] RTW: ERROR [HALMAC][ERR]Dump efuse in suspend
+[    4.122431] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[    4.122450] RTW: ERROR [HALMAC][ERR]Dump efuse in suspend
+[    4.123665] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[    4.123685] RTW: ERROR [HALMAC][ERR]Dump efuse in suspend
+[    4.124905] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[    4.124932] RTW: ERROR [HALMAC][ERR]Dump efuse in suspend
+[    4.126119] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[    4.126142] RTW: ERROR [HALMAC][ERR]Dump efuse in suspend
+[    4.127349] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[    4.127370] RTW: ERROR [HALMAC][ERR]Dump efuse in suspend
+[    4.127581] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[    4.127593] RTW: rtw_hal_read_chip_info in 440 ms
+[    4.127619] RTW: init_channel_set((null)) ChannelPlan ID:0x7f, ch num:37
+[    4.127635] RTW: [RF_PATH] IC's RF PATH:RF_1T1R, max_tx_cnt:1
+[    4.127643] RTW: [RF_PATH] PG's trx_path_bmp:0x00, max_tx_cnt:0
+[    4.127650] RTW: [RF_PATH] Registry's RF PATH:UNKNOWN
+[    4.127657] RTW: [RF_PATH] HALDATA's trx_path_bmp:0x11, max_tx_cnt:1
+[    4.127664] RTW: [RF_PATH] HALDATA's RF PATH:RF_1T1R
+[    4.127670] RTW: [RF_PATH] NumTotalRFPath:1
+[    4.127678] RTW: rtw_hal_rfpath_init trx_path_bmp:0x11(RF_1T1R), NumTotalRFPath:1, max_tx_cnt:1
+[    4.127687] RTW: [TRX_Nss] HALSPEC - tx_nss :1, rx_nss:1
+[    4.127694] RTW: [TRX_Nss] Registry - tx_nss :0, rx_nss:0
+[    4.127701] RTW: [TRX_Nss] HALDATA - tx_nss :1, rx_nss:1
+[    4.127708] RTW: rtw_hal_trxnss_init tx_nss:1, rx_nss:1
+[    4.127822] RTW: init_mlme_default_rate_set: support CCK
+[    4.127831] RTW: init_mlme_default_rate_set: support OFDM
+[    4.128137] RTW: NR_RECVBUFF: 8
+[    4.128149] RTW: MAX_RECVBUF_SZ: 32768
+[    4.128158] RTW: NR_PREALLOC_RECV_SKB: 8
+[    4.128842] RTW: rtw_alloc_macid((null)) if1, mac_addr:ff:ff:ff:ff:ff:ff macid:1
+[    4.128861] RTW: rtw_init_pwrctrl_priv: IPS_mode=1, LPS_mode=2, LPS_level=0
+[    4.128886] RTW: IQK FW offload:enable
+[    4.128900] RTW: init_phydm_cominfo: Fv=1 Cv=2
+[    4.128956] RTW: [A] 2G G00 CCK-1T base:45 from IC_DEF
+[    4.128963] RTW: [A] 2G G01 CCK-1T base:45 from IC_DEF
+[    4.128971] RTW: [A] 2G G02 CCK-1T base:45 from IC_DEF
+[    4.128978] RTW: [A] 2G G03 CCK-1T base:45 from IC_DEF
+[    4.128985] RTW: [A] 2G G04 CCK-1T base:45 from IC_DEF
+[    4.128993] RTW: [A] 2G G05 CCK-1T base:45 from IC_DEF
+[    4.129000] RTW: [A] 2G G00 BW40-1S base:45 from IC_DEF
+[    4.129007] RTW: [A] 2G G01 BW40-1S base:45 from IC_DEF
+[    4.129015] RTW: [A] 2G G02 BW40-1S base:45 from IC_DEF
+[    4.129023] RTW: [A] 2G G03 BW40-1S base:45 from IC_DEF
+[    4.129030] RTW: [A] 2G G04 BW40-1S base:45 from IC_DEF
+[    4.129056] RTW: rtw_regsty_chk_target_tx_power_valid return _FALSE for band:0, path:0, rs:0, t:-1
+[    4.129126] RTW: phy_ConfigBBWithPgParaFile(): No File PHY_REG_PG.txt, Load from HWImg Array!
+[    4.129144] RTW: default power by rate loaded
+[    4.129154] RTW: phy_txpwr_by_rate_chk_for_path_dup duplicate 2.4G [A] to [B]
+[    4.129171] RTW: can't get autopm:
+[    4.129180] RTW: rtw_macaddr_cfg mac addr:0c:cf:89:32:fc:05
+[    4.129189] RTW: bDriverStopped:True, bSurpriseRemoved:False, bup:0, hw_init_completed:0
+[    4.129214] RTW: loadparam, Select P2P interface: iface_id:1
+[    4.129344] RTW: init_mlme_default_rate_set: support CCK
+[    4.129351] RTW: init_mlme_default_rate_set: support OFDM
+[    4.129621] RTW: NR_RECVBUFF: 8
+[    4.129632] RTW: MAX_RECVBUF_SZ: 32768
+[    4.129640] RTW: NR_PREALLOC_RECV_SKB: 8
+[    4.130314] RTW: rtw_alloc_macid((null)) if2, mac_addr:ff:ff:ff:ff:ff:ff macid:1
+[    4.130336] RTW: rtw_drv_add_vir_if if2 mac_addr : 0e:cf:89:32:fc:05
+[    4.130383] RTW: rtw_cfg80211_preinit_wiphy iface_id:0- don't set p2p capability
+[    4.130397] RTW: rtw_wiphy_alloc(phy0)
+[    4.130405] RTW: rtw_wdev_alloc(padapter=ffffff8001ff3000)
+[    4.130433] RTW: rtw_wiphy_alloc(phy1)
+[    4.130440] RTW: rtw_wdev_alloc(padapter=ffffff8002cf6000)
+[    4.130449] RTW: rtw_wiphy_register(phy0)
+[    4.134547] RTW: rtw_ndev_init(wlan0) if1 mac_addr=0c:cf:89:32:fc:05
+[    4.134988] RTW: rtw_ndev_notifier_call(wlan0) state:16
+[    4.140082] RTW: rtw_ndev_notifier_call(wlan0) state:5
+[    4.140363] RTW: rtw_wiphy_register(phy1)
+[    4.141524] RTW: rtw_ndev_init(p2p0) if2 mac_addr=0e:cf:89:32:fc:05
+[    4.141963] RTW: rtw_ndev_notifier_call(p2p0) state:16
+[    4.146197] RTW: rtw_ndev_notifier_call(p2p0) state:5
+[    4.164742] EXT4-fs (mmcblk0p14): Unrecognized mount option "background_gc=on" or missing value
+[    4.167299] init: (Loading properties from /data/local.prop took 0.00s.)
+[    4.265449] healthd: No battery devices found
+[    4.265578] healthd: battery l=100 v=0 t=42.4 h=2 st=2 chg=a
+[    4.294926] init: Starting service 'logd'...
+[    4.295735] init: Starting service 'logd-reinit'...
+[    4.298890] init: SELinux:  Could not stat /sys/devices/system/cpu/cpufreq/interactive: No such file or directory.
+[    4.300071] init: write_file: Unable to open '/proc/sys/vm/lazy_vfree_tlb_flush_all_threshold': No such file or directory
+[    4.301883] init: SELinux: Could not get canonical path for /dev/block/platform/fe330000.sdhci/by-name/ restorecon: No such file or directory.
+[    4.302795] init: property 'ro.serialno' doesn't exist while expanding '${ro.serialno}'
+[    4.302820] init: write: cannot expand '${ro.serialno}'
+[    4.303105] init: using deprecated syntax for specifying property 'ro.product.usbfactory', use ${name} instead
+[    4.322380] init: Starting service 'exec 2 (/init_gpio_pins.sh)'...
+[    4.347916] init: Service 'logd-reinit' (pid 186) exited with status 145
+[    4.364248] init: Service 'exec 2 (/init_gpio_pins.sh)' (pid 187) exited with status 0
+[    4.365291] init: Starting service 'wifilog'...
+[    4.367215] init: Starting service 'console'...
+[    4.367951] android_usb: already disabled
+[    4.368164] init: Starting service 'adbd'...
+[    4.368784] init: cannot find '/system/bin/update_verifier' (No such file or directory), disabling 'exec 3 (/system/bin/update_verifier)'
+[    4.369248] init: Starting service 'flash_recovery'...
+[    4.369769] init: cannot find '/system/bin/bplus_helper' (No such file or directory), disabling 'bplus_helper'
+[    4.370124] init: Service up_eth0 does not have a SELinux domain defined.
+[    4.370160] init: cannot find '/system/bin/rk_store_keybox' (No such file or directory), disabling 'rk_store_keybox'
+[    4.370216] init: cannot find '/system/bin/akmd' (No such file or directory), disabling 'akmd'
+[    4.376590] init: Starting service 'audioserver'...
+[    4.378479] init: Starting service 'cameraserver'...
+[    4.380081] init: Starting service 'drm'...
+[    4.380620] logd.auditd: start
+[    4.380686] logd.klogd: 3266917765
+[    4.381530] init: Starting service 'installd'...
+[    4.383477] init: couldn't write 199 to /dev/cpuset/camera-daemon/tasks: No such file or directory
+[    4.385214] init: Starting service 'keystore'...
+[    4.389500] init: Starting service 'mediacodec'...
+[    4.390995] init: Starting service 'mediadrm'...
+[    4.392146] read descriptors
+[    4.392175] read descriptors
+[    4.392187] read strings
+[    4.392213] mtp_bind_config
+[    4.392245] pcd_pullup, is_on 1
+[    4.394136] init: Starting service 'mediaextractor'...
+[    4.395577] init: Starting service 'media'...
+[    4.397204] init: Starting service 'netd'...
+[    4.405695] init: Starting service 'gatekeeperd'...
+[    4.601304] init: Starting service 'perfprofd'...
+[    4.633537] init: Service 'wifilog' (pid 190) exited with status 1
+[    4.633581] init: Service 'wifilog' (pid 190) killing any children in process group
+[    4.633667] init: cannot find 'log' (No such file or directory), disabling 'exec 4 (log)'
+[    4.646263] fs_mgr: Warning: unknown flag resize
+[    5.663976] init: Service 'flash_recovery' (pid 193) exited with status 0
+[    5.732297] type=1400 audit(3.276:31): avc: denied { read } for pid=190 comm="logcat" name="primary" dev="tmpfs" ino=8538 scontext=u:r:logd:s0 tcontext=u:object_r:storage_file:s0 tclass=lnk_file permissive=1
+[    5.734642] type=1400 audit(3.276:32): avc: denied { search } for pid=190 comm="logcat" name="user" dev="tmpfs" ino=8526 scontext=u:r:logd:s0 tcontext=u:object_r:mnt_user_file:s0 tclass=dir permissive=1
+[    5.746098] type=1400 audit(3.533:33): avc: denied { write } for pid=215 comm="applypatch" name="kmsg" dev="tmpfs" ino=6306 scontext=u:r:install_recovery:s0 tcontext=u:object_r:kmsg_device:s0 tclass=chr_file permissive=1
+[    5.781933] type=1400 audit(3.536:34): avc: denied { open } for pid=215 comm="applypatch" path="/dev/kmsg" dev="tmpfs" ino=6306 scontext=u:r:install_recovery:s0 tcontext=u:object_r:kmsg_device:s0 tclass=chr_file permissive=1
+[    5.782258] type=1400 audit(3.536:35): avc: denied { read } for pid=215 comm="applypatch" name="mmcblk0p8" dev="tmpfs" ino=6257 scontext=u:r:install_recovery:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=1
+[    5.782554] type=1400 audit(3.540:36): avc: denied { open } for pid=215 comm="applypatch" path="/dev/block/mmcblk0p8" dev="tmpfs" ino=6257 scontext=u:r:install_recovery:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=1
+[    5.782818] type=1400 audit(3.683:37): avc: denied { getattr } for pid=215 comm="applypatch" path="/dev/block/mmcblk0p8" dev="tmpfs" ino=6257 scontext=u:r:install_recovery:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=1
+[    5.783094] type=1400 audit(3.970:38): avc: denied { execute } for pid=236 comm="audioserver" name="sh" dev="mmcblk0p13" ino=321 scontext=u:r:audioserver:s0 tcontext=u:object_r:shell_exec:s0 tclass=file permissive=1
+[    5.783361] type=1400 audit(3.970:39): avc: denied { read open } for pid=236 comm="audioserver" path="/system/bin/sh" dev="mmcblk0p13" ino=321 scontext=u:r:audioserver:s0 tcontext=u:object_r:shell_exec:s0 tclass=file permissive=1
+[    5.783616] type=1400 audit(3.970:40): avc: denied { execute_no_trans } for pid=236 comm="audioserver" path="/system/bin/sh" dev="mmcblk0p13" ino=321 scontext=u:r:audioserver:s0 tcontext=u:object_r:shell_exec:s0 tclass=file permissive=1
+[    5.783861] type=1400 audit(3.973:41): avc: denied { getattr } for pid=236 comm="sh" path="/system/bin/sh" dev="mmcblk0p13" ino=321 scontext=u:r:audioserver:s0 tcontext=u:object_r:shell_exec:s0 tclass=file permissive=1
+[    5.784112] type=1400 audit(3.990:42): avc: denied { getattr } for pid=236 comm="sh" path="/system/bin/toybox" dev="mmcblk0p13" ino=355 scontext=u:r:audioserver:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=1
+[    5.784593] type=1400 audit(3.990:43): avc: denied { execute } for pid=236 comm="sh" name="toybox" dev="mmcblk0p13" ino=355 scontext=u:r:audioserver:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=1
+[    5.784871] type=1400 audit(3.990:44): avc: denied { read open } for pid=236 comm="sh" path="/system/bin/toybox" dev="mmcblk0p13" ino=355 scontext=u:r:audioserver:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=1
+[    5.785128] type=1400 audit(3.990:45): avc: denied { execute_no_trans } for pid=236 comm="sh" path="/system/bin/toybox" dev="mmcblk0p13" ino=355 scontext=u:r:audioserver:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=1
+[    5.785376] type=1400 audit(4.253:46): avc: denied { create } for pid=198 comm="audioserver" scontext=u:r:audioserver:s0 tcontext=u:r:audioserver:s0 tclass=netlink_kobject_uevent_socket permissive=1
+[    5.785548] type=1400 audit(4.253:47): avc: denied { setopt } for pid=198 comm="audioserver" scontext=u:r:audioserver:s0 tcontext=u:r:audioserver:s0 tclass=netlink_kobject_uevent_socket permissive=1
+[    5.785679] type=1400 audit(4.253:48): avc: denied { bind } for pid=198 comm="audioserver" scontext=u:r:audioserver:s0 tcontext=u:r:audioserver:s0 tclass=netlink_kobject_uevent_socket permissive=1
+[    6.068561] type=1400 audit(4.980:49): avc: denied { read } for pid=199 comm="cameraserver" name="base" dev="sysfs" ino=120 scontext=u:r:cameraserver:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=1
+[    6.070321] type=1400 audit(4.980:50): avc: denied { open } for pid=199 comm="cameraserver" path="/sys/firmware/devicetree/base" dev="sysfs" ino=120 scontext=u:r:cameraserver:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=1
+[    6.070567] type=1400 audit(4.980:51): avc: denied { read } for pid=199 comm="cameraserver" name="iommu_enabled" dev="sysfs" ino=3426 scontext=u:r:cameraserver:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    6.070724] type=1400 audit(4.980:52): avc: denied { open } for pid=199 comm="cameraserver" path="/sys/firmware/devicetree/base/vpu_service@ff350000/iommu_enabled" dev="sysfs" ino=3426 scontext=u:r:cameraserver:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    6.070860] type=1400 audit(4.980:53): avc: denied { getattr } for pid=199 comm="cameraserver" path="/sys/firmware/devicetree/base/vpu_service@ff350000/iommu_enabled" dev="sysfs" ino=3426 scontext=u:r:cameraserver:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    7.541019] warning: `system_server' uses 32-bit capabilities (legacy support in use)
+[    9.291121] init: Starting service 'wifilog'...
+[    9.304712] type=1400 audit(8.270:54): avc: denied { read } for pid=506 comm="logcat" name="primary" dev="tmpfs" ino=8538 scontext=u:r:logd:s0 tcontext=u:object_r:storage_file:s0 tclass=lnk_file permissive=1
+[    9.305279] type=1400 audit(8.270:55): avc: denied { search } for pid=506 comm="logcat" name="user" dev="tmpfs" ino=8526 scontext=u:r:logd:s0 tcontext=u:object_r:mnt_user_file:s0 tclass=dir permissive=1
+[    9.305870] init: Service 'wifilog' (pid 506) exited with status 1
+[    9.305898] init: Service 'wifilog' (pid 506) killing any children in process group
+[    9.306335] init: cannot find 'log' (No such file or directory), disabling 'exec 5 (log)'
+[    9.585868] [otg id chg] last id -1 current id 64
+[   10.283721] healthd: battery l=100 v=0 t=42.4 h=2 st=2 chg=a
+[   11.050690] acc_open
+[   11.050727] acc_release
+[   11.685537] dwc_otg_hcd_resume, usb device mode
+[   11.691350] dwc_otg_hcd_suspend, usb device mode
+[   11.701833] type=1400 audit(10.706:56): avc: denied { read } for pid=198 comm="audioserver" scontext=u:r:audioserver:s0 tcontext=u:r:audioserver:s0 tclass=netlink_kobject_uevent_socket permissive=1
+[   11.703096] SELinux: initialized (dev fuse, type fuse), uses genfs_contexts
+[   11.705433] SELinux: initialized (dev fuse, type fuse), uses genfs_contexts
+[   11.709130] SELinux: initialized (dev fuse, type fuse), uses genfs_contexts
+[   11.728066] type=1400 audit(10.733:57): avc: denied { search } for pid=208 comm="mediaserver" name="375" dev="proc" ino=1390 scontext=u:r:mediaserver:s0 tcontext=u:r:system_server:s0 tclass=dir permissive=1
+[   11.730668] type=1400 audit(10.733:58): avc: denied { read } for pid=208 comm="mediaserver" name="cmdline" dev="proc" ino=1395 scontext=u:r:mediaserver:s0 tcontext=u:r:system_server:s0 tclass=file permissive=1
+[   11.730866] type=1400 audit(10.733:59): avc: denied { open } for pid=208 comm="mediaserver" path="/proc/375/cmdline" dev="proc" ino=1395 scontext=u:r:mediaserver:s0 tcontext=u:r:system_server:s0 tclass=file permissive=1
+[   12.376109] init: write_file: Unable to open '/sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq': No such file or directory
+[   12.392213] init: cannot find '/system/bin/glgps' (No such file or directory), disabling 'gpsd'
+[   12.394038] init: Starting service 'exec 6 (/system/bin/bootstat)'...
+[   12.441044] init: Service 'exec 6 (/system/bin/bootstat)' (pid 774) exited with status 0
+[   12.442250] init: Starting service 'exec 7 (/system/bin/bootstat)'...
+[   12.460415] init: Service 'exec 7 (/system/bin/bootstat)' (pid 786) exited with status 0
+[   12.461595] init: Starting service 'exec 8 (/system/bin/bootstat)'...
+[   12.487098] init: Service 'exec 8 (/system/bin/bootstat)' (pid 789) exited with status 0
+[   12.488276] init: Starting service 'exec 9 (/system/bin/bootstat)'...
+[   12.526235] init: Service 'exec 9 (/system/bin/bootstat)' (pid 790) exited with status 0
+[   13.954339] init: avc:  denied  { set } for property=persist.chupdate.firstboot pid=928 uid=1000 gid=1000 scontext=u:r:system_app:s0 tcontext=u:object_r:default_prop:s0 tclass=property_service permissive=1
+[   13.975281] init: Starting service 'wifilog'...
+[   13.997591] type=1400 audit(13.036:60): avc: denied { read } for pid=976 comm="logcat" name="primary" dev="tmpfs" ino=8538 scontext=u:r:logd:s0 tcontext=u:object_r:storage_file:s0 tclass=lnk_file permissive=1
+[   14.029494] type=1400 audit(13.036:61): avc: denied { search } for pid=976 comm="logcat" name="user" dev="tmpfs" ino=8526 scontext=u:r:logd:s0 tcontext=u:object_r:mnt_user_file:s0 tclass=dir permissive=1
+[   14.032433] type=1400 audit(13.036:62): avc: denied { read } for pid=976 comm="logcat" name="primary" dev="tmpfs" ino=10158 scontext=u:r:logd:s0 tcontext=u:object_r:mnt_user_file:s0 tclass=lnk_file permissive=1
+[   14.037081] type=1400 audit(13.036:63): avc: denied { search } for pid=976 comm="logcat" name="/" dev="fuse" ino=0 scontext=u:r:logd:s0 tcontext=u:object_r:fuse:s0 tclass=dir permissive=1
+[   14.039060] type=1400 audit(13.036:64): avc: denied { read } for pid=976 comm="logcat" name="0" dev="fuse" ino=1 scontext=u:r:logd:s0 tcontext=u:object_r:fuse:s0 tclass=dir permissive=1
+[   14.040797] type=1400 audit(13.036:65): avc: denied { open } for pid=976 comm="logcat" path="/storage/emulated/0" dev="fuse" ino=1 scontext=u:r:logd:s0 tcontext=u:object_r:fuse:s0 tclass=dir permissive=1
+[   14.042559] type=1400 audit(13.040:66): avc: denied { read } for pid=976 comm="logcat" name="WifiLog.txt" dev="fuse" ino=21 scontext=u:r:logd:s0 tcontext=u:object_r:fuse:s0 tclass=file permissive=1
+[   14.044352] type=1400 audit(13.040:67): avc: denied { open } for pid=976 comm="logcat" path="/storage/emulated/0/WifiLog.txt" dev="fuse" ino=21 scontext=u:r:logd:s0 tcontext=u:object_r:fuse:s0 tclass=file permissive=1
+[   14.210665] type=1400 audit(13.253:68): avc: denied { search } for pid=952 comm="Thread-2" name="hostapd" dev="mmcblk0p14" ino=180433 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:wpa_socket:s0 tclass=dir permissive=1
+[   14.212626] type=1400 audit(13.253:69): avc: denied { write } for pid=952 comm="Thread-2" name="sockets" dev="mmcblk0p14" ino=180239 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:wpa_socket:s0 tclass=dir permissive=1
+[   14.214676] type=1400 audit(13.253:70): avc: denied { add_name } for pid=952 comm="Thread-2" name="wpa_ctrl_952-1" scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:wpa_socket:s0 tclass=dir permissive=1
+[   14.216479] type=1400 audit(13.253:71): avc: denied { create } for pid=952 comm="Thread-2" name="wpa_ctrl_952-1" scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:wpa_socket:s0:c512,c768 tclass=sock_file permissive=1
+[   14.274137] type=1400 audit(13.316:72): avc: denied { setattr } for pid=952 comm="Thread-2" name="wpa_ctrl_952-1" dev="mmcblk0p14" ino=180636 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:wpa_socket:s0:c512,c768 tclass=sock_file permissive=1
+[   14.279051] type=1400 audit(13.316:73): avc: denied { write } for pid=952 comm="Thread-2" name="wlan0" dev="mmcblk0p14" ino=180434 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:wpa_socket:s0 tclass=sock_file permissive=1
+[   14.281296] type=1400 audit(13.316:74): avc: denied { remove_name } for pid=952 comm="Thread-2" name="wpa_ctrl_952-1" dev="mmcblk0p14" ino=180636 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:wpa_socket:s0 tclass=dir permissive=1
+[   14.283398] type=1400 audit(13.320:75): avc: denied { unlink } for pid=952 comm="Thread-2" name="wpa_ctrl_952-1" dev="mmcblk0p14" ino=180636 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:wpa_socket:s0:c512,c768 tclass=sock_file permissive=1
+[   14.288128] RTW: rtw_ndev_notifier_call(wlan0) state:13
+[   14.288156] RTW: _netdev_open(wlan0) , bup=0
+[   14.305498] RTW: [HALMAC][ALWAYS]shall R reg twice!!
+[   14.307865] RTW: SetHwReg: bMacPwrCtrlOn=1
+[   14.462095] RTW: _rtw_hal_set_fw_rsvd_page(wlan0) Get [ NOR ] RsvdPageNUm  ==>
+[   14.462120] RTW: LocPsPoll: 4
+[   14.462129] RTW: LocNullData: 5
+[   14.462137] RTW: LocQosNull: 6
+[   14.462144] RTW: LocBTQosNull: 7
+[   14.462153] RTW: _rtw_hal_set_fw_rsvd_page(wlan0) Get [ NOR ] RsvdPageNUm <==
+[   14.480156] RTW: rtw_start_drv_threads(wlan0) enter
+[   14.480177] RTW: rtw_start_drv_threads(wlan0) start RTW_CMD_THREAD
+[   14.481249] RTW: WARN [HALMAC][WARN]the H2C ver. does not match halmac
+[   14.619452] type=1400 audit(13.670:76): avc: denied { read } for pid=982 comm="robotcontroller" name="direction" dev="sysfs" ino=16611 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   14.621655] type=1400 audit(13.670:77): avc: denied { open } for pid=982 comm="robotcontroller" path="/sys/devices/pinctrl.26/gpio/gpio50/direction" dev="sysfs" ino=16611 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   14.625118] type=1400 audit(13.670:78): avc: denied { getattr } for pid=982 comm="robotcontroller" path="/sys/devices/pinctrl.26/gpio/gpio50/direction" dev="sysfs" ino=16611 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   14.629492] type=1400 audit(13.673:79): avc: denied { write } for pid=982 comm="robotcontroller" name="value" dev="sysfs" ino=13336 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   14.747985] type=1400 audit(13.800:80): avc: denied { read } for pid=1028 comm="sh" name="/" dev="rootfs" ino=1 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:rootfs:s0 tclass=dir permissive=1
+[   14.749766] type=1400 audit(13.803:81): avc: denied { open } for pid=1028 comm="sh" path="/" dev="rootfs" ino=1 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:rootfs:s0 tclass=dir permissive=1
+[   15.395012] RTW: FW Version:24 SubVersion:2
+[   15.395031] RTW: rtl8821c_hal_init_main: successful
+[   15.396617] RTW: txpath=0x1, rxpath=0x1
+[   15.396638] RTW: txpath_1ss:0x1, num:1
+[   15.415574] start_addr=(0x8000), end_addr=(0x10000), buffer_size=(0x8000), smp_number_max=(4096)
+[   15.416902] RTW: rtw_hal_set_default_port_id_cmd (wlan0) port_id :0, mad_id:0
+[   15.429566] RTW: rtw_hal_set_wifi_btc_port_id_cmd (wlan0) - hw_port :0
+[   15.431432] RTW: rtl8821cu_hal_init in 1163ms
+[   15.431458] RTW: rtw_hal_set_macaddr_port wlan0- hw port(0) mac_addr =0c:cf:89:32:fc:05
+[   15.431930] RTW: rtw_hal_set_macaddr_port p2p0- hw port(1) mac_addr =0e:cf:89:32:fc:05
+[   15.432403] RTW: rtw_hal_get_macaddr_port wlan0- hw port(0) mac_addr =0c:cf:89:32:fc:05
+[   15.432420] RTW: wlan0- hw port(0) mac_addr =0c:cf:89:32:fc:05
+[   15.432643] RTW: rtw_hal_get_macaddr_port p2p0- hw port(1) mac_addr =0e:cf:89:32:fc:05
+[   15.432657] RTW: p2p0- hw port(1) mac_addr =0e:cf:89:32:fc:05
+[   15.433513] RTW: [HW_VAR_ENABLE_RX_BAR] 0x6A2=0x500
+[   15.446672] RTW: wlan0: hw_port(0) will set mode to 2
+[   15.446696] RTW: rtw_hal_set_macaddr_port wlan0- hw port(0) mac_addr =0c:cf:89:32:fc:05
+[   15.446909] RTW: wlan0: hw_port(0) set mode=2
+[   15.448023] RTW: MAC Address = 0c:cf:89:32:fc:05
+[   15.448040] RTW: rtw_cfg80211_init_wiphy:rf_type=0
+[   15.448048] RTW: [HT] HAL Support LDPC = 0x02
+[   15.448055] RTW: [HT] HAL Support STBC = 0x01
+[   15.448063] RTW: [HT] HAL Support LDPC = 0x02
+[   15.448070] RTW: [HT] HAL Support STBC = 0x01
+[   15.448078] RTW: [VHT] Support LDPC = 0x02
+[   15.448084] RTW: [VHT] Support STBC = 0x01
+[   15.448095] RTW: rtw_build_vht_cap_ie, line810, Set MAX MPDU len = 11454 bytes
+[   15.448103] RTW: [VHT] Declare supporting SGI 80MHz
+[   15.448110] RTW: [VHT] Declare supporting RX STBC = 1
+[   15.448125] RTW: _netdev_vir_if_open(p2p0) , bup=0
+[   15.448133] RTW: rtw_start_drv_threads(p2p0) enter
+[   15.448140] RTW: rtw_cfg80211_init_wiphy:rf_type=0
+[   15.448147] RTW: [HT] HAL Support LDPC = 0x02
+[   15.448154] RTW: [HT] HAL Support STBC = 0x01
+[   15.448161] RTW: [HT] HAL Support LDPC = 0x02
+[   15.448167] RTW: [HT] HAL Support STBC = 0x01
+[   15.448181] RTW: [VHT] Support LDPC = 0x02
+[   15.448188] RTW: [VHT] Support STBC = 0x01
+[   15.448197] RTW: rtw_build_vht_cap_ie, line810, Set MAX MPDU len = 11454 bytes
+[   15.448205] RTW: [VHT] Declare supporting SGI 80MHz
+[   15.448213] RTW: [VHT] Declare supporting RX STBC = 1
+[   15.448221] RTW: _netdev_vir_if_open(p2p0) (bup=1) exit
+[   15.448228] RTW: -871x_drv - drv_open, bup=1
+[   15.448300] RTW: cfg80211_rtw_set_power_mgmt(wlan0) enabled:1, timeout:-1
+[   15.448319] RTW: rtw_ndev_notifier_call(wlan0) state:1
+[   15.448332] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+[   15.549010] RTW: cfg80211_rtw_change_iface(wlan0) type=3, hw_port:0
+[   15.549036] RTW: cfg80211_rtw_change_iface(wlan0) call netdev_open
+[   15.549047] RTW: _netdev_open(wlan0) , bup=1
+[   15.551136] RTW: -871x_drv - drv_open, bup=1
+[   15.551168] RTW: cfg80211_rtw_change_iface(wlan0) old_iftype=2, new_iftype=3
+[   15.551200] RTW: rtw_release_macid(wlan0) if1, mac_addr:ff:ff:ff:ff:ff:ff macid:1
+[   15.551223] RTW: rtw_alloc_macid(wlan0) if1, mac_addr:ff:ff:ff:ff:ff:ff macid:0
+[   15.553484] RTW: wlan0: hw_port(0) will set mode to 3
+[   15.553508] RTW: rtw_hal_set_macaddr_port wlan0- hw port(0) mac_addr =0c:cf:89:32:fc:05
+[   15.554114] RTW: wlan0: hw_port(0) set mode=3
+[   15.555167] RTW: rtl8821c_dl_rsvd_page(wlan0):+ hw_port=0 mstatus(1)
+[   15.556669] RTW: _rtw_hal_set_fw_rsvd_page(wlan0) PageSize: 128, [ NOR ]-RsvdPageNUm: 8
+[   15.556700] RTW: LocBTQosNull: 4
+[   15.556715] RTW: _rtw_hal_set_fw_rsvd_page PageNum(5), pktlen(640)
+[   15.556902] RTW: _rtw_hal_set_fw_rsvd_page: Set RSVD page location to Fw ,TotalPacketLen(640), TotalPageNum(5)
+[   15.556918] RTW: RsvdPageLoc: ProbeRsp=0 PsPoll=0 Null=0 QoSNull=0 BTNull=4
+[   15.557504] RTW: wlan0: DL RSVD page success! DLBcnCount:1, poll:1
+[   15.569656] RTW: cfg80211_rtw_change_iface(wlan0) ret:0
+[   15.574609] RTW: cfg80211_rtw_scan(wlan0)
+[   15.576513] RTW: [HW_VAR_CHECK_TXBUF] Empty in 0 ms
+[   15.576995] RTW: wlan0 sleep m0=0x00000003, ori reg_0x4d4=0x00000000
+[   15.577212] ------------[ cut here ]------------
+[   15.577238] WARNING: at drivers/net/wireless/rockchip_wlan/rtl8821cu/hal/hal_intf.c:1572 _rtw_hal_macid_bmp_sleep+0xcc/0x1ac()
+[   15.577247] Modules linked in:
+[   15.577259] CPU: 0 PID: 1014 Comm: RTW_CMD_THREAD Not tainted 3.10.245 #18
+[   15.577267] Call trace:
+[   15.577279] [<ffffffc0000884b8>] dump_backtrace+0x0/0x10c
+[   15.577289] [<ffffffc0000885d8>] show_stack+0x14/0x1c
+[   15.577299] [<ffffffc0009fad10>] dump_stack+0x20/0x28
+[   15.577310] [<ffffffc0000a8748>] warn_slowpath_common+0x78/0x9c
+[   15.577324] [<ffffffc0000a8834>] warn_slowpath_null+0x18/0x20
+[   15.577334] [<ffffffc0004fb94c>] _rtw_hal_macid_bmp_sleep+0xcc/0x1ac
+[   15.577344] [<ffffffc0004fd43c>] rtw_hal_macid_sleep_all_used+0x18/0x20
+[   15.577354] [<ffffffc0004970dc>] sitesurvey_cmd_hdl+0x3b0/0xd10
+[   15.577367] [<ffffffc000462a44>] rtw_cmd_thread+0x388/0x604
+[   15.577377] [<ffffffc0000ca0c4>] kthread+0xb0/0xb8
+[   15.577384] ---[ end trace e68098b84436d968 ]---
+[   16.042241] type=1400 audit(15.116:82): avc: denied { read } for pid=976 comm="logcat" name="primary" dev="tmpfs" ino=8538 scontext=u:r:logd:s0 tcontext=u:object_r:storage_file:s0 tclass=lnk_file permissive=1
+[   16.042789] type=1400 audit(15.116:83): avc: denied { search } for pid=976 comm="logcat" name="user" dev="tmpfs" ino=8526 scontext=u:r:logd:s0 tcontext=u:object_r:mnt_user_file:s0 tclass=dir permissive=1
+[   16.043231] type=1400 audit(15.116:84): avc: denied { read } for pid=976 comm="logcat" name="primary" dev="tmpfs" ino=10158 scontext=u:r:logd:s0 tcontext=u:object_r:mnt_user_file:s0 tclass=lnk_file permissive=1
+[   16.043665] type=1400 audit(15.116:85): avc: denied { search } for pid=976 comm="logcat" name="/" dev="fuse" ino=0 scontext=u:r:logd:s0 tcontext=u:object_r:fuse:s0 tclass=dir permissive=1
+[   16.044082] type=1400 audit(15.116:86): avc: denied { read } for pid=976 comm="logcat" name="WifiLog.txt.2" dev="fuse" ino=1093 scontext=u:r:logd:s0 tcontext=u:object_r:fuse:s0 tclass=file permissive=1
+[   16.045031] type=1400 audit(15.116:87): avc: denied { open } for pid=976 comm="logcat" path="/storage/emulated/0/WifiLog.txt.2" dev="fuse" ino=1093 scontext=u:r:logd:s0 tcontext=u:object_r:fuse:s0 tclass=file permissive=1
+[   16.477867] type=1400 audit(15.560:88): avc: denied { write } for pid=952 comm="Thread-2" name="sockets" dev="mmcblk0p14" ino=180239 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:wpa_socket:s0 tclass=dir permissive=1
+[   16.480462] type=1400 audit(15.560:89): avc: denied { add_name } for pid=952 comm="Thread-2" name="wpa_ctrl_952-4" scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:wpa_socket:s0 tclass=dir permissive=1
+[   16.486669] type=1400 audit(15.560:90): avc: denied { write } for pid=952 comm="Thread-2" name="wlan0" dev="mmcblk0p14" ino=180434 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:wpa_socket:s0 tclass=sock_file permissive=1
+[   16.489673] type=1400 audit(15.563:91): avc: denied { sendto } for pid=952 comm="Thread-2" path="/data/misc/wifi/hostapd/wlan0" scontext=u:r:platform_app:s0:c512,c768 tcontext=u:r:hostapd:s0 tclass=unix_dgram_socket permissive=1
+[   16.493717] type=1400 audit(15.566:92): avc: denied { remove_name } for pid=952 comm="Thread-2" name="wpa_ctrl_952-5" dev="mmcblk0p14" ino=180574 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:wpa_socket:s0 tclass=dir permissive=1
+[   16.495736] type=1400 audit(15.566:93): avc: denied { write } for pid=1075 comm="hostapd" name="wpa_ctrl_952-5" dev="mmcblk0p14" ino=180574 scontext=u:r:hostapd:s0 tcontext=u:object_r:wpa_socket:s0:c512,c768 tclass=sock_file permissive=1
+[   16.497794] type=1400 audit(15.566:94): avc: denied { sendto } for pid=1075 comm="hostapd" path="/data/misc/wifi/sockets/wpa_ctrl_952-5" scontext=u:r:hostapd:s0 tcontext=u:r:platform_app:s0:c512,c768 tclass=unix_dgram_socket permissive=1
+[   16.658574] RTW: wlan0 wakeup m0=0x00000003, ori reg_0x4d4=0x00000003
+[   16.659157] ------------[ cut here ]------------
+[   16.659176] WARNING: at drivers/net/wireless/rockchip_wlan/rtl8821cu/hal/hal_intf.c:1572 _rtw_hal_macid_bmp_sleep+0xcc/0x1ac()
+[   16.659185] Modules linked in:
+[   16.659197] CPU: 0 PID: 1014 Comm: RTW_CMD_THREAD Tainted: G        W    3.10.245 #18
+[   16.659205] Call trace:
+[   16.659217] [<ffffffc0000884b8>] dump_backtrace+0x0/0x10c
+[   16.659227] [<ffffffc0000885d8>] show_stack+0x14/0x1c
+[   16.659237] [<ffffffc0009fad10>] dump_stack+0x20/0x28
+[   16.659247] [<ffffffc0000a8748>] warn_slowpath_common+0x78/0x9c
+[   16.659256] [<ffffffc0000a8834>] warn_slowpath_null+0x18/0x20
+[   16.659265] [<ffffffc0004fb94c>] _rtw_hal_macid_bmp_sleep+0xcc/0x1ac
+[   16.659275] [<ffffffc0004fd45c>] rtw_hal_macid_wakeup_all_used+0x18/0x20
+[   16.659286] [<ffffffc00049794c>] sitesurvey_cmd_hdl+0xc20/0xd10
+[   16.659297] [<ffffffc000462a44>] rtw_cmd_thread+0x388/0x604
+[   16.659308] [<ffffffc0000ca0c4>] kthread+0xb0/0xb8
+[   16.659315] ---[ end trace e68098b84436d969 ]---
+[   16.659332] RTW: survey done event(18) band:0 for wlan0
+[   16.659353] ========== ACS (VER-3) ==========
+[   16.659360] Best 24G Channel:1
+[   16.659366] Best 5G Channel:52
+[   16.659366] 
+[   16.659495] RTW: rtw_indicate_scan_done(wlan0)
+[   16.660154] RTW: cfg80211_rtw_scan(wlan0)
+[   16.664124] RTW: [HW_VAR_CHECK_TXBUF] Empty in 3 ms
+[   16.664362] RTW: wlan0 sleep m0=0x00000003, ori reg_0x4d4=0x00000000
+[   16.664483] ------------[ cut here ]------------
+[   16.664504] WARNING: at drivers/net/wireless/rockchip_wlan/rtl8821cu/hal/hal_intf.c:1572 _rtw_hal_macid_bmp_sleep+0xcc/0x1ac()
+[   16.664513] Modules linked in:
+[   16.664527] CPU: 0 PID: 1014 Comm: RTW_CMD_THREAD Tainted: G        W    3.10.245 #18
+[   16.664535] Call trace:
+[   16.664548] [<ffffffc0000884b8>] dump_backtrace+0x0/0x10c
+[   16.664557] [<ffffffc0000885d8>] show_stack+0x14/0x1c
+[   16.664568] [<ffffffc0009fad10>] dump_stack+0x20/0x28
+[   16.664578] [<ffffffc0000a8748>] warn_slowpath_common+0x78/0x9c
+[   16.664589] [<ffffffc0000a8834>] warn_slowpath_null+0x18/0x20
+[   16.664598] [<ffffffc0004fb94c>] _rtw_hal_macid_bmp_sleep+0xcc/0x1ac
+[   16.664608] [<ffffffc0004fd43c>] rtw_hal_macid_sleep_all_used+0x18/0x20
+[   16.664619] [<ffffffc0004970dc>] sitesurvey_cmd_hdl+0x3b0/0xd10
+[   16.664630] [<ffffffc000462a44>] rtw_cmd_thread+0x388/0x604
+[   16.664641] [<ffffffc0000ca0c4>] kthread+0xb0/0xb8
+[   16.664648] ---[ end trace e68098b84436d96a ]---
+[   17.688808] type=1400 audit(16.790:95): avc: denied { append } for pid=976 comm="logcat" name="WifiLog.txt" dev="fuse" ino=21 scontext=u:r:logd:s0 tcontext=u:object_r:fuse:s0 tclass=file permissive=1
+[   17.693093] type=1400 audit(16.793:96): avc: denied { getattr } for pid=976 comm="logcat" path="/storage/emulated/0/WifiLog.txt" dev="fuse" ino=21 scontext=u:r:logd:s0 tcontext=u:object_r:fuse:s0 tclass=file permissive=1
+[   17.734969] RTW: wlan0 wakeup m0=0x00000003, ori reg_0x4d4=0x00000003
+[   17.735082] ------------[ cut here ]------------
+[   17.735102] WARNING: at drivers/net/wireless/rockchip_wlan/rtl8821cu/hal/hal_intf.c:1572 _rtw_hal_macid_bmp_sleep+0xcc/0x1ac()
+[   17.735112] Modules linked in:
+[   17.735124] CPU: 0 PID: 1014 Comm: RTW_CMD_THREAD Tainted: G        W    3.10.245 #18
+[   17.735132] Call trace:
+[   17.735143] [<ffffffc0000884b8>] dump_backtrace+0x0/0x10c
+[   17.735153] [<ffffffc0000885d8>] show_stack+0x14/0x1c
+[   17.735163] [<ffffffc0009fad10>] dump_stack+0x20/0x28
+[   17.735175] [<ffffffc0000a8748>] warn_slowpath_common+0x78/0x9c
+[   17.735184] [<ffffffc0000a8834>] warn_slowpath_null+0x18/0x20
+[   17.735193] [<ffffffc0004fb94c>] _rtw_hal_macid_bmp_sleep+0xcc/0x1ac
+[   17.735203] [<ffffffc0004fd45c>] rtw_hal_macid_wakeup_all_used+0x18/0x20
+[   17.735214] [<ffffffc00049794c>] sitesurvey_cmd_hdl+0xc20/0xd10
+[   17.735224] [<ffffffc000462a44>] rtw_cmd_thread+0x388/0x604
+[   17.735236] [<ffffffc0000ca0c4>] kthread+0xb0/0xb8
+[   17.735243] ---[ end trace e68098b84436d96b ]---
+[   17.735263] RTW: survey done event(10) band:0 for wlan0
+[   17.735284] ========== ACS (VER-3) ==========
+[   17.735291] Best 24G Channel:1
+[   17.735297] Best 5G Channel:52
+[   17.735297] 
+[   17.735428] RTW: rtw_indicate_scan_done(wlan0)
+[   17.739344] RTW: +cfg80211_rtw_del_station(wlan0) mac=          (null)
+[   17.739377] RTW: flush all sta, and cam_entry
+[   17.739391] RTW: rtw_sta_flush(wlan0)
+[   17.739401] RTW: issue_deauth to ff:ff:ff:ff:ff:ff
+[   17.739598] RTW: +cfg80211_rtw_del_station(wlan0) mac=ff:ff:ff:ff:ff:ff
+[   17.739614] RTW: free sta macaddr =ff:ff:ff:ff:ff:ff
+[   17.739828] RTW: cfg80211_rtw_del_key(wlan0) key_index=0, addr=          (null)
+[   17.743402] RTW: cfg80211_rtw_del_key(wlan0) key_index=1, addr=          (null)
+[   17.743590] RTW: cfg80211_rtw_del_key(wlan0) key_index=2, addr=          (null)
+[   17.743746] RTW: cfg80211_rtw_del_key(wlan0) key_index=3, addr=          (null)
+[   17.743898] RTW: cfg80211_rtw_del_key(wlan0) key_index=4, addr=          (null)
+[   17.744044] RTW: cfg80211_rtw_del_key(wlan0) key_index=5, addr=          (null)
+[   17.746793] RTW: cfg80211_rtw_start_ap(wlan0) hidden_ssid:0, auth_type:5
+[   17.746809] RTW: rtw_cfg80211_set_auth_type, nl80211_auth_type=5
+[   17.746826] RTW: rtw_add_beacon beacon_head_len=59, beacon_tail_len=132
+[   17.746839] RTW: rtw_check_beacon_data, len=167
+[   17.746876] RTW: [HT] HAL Support LDPC = 0x02
+[   17.746883] RTW: [HT] HAL Support STBC = 0x01
+[   17.755318] RTW: update_hw_ht_param
+[   17.756008] RTW: rtw_hal_set_bssid wlan0- hw port -0 BSSID: 0c:cf:89:32:fc:05
+[   17.756509] RTW: hw_var_set_sec_cfg: [HW_VAR_SEC_CFG] 0x680=0x30c
+[   17.756987] RTW: rtw_ap_chbw_decision ifbmp:0x01 excl_ifbmp:0x00 req:0,-1,-1
+[   17.757008] RTW: rtw_ap_chbw_decision others ld_sta_num:0, lg_sta_num:0, ap_num:0, mesh_num:0
+[   17.757023] RTW: rtw_ap_chbw_decision ifbmp:0x01 tmp union:165,0,0
+[   17.757040] RTW: rtw_ap_chbw_decision(wlan0) 165,0,0 => 165,0,0
+[   17.757051] RTW: rtw_ap_chbw_decision union:165,0,0
+[   17.757067] RTW: HW_VAR_BASIC_RATE: 0x15f->0x15f->0x15f
+[   17.758097] RTW: rtw_get_sta_tx_nss: 1 SS
+[   17.758116] RTW: rtw_get_sta_rx_nss: 1 ss
+[   17.758124] RTW: STA - MAC_ID:0, Tx - 1 SS, Rx - 1 SS
+[   17.758131] RTW: STA - MAC_ID:0, SM_PS 3
+[   17.759022] RTW: wlan0 BMC Init Tx rate - OFDM_24M
+[   17.798344] RTW: is_valid_id_status: HALMAC_FEATURE_IQK
+[   17.800536] RTW: hw_var_set_correct_tsf(wlan0)
+[   17.800560] RTW: [TSF_SYNC] p0 sync port = N/A
+[   17.800567] RTW: [TSF_SYNC] timer offset = 0
+[   17.801970] RTW: rtw_cfg80211_indicate_connect(wlan0)
+[   17.801995] RTW: assoc success
+[   17.802141] RTW: cfg80211_rtw_change_bss(wlan0)
+[   17.804820] RTW: cfg80211_rtw_add_key(wlan0) cipher=0xfac02
+[   17.804837] RTW: cfg80211_rtw_add_key(wlan0) key_len=32, key_index=1
+[   17.804844] RTW: cfg80211_rtw_add_key(wlan0) pairwise=0
+[   17.804855] RTW: rtw_cfg80211_ap_set_encryption
+[   17.804863] RTW: rtw_cfg80211_ap_set_encryption(wlan0) set TKIP TX GTK idx:1, len:32
+[   17.804874] RTW: rtw_ap_set_group_key
+[   17.804931] RTW: set group key camid:0, addr:0c:cf:89:32:fc:05, kid:1, type:TKIP
+[   17.804965] RTW: cfg80211_rtw_set_default_key(wlan0) key_index=1, unicast=0, multicast=1
+[   17.805101] RTW: cfg80211_rtw_add_key(wlan0) cipher=0xfac06
+[   17.805114] RTW: cfg80211_rtw_add_key(wlan0) key_len=16, key_index=4
+[   17.805122] RTW: cfg80211_rtw_add_key(wlan0) pairwise=0
+[   17.805131] RTW: rtw_cfg80211_ap_set_encryption
+[   17.805143] RTW: rtw_cfg80211_ap_set_encryption(wlan0) set TX IGTK idx:4, len:16
+[   17.805201] RTW: cfg80211_rtw_set_default_mgmt_key(wlan0) key_index=4
+[   17.805406] RTW: cfg80211_rtw_set_mac_acl(wlan0) acl_policy:0, entry_num:0
+[   17.805424] RTW: rtw_set_macaddr_acl(wlan0) p=1, mode=1
+[   17.805505] RTW: rtw_ndev_notifier_call(wlan0) state:4
+[   17.805521] IPv6: ADDRCONF(NETDEV_CHANGE): wlan0: link becomes ready
+[   17.810817] RTW: rtw_ac_parm_cmd_hdl(wlan0) AC_VO = 0x002f3219
+[   17.811033] RTW: rtw_ac_parm_cmd_hdl(wlan0) AC_VI = 0x005e4319
+[   17.811412] RTW: rtw_ac_parm_cmd_hdl(wlan0) AC_BE = 0x0000642b
+[   17.811623] RTW: rtw_ac_parm_cmd_hdl(wlan0) AC_BK = 0x0000a44f
+[   19.233085] type=1400 audit(18.360:97): avc: denied { write } for pid=1075 comm="hostapd" name="wpa_ctrl_952-4" dev="mmcblk0p14" ino=180636 scontext=u:r:hostapd:s0 tcontext=u:object_r:wpa_socket:s0:c512,c768 tclass=sock_file permissive=1
+[   19.912020] init: Service 'bootanim' is being killed...
+[   19.917379] init: Service 'bootanim' (pid 180) killed by signal 9
+[   20.597763] type=1400 audit(19.746:98): avc: denied { read } for pid=1138 comm="ContactsProvide" name="mm_stat" dev="sysfs" ino=11713 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs_zram:s0 tclass=file permissive=1
+[   20.599982] type=1400 audit(19.746:99): avc: denied { open } for pid=1138 comm="ContactsProvide" path="/sys/devices/virtual/block/zram0/mm_stat" dev="sysfs" ino=11713 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs_zram:s0 tclass=file permissive=1
+[   20.602512] type=1400 audit(19.750:100): avc: denied { getattr } for pid=1138 comm="ContactsProvide" path="/sys/devices/virtual/block/zram0/mm_stat" dev="sysfs" ino=11713 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs_zram:s0 tclass=file permissive=1
+[   21.825639] binder: 797:913 transaction failed 29189, size 288-0
+[   25.048612] RTW: +OnAuth
+[   25.048655] RTW: auth alg=0, seq=1
+[   25.048667] RTW: going to alloc stainfo for sa=6c:d5:52:0e:99:21
+[   25.048689] RTW: rtw_alloc_macid(wlan0) if1, mac_addr:6c:d5:52:0e:99:21 macid:2
+[   25.048708] RTW: issue_auth
+[   25.049940] RTW: OnAssocReq
+[   25.049969] RTW: OnAssocReq(wlan0) allocate new AID=1
+[   25.049980] RTW: HT: STA 6c:d5:52:0e:99:21 HT Capabilities Info: 0x182c
+[   25.049990] RTW: bss_cap_update_on_sta_join STA 6c:d5:52:0e:99:21 - no greenfield, num of non-gf stations 1
+[   25.050008] RTW: bss_cap_update_on_sta_join STA 6c:d5:52:0e:99:21 - 20 MHz HT, num of 20MHz HT STAs 1
+[   25.050017] RTW: rtw_ht_operation_update current operation mode=0x0
+[   25.050026] RTW: rtw_ht_operation_update new operation mode=0x4 changes=1
+[   25.050033] RTW: update_bcn_htcap_ie
+[   25.050041] RTW: update_bcn_htinfo_ie current operation mode=0x4
+[   25.050049] RTW: num_sta_40mhz_intolerant(0), 20mhz_width_req(0), intolerant_ch_rpt(0), olbc(0)
+[   25.050082] RTW: associated_stainfo_update: 6c:d5:52:0e:99:21, updated_type=0x3f
+[   25.050091] RTW: bss_cap_update_on_sta_join, updated=1
+[   25.050098] RTW: update_sta_info_apmode
+[   25.050111] RTW: ### Set STA_(2) info ###
+[   25.050131] RTW: issue_asocrsp
+[   25.050172] RTW: report_add_sta_event: add STA
+[   25.052234] RTW: rtw_get_sta_tx_nss: 1 SS
+[   25.052250] RTW: rtw_get_sta_rx_nss: 1 ss
+[   25.052258] RTW: STA - MAC_ID:2, Tx - 1 SS, Rx - 1 SS
+[   25.052265] RTW: STA - MAC_ID:2, SM_PS 3
+[   25.052276] RTW: ht_mcs_set=ff 00 00 00, nss=1, bitmap=000000ff
+[   25.052286] RTW: rtw_ap_update_sta_ra_info=> mac_id:2 , tx_ra_bitmap:0x00000000000ffff0, networkType:0x14
+[   25.052722] RTW: ============ STA [6c:d5:52:0e:99:21]  ===================
+[   25.052736] RTW: mac_id : 2
+[   25.052742] RTW: wireless_mode : 0x14
+[   25.052749] RTW: mimo_type : 0
+[   25.052755] RTW: static smps : N
+[   25.052762] RTW: bw_mode : 20MHz, ra_bw_mode : 20MHz
+[   25.052769] RTW: rate_id : 10
+[   25.052776] RTW: rssi : -1 (%), rssi_level : 0
+[   25.052783] RTW: is_support_sgi : N, is_vht_enable : N
+[   25.052790] RTW: disable_ra : N, disable_pt : N
+[   25.052797] RTW: is_noisy : N
+[   25.052803] RTW: txrx_state : 0
+[   25.052811] RTW: curr_tx_rate : CCK_1M (L)
+[   25.052817] RTW: curr_tx_bw : 20MHz
+[   25.052823] RTW: curr_retry_ratio : 0
+[   25.052829] RTW: ra_mask : 0x00000000000ffff0
+[   25.052829] 
+[   25.052840] RTW: indicate_sta_assoc_event to upper layer - hostapd
+[   25.052851] RTW: rtw_cfg80211_indicate_sta_assoc(wlan0)
+[   25.052893] RTW: rtw_set_rts_bw connect_to_8812=0,enable=1
+[   25.053458] RTW: cfg80211_rtw_change_station(wlan0) mac:6c:d5:52:0e:99:21
+[   25.053680] RTW: cfg80211_rtw_del_key(wlan0) key_index=0, addr=6c:d5:52:0e:99:21
+[   25.053882] RTW: cfg80211_rtw_del_key(wlan0) key_index=0, addr=6c:d5:52:0e:99:21
+[   25.053951] RTW: cfg80211_rtw_change_station(wlan0) mac:6c:d5:52:0e:99:21
+[   25.060024] RTW: cfg80211_rtw_add_key(wlan0) cipher=0xfac02
+[   25.060040] RTW: cfg80211_rtw_add_key(wlan0) key_len=32, key_index=1
+[   25.060048] RTW: cfg80211_rtw_add_key(wlan0) pairwise=0
+[   25.060058] RTW: rtw_cfg80211_ap_set_encryption
+[   25.060067] RTW: rtw_cfg80211_ap_set_encryption(wlan0) set TKIP TX GTK idx:1, len:32
+[   25.060078] RTW: rtw_ap_set_group_key
+[   25.060126] RTW: set group key camid:0, addr:0c:cf:89:32:fc:05, kid:1, type:TKIP
+[   25.060173] RTW: cfg80211_rtw_set_default_key(wlan0) key_index=1, unicast=0, multicast=1
+[   25.060301] RTW: cfg80211_rtw_add_key(wlan0) cipher=0xfac06
+[   25.060312] RTW: cfg80211_rtw_add_key(wlan0) key_len=16, key_index=4
+[   25.060320] RTW: cfg80211_rtw_add_key(wlan0) pairwise=0
+[   25.060330] RTW: rtw_cfg80211_ap_set_encryption
+[   25.060340] RTW: rtw_cfg80211_ap_set_encryption(wlan0) set TX IGTK idx:4, len:16
+[   25.060412] RTW: cfg80211_rtw_set_default_mgmt_key(wlan0) key_index=4
+[   25.061728] RTW: send eapol packet 1/4
+[   25.077391] RTW: recv eapol packet 2/4
+[   25.077848] RTW: cfg80211_rtw_get_key(wlan0) keyid=1, pairwise=0, addr=          (null) ret 0
+[   25.077865] RTW: cfg80211_rtw_get_key(wlan0) seq:0x0
+[   25.078070] RTW: cfg80211_rtw_get_key(wlan0) keyid=4, pairwise=0, addr=          (null) ret 0
+[   25.078086] RTW: cfg80211_rtw_get_key(wlan0) seq:0x0
+[   25.087035] RTW: send eapol packet 3/4
+[   25.090197] RTW: recv eapol packet 4/4
+[   25.090852] RTW: cfg80211_rtw_add_key(wlan0) adding key for 6c:d5:52:0e:99:21
+[   25.090871] RTW: cfg80211_rtw_add_key(wlan0) cipher=0xfac04
+[   25.090879] RTW: cfg80211_rtw_add_key(wlan0) key_len=16, key_index=0
+[   25.090887] RTW: cfg80211_rtw_add_key(wlan0) pairwise=1
+[   25.090899] RTW: rtw_cfg80211_ap_set_encryption
+[   25.090912] RTW: rtw_cfg80211_ap_set_encryption(wlan0) set CCMP PTK of 6c:d5:52:0e:99:21 idx:0, len:16
+[   25.090955] RTW: set pairwise key camid:1, addr:6c:d5:52:0e:99:21, kid:0, type:AES
+[   25.091184] RTW: cfg80211_rtw_change_station(wlan0) mac:6c:d5:52:0e:99:21
+[   25.221889] RTW: OnDeAuth(wlan0) - Start to Disconnect
+[   25.221916] RTW: OnDeAuth(wlan0) reason=3, ta=6c:d5:52:0e:99:21
+[   25.221935] RTW: rtw_cfg80211_indicate_sta_disassoc(wlan0)
+[   25.221994] RTW: rtw_ht_operation_update current operation mode=0x4
+[   25.222006] RTW: rtw_ht_operation_update new operation mode=0x0 changes=1
+[   25.222015] RTW: update_bcn_htcap_ie
+[   25.222024] RTW: clear key for addr:6c:d5:52:0e:99:21, camid:1
+[   25.222034] RTW: update_bcn_htinfo_ie current operation mode=0x0
+[   25.222043] RTW: num_sta_40mhz_intolerant(0), 20mhz_width_req(0), intolerant_ch_rpt(0), olbc(0)
+[   25.222057] RTW: bss_cap_update_on_sta_leave, updated=1
+[   25.222071] RTW: report_del_sta_event(wlan0) 6c:d5:52:0e:99:21 mac_id=2, enqueue:1, res:1
+[   25.222623] RTW: cfg80211_rtw_del_key(wlan0) key_index=0, addr=6c:d5:52:0e:99:21
+[   25.222818] RTW: cfg80211_rtw_del_key(wlan0) key_index=0, addr=6c:d5:52:0e:99:21
+[   25.222896] RTW: cfg80211_rtw_change_station(wlan0) mac:6c:d5:52:0e:99:21
+[   25.222974] RTW: +cfg80211_rtw_del_station(wlan0) mac=6c:d5:52:0e:99:21
+[   25.222986] RTW: free sta macaddr =6c:d5:52:0e:99:21
+[   25.222995] RTW: -cfg80211_rtw_del_station(wlan0)
+[   25.226418] RTW: rtw_stadel_event_callback(mac_id=2)=6c:d5:52:0e:99:21
+[   25.226437] RTW: rtw_sta_mstatus_disc_rpt(wlan0) - mac_id=2
+[   25.227262] RTW: wlan0 wakeup macid=2, ori reg_0x4d4=0x00000000
+[   25.227294] RTW: ### Clean STA_(2) info ###
+[   25.227308] RTW: rtw_release_macid(wlan0) if1, mac_addr:6c:d5:52:0e:99:21 macid:2
+[   25.227322] RTW: rtw_set_rts_bw connect_to_8812=0,enable=1
+[   27.929311] type=1400 audit(27.196:101): avc: denied { read } for pid=982 comm="pRunnable.run()" name="ttyS1" dev="tmpfs" ino=6221 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:serial_device:s0 tclass=chr_file permissive=1
+[   27.931178] type=1400 audit(27.196:102): avc: denied { write } for pid=982 comm="pRunnable.run()" name="ttyS1" dev="tmpfs" ino=6221 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:serial_device:s0 tclass=chr_file permissive=1
+[   27.931377] type=1400 audit(27.196:103): avc: denied { open } for pid=982 comm="pRunnable.run()" path="/dev/ttyS1" dev="tmpfs" ino=6221 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:serial_device:s0 tclass=chr_file permissive=1
+[   27.931536] type=1400 audit(27.196:104): avc: denied { ioctl } for pid=982 comm="pRunnable.run()" path="/dev/ttyS1" dev="tmpfs" ino=6221 ioctlcmd=5401 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:serial_device:s0 tclass=chr_file permissive=1
+[   27.934229] type=1400 audit(27.200:105): avc: denied { read } for pid=982 comm="pRunnable.run()" name="value" dev="sysfs" ino=13336 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   27.934417] type=1400 audit(27.200:106): avc: denied { open } for pid=982 comm="pRunnable.run()" path="/sys/devices/pinctrl.26/gpio/gpio50/value" dev="sysfs" ino=13336 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   27.934589] type=1400 audit(27.200:107): avc: denied { getattr } for pid=982 comm="pRunnable.run()" path="/sys/devices/pinctrl.26/gpio/gpio50/value" dev="sysfs" ino=13336 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   27.935799] type=1400 audit(27.203:108): avc: denied { write } for pid=982 comm="pRunnable.run()" name="value" dev="sysfs" ino=16654 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   28.427059] type=1400 audit(27.703:109): avc: denied { read } for pid=982 comm="pRunnable.run()" name="devices" dev="sysfs" ino=7267 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=1
+[   28.429015] type=1400 audit(27.703:110): avc: denied { open } for pid=982 comm="pRunnable.run()" path="/sys/bus/usb/devices" dev="sysfs" ino=7267 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=1
+[   28.815275] type=1400 audit(28.093:111): avc: denied { create } for pid=208 comm="Binder:208_2" name="rk_ext_subtitle" scontext=u:r:mediaserver:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+[   28.822159] type=1400 audit(28.100:112): avc: denied { setattr } for pid=208 comm="Binder:208_2" name="rk_ext_subtitle" dev="mmcblk0p14" ino=172033 scontext=u:r:mediaserver:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+[   28.836021] type=1400 audit(28.116:113): avc: denied { read } for pid=208 comm="FFParser" name="com.qualcomm.ftcrobotcontroller-1" dev="mmcblk0p14" ino=483403 scontext=u:r:mediaserver:s0 tcontext=u:object_r:apk_data_file:s0 tclass=dir permissive=1
+[   28.840232] type=1400 audit(28.116:114): avc: denied { open } for pid=208 comm="FFParser" path="/data/app/com.qualcomm.ftcrobotcontroller-1" dev="mmcblk0p14" ino=483403 scontext=u:r:mediaserver:s0 tcontext=u:object_r:apk_data_file:s0 tclass=dir permissive=1
+[   28.891633] type=1400 audit(28.173:115): avc: denied { read } for pid=208 comm="RkMsgQueue" name="f4fb43c0" dev="mmcblk0p14" ino=172034 scontext=u:r:mediaserver:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+[   28.893668] type=1400 audit(28.173:116): avc: denied { open } for pid=208 comm="RkMsgQueue" path="/data/rk_ext_subtitle/f4fb43c0" dev="mmcblk0p14" ino=172034 scontext=u:r:mediaserver:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+[   28.895888] type=1400 audit(28.173:117): avc: denied { remove_name } for pid=208 comm="RkMsgQueue" name="f4fb43c0" dev="mmcblk0p14" ino=172034 scontext=u:r:mediaserver:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+[   28.897993] type=1400 audit(28.173:118): avc: denied { rmdir } for pid=208 comm="RkMsgQueue" name="f4fb43c0" dev="mmcblk0p14" ino=172034 scontext=u:r:mediaserver:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+[   28.900604] type=1400 audit(28.176:119): avc: denied { write } for pid=208 comm="RkMsgQueue" name="trace_thread.log" dev="mmcblk0p14" ino=14 scontext=u:r:mediaserver:s0 tcontext=u:object_r:system_data_file:s0 tclass=file permissive=1
+[   28.903358] type=1400 audit(28.176:120): avc: denied { open } for pid=208 comm="RkMsgQueue" path="/data/trace_thread.log" dev="mmcblk0p14" ino=14 scontext=u:r:mediaserver:s0 tcontext=u:object_r:system_data_file:s0 tclass=file permissive=1
+[   29.210666] type=1400 audit(28.500:121): avc: denied { read } for pid=198 comm="AudioOut_D" name="audioinfo" dev="sysfs" ino=10588 scontext=u:r:audioserver:s0 tcontext=u:object_r:sysfs_hdmi:s0 tclass=file permissive=1
+[   29.212574] type=1400 audit(28.500:122): avc: denied { open } for pid=198 comm="AudioOut_D" path="/sys/devices/virtual/display/HDMI/audioinfo" dev="sysfs" ino=10588 scontext=u:r:audioserver:s0 tcontext=u:object_r:sysfs_hdmi:s0 tclass=file permissive=1
+[   29.215489] type=1400 audit(28.500:123): avc: denied { getattr } for pid=198 comm="AudioOut_D" path="/sys/devices/virtual/display/HDMI/audioinfo" dev="sysfs" ino=10588 scontext=u:r:audioserver:s0 tcontext=u:object_r:sysfs_hdmi:s0 tclass=file permissive=1
+[   30.993181] RTW: +OnAuth
+[   30.993247] RTW: auth alg=0, seq=1
+[   30.993279] RTW: going to alloc stainfo for sa=6c:d5:52:0e:99:21
+[   30.993331] RTW: rtw_alloc_macid(wlan0) if1, mac_addr:6c:d5:52:0e:99:21 macid:2
+[   30.993387] RTW: issue_auth
+[   30.994571] RTW: OnAssocReq
+[   30.994640] RTW: OnAssocReq(wlan0) allocate new AID=1
+[   30.994691] RTW: HT: STA 6c:d5:52:0e:99:21 HT Capabilities Info: 0x182c
+[   30.994755] RTW: bss_cap_update_on_sta_join STA 6c:d5:52:0e:99:21 - no greenfield, num of non-gf stations 1
+[   30.994788] RTW: bss_cap_update_on_sta_join STA 6c:d5:52:0e:99:21 - 20 MHz HT, num of 20MHz HT STAs 1
+[   30.994814] RTW: rtw_ht_operation_update current operation mode=0x0
+[   30.994838] RTW: rtw_ht_operation_update new operation mode=0x4 changes=1
+[   30.994861] RTW: update_bcn_htcap_ie
+[   30.994881] RTW: update_bcn_htinfo_ie current operation mode=0x4
+[   30.994907] RTW: num_sta_40mhz_intolerant(0), 20mhz_width_req(0), intolerant_ch_rpt(0), olbc(0)
+[   30.994963] RTW: associated_stainfo_update: 6c:d5:52:0e:99:21, updated_type=0x3f
+[   30.994989] RTW: bss_cap_update_on_sta_join, updated=1
+[   30.995010] RTW: update_sta_info_apmode
+[   30.995040] RTW: ### Set STA_(2) info ###
+[   30.995061] RTW: issue_asocrsp
+[   30.995128] RTW: report_add_sta_event: add STA
+[   30.996231] RTW: rtw_get_sta_tx_nss: 1 SS
+[   30.996258] RTW: rtw_get_sta_rx_nss: 1 ss
+[   30.996280] RTW: STA - MAC_ID:2, Tx - 1 SS, Rx - 1 SS
+[   30.996301] RTW: STA - MAC_ID:2, SM_PS 3
+[   30.996329] RTW: ht_mcs_set=ff 00 00 00, nss=1, bitmap=000000ff
+[   30.996357] RTW: rtw_ap_update_sta_ra_info=> mac_id:2 , tx_ra_bitmap:0x00000000000ffff0, networkType:0x14
+[   30.996835] RTW: ============ STA [6c:d5:52:0e:99:21]  ===================
+[   30.996860] RTW: mac_id : 2
+[   30.996879] RTW: wireless_mode : 0x14
+[   30.996898] RTW: mimo_type : 0
+[   30.996917] RTW: static smps : N
+[   30.996937] RTW: bw_mode : 20MHz, ra_bw_mode : 20MHz
+[   30.996957] RTW: rate_id : 10
+[   30.996978] RTW: rssi : -1 (%), rssi_level : 0
+[   30.996999] RTW: is_support_sgi : N, is_vht_enable : N
+[   30.997020] RTW: disable_ra : N, disable_pt : N
+[   30.997039] RTW: is_noisy : N
+[   30.997058] RTW: txrx_state : 0
+[   30.997078] RTW: curr_tx_rate : CCK_1M (L)
+[   30.997098] RTW: curr_tx_bw : 20MHz
+[   30.997116] RTW: curr_retry_ratio : 0
+[   30.997135] RTW: ra_mask : 0x00000000000ffff0
+[   30.997135] 
+[   30.997167] RTW: indicate_sta_assoc_event to upper layer - hostapd
+[   30.997244] RTW: rtw_cfg80211_indicate_sta_assoc(wlan0)
+[   30.997340] RTW: rtw_set_rts_bw connect_to_8812=0,enable=1
+[   30.998397] RTW: cfg80211_rtw_change_station(wlan0) mac:6c:d5:52:0e:99:21
+[   30.998795] RTW: cfg80211_rtw_del_key(wlan0) key_index=0, addr=6c:d5:52:0e:99:21
+[   30.999097] RTW: cfg80211_rtw_del_key(wlan0) key_index=0, addr=6c:d5:52:0e:99:21
+[   30.999276] RTW: cfg80211_rtw_change_station(wlan0) mac:6c:d5:52:0e:99:21
+[   31.003259] RTW: send eapol packet 1/4
+[   31.008701] RTW: recv eapol packet 2/4
+[   31.009589] RTW: cfg80211_rtw_get_key(wlan0) keyid=1, pairwise=0, addr=          (null) ret 0
+[   31.009626] RTW: cfg80211_rtw_get_key(wlan0) seq:0x1
+[   31.010031] RTW: cfg80211_rtw_get_key(wlan0) keyid=4, pairwise=0, addr=          (null) ret 0
+[   31.010064] RTW: cfg80211_rtw_get_key(wlan0) seq:0x0
+[   31.010493] RTW: send eapol packet 3/4
+[   31.017663] RTW: recv eapol packet 4/4
+[   31.018348] RTW: cfg80211_rtw_add_key(wlan0) adding key for 6c:d5:52:0e:99:21
+[   31.018386] RTW: cfg80211_rtw_add_key(wlan0) cipher=0xfac04
+[   31.018411] RTW: cfg80211_rtw_add_key(wlan0) key_len=16, key_index=0
+[   31.018434] RTW: cfg80211_rtw_add_key(wlan0) pairwise=1
+[   31.018460] RTW: rtw_cfg80211_ap_set_encryption
+[   31.018495] RTW: rtw_cfg80211_ap_set_encryption(wlan0) set CCMP PTK of 6c:d5:52:0e:99:21 idx:0, len:16
+[   31.018595] RTW: set pairwise key camid:1, addr:6c:d5:52:0e:99:21, kid:0, type:AES
+[   31.019016] RTW: cfg80211_rtw_change_station(wlan0) mac:6c:d5:52:0e:99:21
+[   31.557602] RTW: Turbo EDCA =0x5ea42b
+[   34.885249] RTW: rtw_issue_addbareq_cmd, p=0
+[   34.885506] RTW: BA_starting_seqctrl = 117 for TID=0
+[   34.885645] RTW: issue_addba_req(wlan0) ra=6c:d5:52:0e:99:21 tid=0
+[   34.888945] RTW: OnAction_back
+[   34.888971] RTW: OnAction_back, action=1
+[   34.888978] RTW: agg_enable for TID=0
+[   38.905842] type=1400 audit(1794759368.440:124): avc: denied { sendto } for pid=1075 comm="hostapd" path="/data/misc/wifi/sockets/wpa_ctrl_952-4" scontext=u:r:hostapd:s0 tcontext=u:r:platform_app:s0:c512,c768 tclass=unix_dgram_socket permissive=1
+[   45.583399] type=1400 audit(1794759375.227:125): avc: denied { read } for pid=198 comm="audioserver" scontext=u:r:audioserver:s0 tcontext=u:r:audioserver:s0 tclass=netlink_kobject_uevent_socket permissive=1
+[   45.752687] usb 1-1: reset high-speed USB device number 2 using xhci-hcd
+[   46.335634] uvcvideo: Found UVC 1.00 device HD Pro Webcam C920 (046d:08e5)
+[   46.338157] input: HD Pro Webcam C920 as /devices/usb.24/ff600000.dwc3/xhci-hcd.0.auto/usb1/1-1/1-1:1.0/input/input3
+[   48.750321] type=1400 audit(1794759378.447:126): avc: denied { sendto } for pid=952 comm="pool-2-thread-1" path="/data/misc/wifi/hostapd/wlan0" scontext=u:r:platform_app:s0:c512,c768 tcontext=u:r:hostapd:s0 tclass=unix_dgram_socket permissive=1
+[   62.549486] binder: undelivered transaction 50846
+[   62.549603] binder: undelivered transaction 50834
+[   62.550675] xhci-hcd xhci-hcd.0.auto: Signal while waiting for configure endpoint command
+[   62.551481] usb 1-1: Not enough bandwidth for altsetting 0
+[   62.552428] init: Untracked pid 1028 killed by signal 9
+[   62.552947] binder: 207:943 transaction failed 29189, size 60-0
+[   62.553319] binder: 375:534 transaction failed 29189, size 348-0
+[   62.736528] binder: 1030:1030 transaction failed 29189, size 88-0
+[   63.755967] type=1400 audit(1794759393.697:127): avc: denied { read } for pid=1250 comm="sh" name="/" dev="rootfs" ino=1 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:rootfs:s0 tclass=dir permissive=1
+[   63.758902] type=1400 audit(1794759393.697:128): avc: denied { open } for pid=1250 comm="sh" path="/" dev="rootfs" ino=1 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:rootfs:s0 tclass=dir permissive=1
+[   65.124678] RTW: Turbo EDCA =0xa42b
+[   67.098673] RTW: Turbo EDCA =0x5ea42b
+[   75.526359] type=1400 audit(1794759405.657:129): avc: denied { read } for pid=1230 comm="pRunnable.run()" name="ttyS1" dev="tmpfs" ino=6221 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:serial_device:s0 tclass=chr_file permissive=1
+[   75.528476] type=1400 audit(1794759405.657:130): avc: denied { write } for pid=1230 comm="pRunnable.run()" name="ttyS1" dev="tmpfs" ino=6221 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:serial_device:s0 tclass=chr_file permissive=1
+[   75.530445] type=1400 audit(1794759405.657:131): avc: denied { open } for pid=1230 comm="pRunnable.run()" path="/dev/ttyS1" dev="tmpfs" ino=6221 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:serial_device:s0 tclass=chr_file permissive=1
+[   75.530674] type=1400 audit(1794759405.657:132): avc: denied { ioctl } for pid=1230 comm="pRunnable.run()" path="/dev/ttyS1" dev="tmpfs" ino=6221 ioctlcmd=5401 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:serial_device:s0 tclass=chr_file permissive=1
+[   75.989661] type=1400 audit(1794759406.127:133): avc: denied { read } for pid=208 comm="FFParser" name="com.qualcomm.ftcrobotcontroller-1" dev="mmcblk0p14" ino=483403 scontext=u:r:mediaserver:s0 tcontext=u:object_r:apk_data_file:s0 tclass=dir permissive=1
+[   75.994326] type=1400 audit(1794759406.127:134): avc: denied { open } for pid=208 comm="FFParser" path="/data/app/com.qualcomm.ftcrobotcontroller-1" dev="mmcblk0p14" ino=483403 scontext=u:r:mediaserver:s0 tcontext=u:object_r:apk_data_file:s0 tclass=dir permissive=1
+[   93.630159] usb 1-1: reset high-speed USB device number 2 using xhci-hcd
+[   98.549273] xhci-hcd xhci-hcd.0.auto: Timeout while waiting for address device command
+[  103.669336] xhci-hcd xhci-hcd.0.auto: Timeout while waiting for address device command
+[  103.872717] usb 1-1: device not accepting address 2, error -62
+[  103.977729] usb 1-1: reset high-speed USB device number 2 using xhci-hcd
+[  108.897676] xhci-hcd xhci-hcd.0.auto: Timeout while waiting for address device command
+[  114.017774] xhci-hcd xhci-hcd.0.auto: Timeout while waiting for address device command
+[  114.217875] usb 1-1: device not accepting address 2, error -62
+[  114.322864] usb 1-1: reset high-speed USB device number 2 using xhci-hcd
+[  119.242919] xhci-hcd xhci-hcd.0.auto: Timeout while waiting for address device command
+[  124.362907] xhci-hcd xhci-hcd.0.auto: Timeout while waiting for address device command
+[  124.562952] usb 1-1: device not accepting address 2, error -62
+[  124.668001] usb 1-1: reset high-speed USB device number 2 using xhci-hcd
+[  129.587927] xhci-hcd xhci-hcd.0.auto: Timeout while waiting for address device command
+[  134.708065] xhci-hcd xhci-hcd.0.auto: Timeout while waiting for address device command
+[  134.908099] usb 1-1: device not accepting address 2, error -62
+[  134.908250] usb 1-1: USB disconnect, device number 2
+[  134.912077] xhci-hcd xhci-hcd.0.auto: xHCI xhci_drop_endpoint called with disabled ep ffffffc004758500
+[  134.912981] xhci-hcd xhci-hcd.0.auto: ERROR: unexpected command completion code 0x13.
+[  135.035990] usb 1-1: new high-speed USB device number 3 using xhci-hcd
+[  135.041253] type=1400 audit(1794759466.138:135): avc: denied { write } for pid=208 comm="RkMsgQueue" name="trace_thread.log" dev="mmcblk0p14" ino=14 scontext=u:r:mediaserver:s0 tcontext=u:object_r:system_data_file:s0 tclass=file permissive=1
+[  135.041535] type=1400 audit(1794759466.138:136): avc: denied { open } for pid=208 comm="RkMsgQueue" path="/data/trace_thread.log" dev="mmcblk0p14" ino=14 scontext=u:r:mediaserver:s0 tcontext=u:object_r:system_data_file:s0 tclass=file permissive=1
+[  137.313899] type=1400 audit(1794759468.448:137): avc: denied { write } for pid=1075 comm="hostapd" name="wpa_ctrl_952-4" dev="mmcblk0p14" ino=180636 scontext=u:r:hostapd:s0 tcontext=u:object_r:wpa_socket:s0:c512,c768 tclass=sock_file permissive=1
+[  139.956055] xhci-hcd xhci-hcd.0.auto: Timeout while waiting for address device command
+[  145.076073] xhci-hcd xhci-hcd.0.auto: Timeout while waiting for address device command
+[  145.276320] usb 1-1: device not accepting address 3, error -62
+[  145.381224] usb 1-1: new high-speed USB device number 4 using xhci-hcd
+[  149.739824] usb 1-1: Device not responding to set address.
+[  149.937161] usb 1-1: Device not responding to set address.
+[  150.137576] usb 1-1: device not accepting address 4, error -71
+[  219.971632] usb 1-1: new high-speed USB device number 6 using xhci-hcd
+[  220.588456] usb 1-1: New USB device found, idVendor=046d, idProduct=08e5
+[  220.588506] usb 1-1: New USB device strings: Mfr=0, Product=2, SerialNumber=1
+[  220.588537] usb 1-1: Product: HD Pro Webcam C920
+[  220.588565] usb 1-1: SerialNumber: 0DB557EF
+[  220.606615] uvcvideo: Found UVC 1.00 device HD Pro Webcam C920 (046d:08e5)
+[  220.608949] input: HD Pro Webcam C920 as /devices/usb.24/ff600000.dwc3/xhci-hcd.0.auto/usb1/1-1/1-1:1.0/input/input4
+[  254.832970] usb 1-1: reset high-speed USB device number 6 using xhci-hcd
+[  255.415892] uvcvideo: Found UVC 1.00 device HD Pro Webcam C920 (046d:08e5)
+[  255.417337] input: HD Pro Webcam C920 as /devices/usb.24/ff600000.dwc3/xhci-hcd.0.auto/usb1/1-1/1-1:1.0/input/input5
+[  283.261229] binder: undelivered transaction 66239
+[  283.261382] binder: undelivered transaction 66226
+[  283.261940] binder: 207:615 transaction failed 29189, size 60-0
+[  283.263408] xhci-hcd xhci-hcd.0.auto: Signal while waiting for configure endpoint command
+[  283.267882] usb 1-1: Not enough bandwidth for altsetting 0
+[  283.268099] binder: 375:534 transaction failed 29189, size 348-0
+[  283.269700] init: Untracked pid 1250 killed by signal 9
+[  283.313505] binder: 1030:1030 transaction failed 29189, size 88-0
+[  284.370773] type=1400 audit(1794759617.894:138): avc: denied { read } for pid=1425 comm="robotcontroller" name="direction" dev="sysfs" ino=16611 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[  284.371171] type=1400 audit(1794759617.894:139): avc: denied { open } for pid=1425 comm="robotcontroller" path="/sys/devices/pinctrl.26/gpio/gpio50/direction" dev="sysfs" ino=16611 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[  284.371395] type=1400 audit(1794759617.894:140): avc: denied { getattr } for pid=1425 comm="robotcontroller" path="/sys/devices/pinctrl.26/gpio/gpio50/direction" dev="sysfs" ino=16611 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[  284.372077] type=1400 audit(1794759617.898:141): avc: denied { write } for pid=1425 comm="robotcontroller" name="value" dev="sysfs" ino=13336 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[  284.428627] type=1400 audit(1794759617.954:142): avc: denied { read } for pid=1444 comm="sh" name="/" dev="rootfs" ino=1 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:rootfs:s0 tclass=dir permissive=1
+[  284.429993] type=1400 audit(1794759617.954:143): avc: denied { open } for pid=1444 comm="sh" path="/" dev="rootfs" ino=1 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:rootfs:s0 tclass=dir permissive=1
+[  286.274956] RTW: Turbo EDCA =0xa42b
+[  288.249598] RTW: Turbo EDCA =0x5ea42b
+[  296.548939] type=1400 audit(1794759630.264:144): avc: denied { read } for pid=198 comm="AudioOut_D" name="audioinfo" dev="sysfs" ino=10588 scontext=u:r:audioserver:s0 tcontext=u:object_r:sysfs_hdmi:s0 tclass=file permissive=1
+[  296.550054] type=1400 audit(1794759630.264:145): avc: denied { open } for pid=198 comm="AudioOut_D" path="/sys/devices/virtual/display/HDMI/audioinfo" dev="sysfs" ino=10588 scontext=u:r:audioserver:s0 tcontext=u:object_r:sysfs_hdmi:s0 tclass=file permissive=1
+[  296.550235] type=1400 audit(1794759630.264:146): avc: denied { getattr } for pid=198 comm="AudioOut_D" path="/sys/devices/virtual/display/HDMI/audioinfo" dev="sysfs" ino=10588 scontext=u:r:audioserver:s0 tcontext=u:object_r:sysfs_hdmi:s0 tclass=file permissive=1
+[  296.733457] type=1400 audit(1794759630.451:147): avc: denied { read } for pid=1425 comm="pRunnable.run()" name="devices" dev="sysfs" ino=7267 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=1
+[  296.736170] type=1400 audit(1794759630.454:148): avc: denied { open } for pid=1425 comm="pRunnable.run()" path="/sys/bus/usb/devices" dev="sysfs" ino=7267 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=1
+[  352.825422] RTW: OnAction_back
+[  352.825462] RTW: OnAction_back, action=0
+[  352.826929] RTW: issue_addba_rsp_wait_ack(wlan0) ra=6c:d5:52:0e:99:21 status:=0 tid=0 size:64, acked, 1/3 in 0 ms
+[  473.378242] RTW: +OnAuth
+[  473.378292] RTW: auth alg=0, seq=1
+[  473.378323] RTW: going to alloc stainfo for sa=c2:40:a4:bd:89:43
+[  473.378391] RTW: rtw_alloc_macid(wlan0) if1, mac_addr:c2:40:a4:bd:89:43 macid:3
+[  473.378430] RTW: issue_auth
+[  473.381094] RTW: OnAssocReq
+[  473.381157] RTW: OnAssocReq(wlan0) allocate new AID=2
+[  473.381208] RTW: HT: STA c2:40:a4:bd:89:43 HT Capabilities Info: 0x006f
+[  473.381240] RTW: bss_cap_update_on_sta_join STA c2:40:a4:bd:89:43 - no greenfield, num of non-gf stations 2
+[  473.381269] RTW: rtw_ht_operation_update current operation mode=0x4
+[  473.381294] RTW: rtw_ht_operation_update new operation mode=0x4 changes=0
+[  473.381318] RTW: bss_cap_update_on_sta_join, updated=0
+[  473.381339] RTW: update_sta_info_apmode
+[  473.381360] RTW: Enable HT Tx LDPC for STA(2)
+[  473.381391] RTW: ### Set STA_(3) info ###
+[  473.381413] RTW: issue_asocrsp
+[  473.381475] RTW: report_add_sta_event: add STA
+[  473.384924] RTW: rtw_get_sta_tx_nss: 1 SS
+[  473.384957] RTW: rtw_get_sta_rx_nss: 1 ss
+[  473.384980] RTW: STA - MAC_ID:3, Tx - 1 SS, Rx - 1 SS
+[  473.385002] RTW: STA - MAC_ID:3, SM_PS 3
+[  473.385032] RTW: ht_mcs_set=ff 00 00 00, nss=1, bitmap=000000ff
+[  473.385060] RTW: rtw_ap_update_sta_ra_info=> mac_id:3 , tx_ra_bitmap:0x00000000000ffff0, networkType:0x14
+[  473.385652] RTW: ============ STA [c2:40:a4:bd:89:43]  ===================
+[  473.385679] RTW: mac_id : 3
+[  473.385698] RTW: wireless_mode : 0x14
+[  473.385718] RTW: mimo_type : 0
+[  473.385737] RTW: static smps : N
+[  473.385757] RTW: bw_mode : 20MHz, ra_bw_mode : 20MHz
+[  473.385777] RTW: rate_id : 10
+[  473.385798] RTW: rssi : -1 (%), rssi_level : 0
+[  473.385820] RTW: is_support_sgi : N, is_vht_enable : N
+[  473.385841] RTW: disable_ra : N, disable_pt : N
+[  473.385956] RTW: is_noisy : N
+[  473.385977] RTW: txrx_state : 0
+[  473.386008] RTW: curr_tx_rate : CCK_1M (L)
+[  473.386028] RTW: curr_tx_bw : 20MHz
+[  473.386047] RTW: curr_retry_ratio : 0
+[  473.386066] RTW: ra_mask : 0x00000000000ffff0
+[  473.386066] 
+[  473.386098] RTW: indicate_sta_assoc_event to upper layer - hostapd
+[  473.386140] RTW: rtw_cfg80211_indicate_sta_assoc(wlan0)
+[  473.386292] RTW: rtw_set_rts_bw connect_to_8812=0,enable=1
+[  473.387941] RTW: cfg80211_rtw_change_station(wlan0) mac:c2:40:a4:bd:89:43
+[  473.388356] RTW: cfg80211_rtw_del_key(wlan0) key_index=0, addr=c2:40:a4:bd:89:43
+[  473.388622] RTW: cfg80211_rtw_del_key(wlan0) key_index=0, addr=c2:40:a4:bd:89:43
+[  473.388770] RTW: cfg80211_rtw_change_station(wlan0) mac:c2:40:a4:bd:89:43
+[  473.391985] RTW: send eapol packet 1/4
+[  473.394572] RTW: recv eapol packet 2/4
+[  473.395136] RTW: cfg80211_rtw_get_key(wlan0) keyid=1, pairwise=0, addr=          (null) ret 0
+[  473.395162] RTW: cfg80211_rtw_get_key(wlan0) seq:0x5
+[  473.395483] RTW: cfg80211_rtw_get_key(wlan0) keyid=4, pairwise=0, addr=          (null) ret 0
+[  473.395504] RTW: cfg80211_rtw_get_key(wlan0) seq:0x0
+[  473.395769] RTW: send eapol packet 3/4
+[  473.397892] RTW: recv eapol packet 4/4
+[  473.398324] RTW: cfg80211_rtw_add_key(wlan0) adding key for c2:40:a4:bd:89:43
+[  473.398347] RTW: cfg80211_rtw_add_key(wlan0) cipher=0xfac04
+[  473.398364] RTW: cfg80211_rtw_add_key(wlan0) key_len=16, key_index=0
+[  473.398380] RTW: cfg80211_rtw_add_key(wlan0) pairwise=1
+[  473.398398] RTW: rtw_cfg80211_ap_set_encryption
+[  473.398422] RTW: rtw_cfg80211_ap_set_encryption(wlan0) set CCMP PTK of c2:40:a4:bd:89:43 idx:0, len:16
+[  473.398784] RTW: cfg80211_rtw_change_station(wlan0) mac:c2:40:a4:bd:89:43
+[  473.399260] RTW: set pairwise key camid:2, addr:c2:40:a4:bd:89:43, kid:0, type:AES
+[  473.480926] RTW: OnAction_back
+[  473.481030] RTW: OnAction_back, action=0
+[  473.482031] RTW: issue_addba_rsp_wait_ack(wlan0) ra=c2:40:a4:bd:89:43 status:=0 tid=6 size:64, acked, 1/3 in 0 ms
+[  473.983865] RTW: OnAction_back
+[  473.983923] RTW: OnAction_back, action=0
+[  473.986944] RTW: issue_addba_rsp_wait_ack(wlan0) ra=c2:40:a4:bd:89:43 status:=0 tid=0 size:64, acked, 1/3 in 0 ms
+[  474.321640] type=1400 audit(1794759810.920:150): avc: denied { getattr } for pid=1586 comm="getprop" path="/dev/__properties__/u:object_r:secureboot_prop:s0" dev="tmpfs" ino=6149 scontext=u:r:shell:s0 tcontext=u:object_r:secureboot_prop:s0 tclass=file permissive=1
+[  474.323464] type=1400 audit(1794759810.920:149): avc: denied { open } for pid=1588 comm="getprop" path="/dev/__properties__/u:object_r:secureboot_prop:s0" dev="tmpfs" ino=6149 scontext=u:r:shell:s0 tcontext=u:object_r:secureboot_prop:s0 tclass=file permissive=1
+[  474.324395] type=1400 audit(1794759810.920:151): avc: denied { open } for pid=1588 comm="getprop" path="/dev/__properties__/u:object_r:pppoe_prop:s0" dev="tmpfs" ino=6150 scontext=u:r:shell:s0 tcontext=u:object_r:pppoe_prop:s0 tclass=file permissive=1
+[  474.328308] type=1400 audit(1794759810.920:152): avc: denied { open } for pid=1586 comm="getprop" path="/dev/__properties__/u:object_r:pppoe_prop:s0" dev="tmpfs" ino=6150 scontext=u:r:shell:s0 tcontext=u:object_r:pppoe_prop:s0 tclass=file permissive=1
+[  474.328505] type=1400 audit(1794759810.920:153): avc: denied { getattr } for pid=1586 comm="getprop" path="/dev/__properties__/u:object_r:pppoe_prop:s0" dev="tmpfs" ino=6150 scontext=u:r:shell:s0 tcontext=u:object_r:pppoe_prop:s0 tclass=file permissive=1
+[  474.328639] type=1400 audit(1794759810.920:154): avc: denied { getattr } for pid=1588 comm="getprop" path="/dev/__properties__/u:object_r:pppoe_prop:s0" dev="tmpfs" ino=6150 scontext=u:r:shell:s0 tcontext=u:object_r:pppoe_prop:s0 tclass=file permissive=1
+[  474.420647] RTW: rtw_issue_addbareq_cmd, p=0
+[  474.422084] RTW: BA_starting_seqctrl = 94 for TID=0
+[  474.422399] RTW: issue_addba_req(wlan0) ra=c2:40:a4:bd:89:43 tid=0
+[  474.425389] RTW: OnAction_back
+[  474.425433] RTW: OnAction_back, action=1
+[  474.425506] RTW: agg_enable for TID=0
+[  474.599993] RTW: rtw_issue_addbareq_cmd, p=6
+[  474.601125] RTW: BA_starting_seqctrl = 3 for TID=6
+[  474.601817] RTW: issue_addba_req(wlan0) ra=c2:40:a4:bd:89:43 tid=6
+[  474.610223] RTW: OnAction_back
+[  474.610266] RTW: OnAction_back, action=1
+[  474.610288] RTW: agg_enable for TID=6
+[  474.772236] RTW: rtw_issue_addbareq_cmd, p=6
+[  474.772328] RTW: BA_starting_seqctrl = 39 for TID=6
+[  474.772430] RTW: issue_addba_req(wlan0) ra=6c:d5:52:0e:99:21 tid=6
+[  474.778561] TCP: TCP: Possible SYN flooding on port 53. Dropping request.  Check SNMP counters.
+[  474.783413] RTW: OnAction_back
+[  474.783434] RTW: OnAction_back, action=1
+[  474.783442] RTW: agg_enable for TID=6
+[  476.784058] type=1400 audit(1794759813.423:155): avc: denied { sendto } for pid=952 comm="pool-2-thread-1" path="/data/misc/wifi/hostapd/wlan0" scontext=u:r:platform_app:s0:c512,c768 tcontext=u:r:hostapd:s0 tclass=unix_dgram_socket permissive=1
+[  476.786378] type=1400 audit(1794759813.426:156): avc: denied { sendto } for pid=1075 comm="hostapd" path="/data/misc/wifi/sockets/wpa_ctrl_952-4" scontext=u:r:hostapd:s0 tcontext=u:r:platform_app:s0:c512,c768 tclass=unix_dgram_socket permissive=1
+[  477.074553] RTW: OnAction_back
+[  477.074589] RTW: OnAction_back, action=0
+[  477.077705] RTW: issue_addba_rsp_wait_ack(wlan0) ra=c2:40:a4:bd:89:43 status:=0 tid=5 size:64, acked, 1/3 in 3 ms
