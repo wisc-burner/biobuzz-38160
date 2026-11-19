@@ -7,6 +7,7 @@ import static org.firstinspires.ftc.teamcode.Constants.AUTO_MAX_TURN_POWER;
 import static org.firstinspires.ftc.teamcode.Constants.AUTO_MIN_DRIVE_POWER;
 import static org.firstinspires.ftc.teamcode.Constants.AUTO_MIN_TURN_POWER;
 import static org.firstinspires.ftc.teamcode.Constants.AUTO_TURN_KP;
+import static org.firstinspires.ftc.teamcode.Constants.FINAL_APPROACH_IN;
 import static org.firstinspires.ftc.teamcode.Constants.HEADING_TOLERANCE_DEG;
 import static org.firstinspires.ftc.teamcode.Constants.MAX_DRIVE_HEADING_ERROR_DEG;
 import static org.firstinspires.ftc.teamcode.Constants.POSITION_TOLERANCE_IN;
@@ -20,6 +21,9 @@ import java.util.List;
  *
  * A tank robot cannot strafe, so the plan is always: point at the next waypoint, drive, and rotate
  * at the end. It drives whichever way round (forwards or backwards) needs the least turning.
+ *
+ * Near the end it stops pointing at the goal. A couple of inches of camera noise swings the
+ * direction to a point that close by a long way, and turning to follow it never finishes.
  */
 public final class DriveController {
     /** Powers for {@code Drive.arcade}. Positive turn is counter-clockwise. */
@@ -42,6 +46,7 @@ public final class DriveController {
     private List<Pose2d> route = Collections.emptyList();
     private int leg;
     private boolean reversing;
+    private boolean finalApproach;
     private boolean settling;
     private boolean atGoal;
     private double lastForward;
@@ -49,6 +54,7 @@ public final class DriveController {
     public void follow(Pose2d robot, List<Pose2d> newRoute) {
         route = newRoute;
         leg = 0;
+        finalApproach = false;
         settling = false;
         atGoal = false;
         chooseDirection(robot);
@@ -71,14 +77,28 @@ public final class DriveController {
 
         boolean lastLeg = leg == route.size() - 1;
         double distanceToGoal = robot.distanceTo(goal);
-        if (lastLeg && distanceToGoal < POSITION_TOLERANCE_IN) {
-            settling = true;
-        } else if (settling && distanceToGoal > POSITION_TOLERANCE_IN * RESUME_FACTOR) {
+        if (lastLeg && distanceToGoal < FINAL_APPROACH_IN) {
+            finalApproach = true;
+        } else if (finalApproach && distanceToGoal > FINAL_APPROACH_IN * RESUME_FACTOR) {
+            finalApproach = false; // Shoved well away: drive back properly.
             settling = false;
             chooseDirection(robot);
         }
 
-        if (settling) {
+        if (finalApproach) {
+            // How far the goal is straight ahead (negative: behind). Sideways error is left alone.
+            double along = (goal.x - robot.x) * Math.cos(robot.heading)
+                    + (goal.y - robot.y) * Math.sin(robot.heading);
+            if (Math.abs(along) < POSITION_TOLERANCE_IN) {
+                settling = true;
+            } else if (Math.abs(along) > POSITION_TOLERANCE_IN * RESUME_FACTOR) {
+                settling = false;
+            }
+            if (!settling) {
+                atGoal = false;
+                double forward = Math.copySign(drivePower(Math.abs(along)), along);
+                return new Command(limitAcceleration(forward, dt), 0);
+            }
             double headingError = Pose2d.wrap(goal.heading - robot.heading);
             atGoal = Math.abs(headingError) < HEADING_TOLERANCE;
             lastForward = 0;

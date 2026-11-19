@@ -8,6 +8,7 @@ import org.firstinspires.ftc.teamcode.Robot;
 import org.firstinspires.ftc.teamcode.core.Alliance;
 import org.firstinspires.ftc.teamcode.core.Field;
 import org.firstinspires.ftc.teamcode.core.Pose2d;
+import org.firstinspires.ftc.teamcode.core.ShotTable;
 import org.firstinspires.ftc.teamcode.core.Sighting;
 import org.firstinspires.ftc.teamcode.core.TagLocalizer;
 
@@ -18,6 +19,7 @@ import org.firstinspires.ftc.teamcode.core.TagLocalizer;
  *   Left bumper     spin flywheel and feed when up to speed
  *   Right bumper    intake
  *   Dpad up / down  flywheel target +/- 10 ticks/s
+ *   X               flywheel target = what SHOT_TABLE says for the distance the camera sees
  *   A / B           poker down / up
  *   Y               zero the inches counter
  */
@@ -27,7 +29,7 @@ public class Diagnostics extends LinearOpMode {
     public void runOpMode() {
         Robot robot = new Robot(hardwareMap, Alliance.BLUE);
         robot.estimator.setPose(Field.startPose(Alliance.BLUE, true), false);
-        double flywheelTarget = Constants.DEFAULT_FLYWHEEL_VELOCITY;
+        double flywheelTarget = ShotTable.atShotSpot();
         double inchesZero = 0;
 
         while (opModeInInit()) {
@@ -41,6 +43,9 @@ public class Diagnostics extends LinearOpMode {
             if (gamepad1.dpadUpWasPressed()) flywheelTarget += 10;
             if (gamepad1.dpadDownWasPressed()) flywheelTarget -= 10;
             if (gamepad1.yWasPressed()) inchesZero = robot.drive.forwardInches();
+            if (gamepad1.xWasPressed() && !robot.sightings.isEmpty()) {
+                flywheelTarget = ShotTable.velocityFor(shotDistance(robot.sightings.get(0)));
+            }
             if (gamepad1.aWasPressed()) robot.poker.down();
             if (gamepad1.bWasPressed()) robot.poker.up();
 
@@ -75,7 +80,16 @@ public class Diagnostics extends LinearOpMode {
             telemetry.addLine(String.format("  from robot: fwd %.1f left %.1f height %.1f (want %.1f)",
                     target.forward, target.left, target.height, Field.OPENING_Z));
             telemetry.addLine(String.format("  robot would be at %s", fix));
+            double distance = shotDistance(sighting);
+            telemetry.addLine(String.format("  shot distance %.1f in, table says %.0f",
+                    distance, ShotTable.velocityFor(distance)));
         }
         telemetry.update();
+    }
+
+    /** Robot center to the opening along the floor, straight from the camera. Matches SHOT_TABLE. */
+    private static double shotDistance(Sighting sighting) {
+        TagLocalizer.Target target = TagLocalizer.toRobotFrame(sighting);
+        return Math.hypot(target.forward, target.left);
     }
 }

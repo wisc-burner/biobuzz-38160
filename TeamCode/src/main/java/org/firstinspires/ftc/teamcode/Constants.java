@@ -28,10 +28,10 @@ public final class Constants {
     public static final double ROBOT_LENGTH_IN = 17;            // ESTIMATE: measure bumper to bumper.
     public static final double ROBOT_WIDTH_IN = 16;             // ESTIMATE
     /** Inferred from REV's auto, which backs away from the wall to launch. Verify in Diagnostics. */
-    public static final boolean LAUNCHER_FACES_REAR = false;
+    public static final boolean LAUNCHER_FACES_REAR = true;
     /** REV's docs say "side", one code comment says "front". Check your robot. */
-    public static final boolean POKER_ON_LEFT = true;
-    public static final double POKER_FORWARD_IN = 4;            // ESTIMATE: poker ahead of robot center.
+    public static final boolean POKER_ON_LEFT = false;
+    public static final double POKER_FORWARD_IN = -4;           // ESTIMATE: poker ahead of robot center.
     /** The lowest point of a Hive is 30.6 in above the tiles (manual Figure 9-10). */
     public static final boolean CAN_DRIVE_UNDER_HIVE = true;
 
@@ -40,9 +40,14 @@ public final class Constants {
     public static final double DRIVE_TICKS_PER_IN = 47.5;
     public static final double STICK_DEADBAND = 0.05;
     public static final double DRIVER_TURN_SCALE = 0.8;
+    /**
+     * Fastest the driver's forward power may change, per second, either way. 2.5 means stopped to
+     * full in 0.4 s, and full forward to full reverse in 0.8 s. Lower it if the robot still tips.
+     */
+    public static final double DRIVER_MAX_ACCEL = 2.5;
 
     // Self-driving (DriveController). Powers are 0 to 1.
-    public static final double AUTO_MAX_DRIVE_POWER = 0.8;
+    public static final double AUTO_MAX_DRIVE_POWER = 0.7;
     public static final double AUTO_MAX_TURN_POWER = 0.6;
     public static final double AUTO_MIN_DRIVE_POWER = 0.08;     // Just enough to overcome friction.
     public static final double AUTO_MIN_TURN_POWER = 0.12;
@@ -52,31 +57,46 @@ public final class Constants {
     public static final double POSITION_TOLERANCE_IN = 2.5;
     public static final double HEADING_TOLERANCE_DEG = 2.5;
     public static final double WAYPOINT_TOLERANCE_IN = 6;
+    /**
+     * Closer than this to the end, stop pointing at it: just drive straight forward or back, then
+     * turn to the final heading. Turning to face a point this near chased camera noise in circles.
+     */
+    public static final double FINAL_APPROACH_IN = 6;
     /** Stop driving and turn on the spot when pointed this far off the path. */
     public static final double MAX_DRIVE_HEADING_ERROR_DEG = 50;
     /** Space kept between robot center and field obstacles when planning a route. */
     public static final double ROUTE_CLEARANCE_IN = 11;
 
-    // Launcher. 1160 ticks/s and the +/-20 and +/-50 windows are REV's own values.
-    public static final double DEFAULT_FLYWHEEL_VELOCITY = 1200;
+    // Launcher. The +/-20 and +/-50 windows are REV's own values.
     public static final double TELEOP_VELOCITY_TOLERANCE = 20;
     public static final double AUTO_VELOCITY_TOLERANCE = 50;
     public static final double FLYWHEEL_REVERSE_POWER = -0.55;
+    /** A drop this big from steady speed counts as a shot. ESTIMATE: check the shot log against real shots. */
+    public static final double SHOT_DIP_TICKS_PER_SEC = 60;
     /** Time the feeder must run per Pollen in auto. ESTIMATE */
     public static final double FEED_SECONDS_PER_POLLEN = 1.0;
-    /** Once feeding starts it keeps going at least this long, even through the flywheel dip. */
-    public static final double MIN_FEED_SECONDS = 2.5;
 
-    /** Distance from robot center to the Cell opening, measured along the floor -> flywheel ticks/s. */
+    /**
+     * {shot distance, flywheel ticks/s}, shortest distance first. Shot distance is robot center to
+     * the Cell opening along the floor, as Diagnostics shows it. Speeds between rows are blended and
+     * speeds past either end are held. Every shot uses this table, including when the robot does not
+     * know where it is: then it assumes it is at SHOT_DISTANCE_IN.
+     * ESTIMATE: only the middle row (1200, the speed drivers were scoring with by hand) is from a
+     * real robot. Re-measure each row in Diagnostics.
+     */
     public static final double[][] SHOT_TABLE = {
-            {30, 1160},
-            {38, 1160},
-            {50, 1160},
+            {30, 1120},
+            {44, 1200},
+            {56, 1280},
     };
 
     // Where the robot likes to shoot from.
-    /** Measured: best shots came with the launcher end of the robot this far from the wall behind the Cell. */
-    public static final double SHOT_FRONT_TO_WALL_IN = 23;
+    /**
+     * Launcher end of the robot to the wall behind the Cell. Smaller backs the robot away from the
+     * Cell, which sends the ball higher at the opening. Was 23, and auto-aligned shots came in low.
+     * Below about 17 the back bumper hits the wall.
+     */
+    public static final double SHOT_FRONT_TO_WALL_IN = 20;
     /** Robot center to the Cell opening at that spot. Follows ROBOT_LENGTH_IN, so measure that too. */
     public static final double SHOT_DISTANCE_IN =
             Field.HALF - SHOT_FRONT_TO_WALL_IN + ROBOT_LENGTH_IN / 2 - Field.OPENING_X;
@@ -89,16 +109,17 @@ public final class Constants {
     /** Straight-on shots are more reliable; extra inches charged per radian off-axis. */
     public static final double OFF_AXIS_COST_IN_PER_RAD = 12;
 
-    // Poker. Positions are REV's: up = 1, down = 0.
-    public static final double POKER_UP = 1;
-    public static final double POKER_DOWN = 0;
+    // Poker. The arm is mounted so the end of the servo's travel (0) is just below down; moving
+    // toward 1 swings it back up. Past about 0.5 it heads for the drive motor.
+    public static final double POKER_DOWN = 0.06;               // Just off the end of travel so it holds itself up off the floor.
+    public static final double POKER_UP = 0.4;                  // Tested: stands straight up.
     public static final double FLOWER_STANDOFF_IN = 13;         // ESTIMATE: robot center to Flower center.
 
     // Camera. Faces the launcher, tilted up, because the tags are on the underside of each Cell.
-    public static final double CAMERA_FORWARD_IN = -4;          // Measured: behind robot center. Positive means ahead of center.
-    public static final double CAMERA_LEFT_IN = 3;              // ESTIMATE
-    public static final double CAMERA_HEIGHT_IN = 11;           // ESTIMATE: above the tiles.
-    public static final double CAMERA_PITCH_UP_DEG = 37;        // this is using the gheto mount and may change
+    public static final double CAMERA_FORWARD_IN = 3;           // Measured: behind robot center. Positive means ahead of center.
+    public static final double CAMERA_LEFT_IN = 0;              // ESTIMATE
+    public static final double CAMERA_HEIGHT_IN = 12;           // ESTIMATE: above the tiles.
+    public static final double CAMERA_PITCH_UP_DEG = 45;        // this is using the gheto mount and may change
     public static final double CAMERA_YAW_DEG = LAUNCHER_FACES_REAR ? 180 : 0;
     public static final int CAMERA_EXPOSURE_MS = 15;            // Short avoids motion blur; too short is black. Tune under field light.
     public static final int CAMERA_GAIN = 250;

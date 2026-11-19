@@ -10,6 +10,7 @@ import org.firstinspires.ftc.teamcode.Snap;
 import org.firstinspires.ftc.teamcode.core.Alliance;
 import org.firstinspires.ftc.teamcode.core.Field;
 import org.firstinspires.ftc.teamcode.core.Pose2d;
+import org.firstinspires.ftc.teamcode.core.ShotTable;
 import org.firstinspires.ftc.teamcode.core.SnapGoals;
 
 /**
@@ -79,7 +80,7 @@ public class MainAuto extends LinearOpMode {
         if (mustPark()) {
             return;
         }
-        robot.shooter.spin(Constants.DEFAULT_FLYWHEEL_VELOCITY); // Arrive already up to speed.
+        robot.shooter.spin(ShotTable.atShotSpot()); // Arrive already up to speed.
         ElapsedTime timer = new ElapsedTime();
         while (tick() && !mustPark() && timer.seconds() < DRIVE_TIMEOUT_SECONDS) {
             robot.snap.hold(Snap.Goal.SCORE);

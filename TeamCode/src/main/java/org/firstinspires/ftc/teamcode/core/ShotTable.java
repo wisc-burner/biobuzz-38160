@@ -19,4 +19,9 @@ public final class ShotTable {
         }
         return table[table.length - 1][1];
     }
+
+    /** Speed for the spot the robot drives to. Used when the robot does not know where it is. */
+    public static double atShotSpot() {
+        return velocityFor(Constants.SHOT_DISTANCE_IN);
+    }
 }

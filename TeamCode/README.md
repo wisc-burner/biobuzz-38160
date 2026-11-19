@@ -78,8 +78,15 @@ Use the **Diagnostics** OpMode. Up on blocks first.
    calibration is off. A non-C270 camera also needs lens calibration.
 9. **Field numbers.** Check `OPENING_X`, `OPENING_Z` and the Flower and Loading Zone positions in
    `core/Field.java` against a real field or the CAD. They came from manual figures.
-10. **Shooter.** Find your best spot and set `SHOT_DISTANCE_IN`. Use dpad up/down to find the
-    velocity that scores at three distances, and fill in `SHOT_TABLE`.
+10. **Shooter.** Every shot's flywheel speed comes from `SHOT_TABLE`, so fill it in from real shots:
+    1. Park with the launcher straight on to a raised Cell and the camera seeing it.
+    2. Read `shot distance` from telemetry. Press X to start from what the table says now.
+    3. Hold the left bumper to fire. Dpad up/down 10 at a time until 4 in a row score cleanly.
+       Low means faster. If it is still rising as it reaches the opening, back up instead.
+    4. Write down {distance, speed}. Repeat at least 3 distances: as close as you would shoot, the
+       shot spot, and as far as you would shoot.
+    5. Put the rows in `SHOT_TABLE`, shortest first. Set `SHOT_FRONT_TO_WALL_IN` to the spot that
+       scored most reliably.
 11. **Self-driving.** On the field, hold the left trigger with a finger ready to let go. Tune
     `AUTO_MIN_*` until the robot finishes moves without stalling, then `AUTO_*_KP` until it stops
     without wobbling. Raise `AUTO_MAX_DRIVE_POWER` last.

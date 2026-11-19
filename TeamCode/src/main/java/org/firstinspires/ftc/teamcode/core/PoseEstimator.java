@@ -16,6 +16,7 @@ public final class PoseEstimator {
     private final double[] historyTime = new double[HISTORY_SIZE];
     private final double[] historyX = new double[HISTORY_SIZE];
     private final double[] historyY = new double[HISTORY_SIZE];
+    private final double[] historyHeading = new double[HISTORY_SIZE];
     private int historyCount;
     private int historyNext;
 
@@ -50,8 +51,12 @@ public final class PoseEstimator {
     }
 
     public void setHeading(double fieldHeading) {
+        double change = Pose2d.wrap(fieldHeading - heading);
         heading = Pose2d.wrap(fieldHeading);
         headingOffset = heading - lastRawYaw;
+        for (int i = 0; i < historyCount; i++) {
+            historyHeading[i] = Pose2d.wrap(historyHeading[i] + change);
+        }
     }
 
     /**
@@ -78,6 +83,7 @@ public final class PoseEstimator {
         historyTime[historyNext] = now;
         historyX[historyNext] = x;
         historyY[historyNext] = y;
+        historyHeading[historyNext] = heading;
         historyNext = (historyNext + 1) % HISTORY_SIZE;
         historyCount = Math.min(historyCount + 1, HISTORY_SIZE);
     }
@@ -90,7 +96,7 @@ public final class PoseEstimator {
      * @return true if the fix was used
      */
     public boolean addFix(double frameTime, double fixX, double fixY, double gain) {
-        double[] then = positionAt(frameTime);
+        double[] then = poseAt(frameTime);
         double errorX = fixX - then[0];
         double errorY = fixY - then[1];
 
@@ -122,6 +128,14 @@ public final class PoseEstimator {
         return new Pose2d(x, y, heading);
     }
 
+    /**
+     * Heading when a camera frame was taken. Working out a fix with the current heading instead
+     * shifts it sideways while turning, by several inches at shooting range.
+     */
+    public double headingAt(double time) {
+        return poseAt(time)[2];
+    }
+
     /** False until the pose comes from a known start or a camera fix. Do not self-drive on a guess. */
     public boolean isTrusted() {
         return trusted;
@@ -135,25 +149,29 @@ public final class PoseEstimator {
         return lastTime - lastFixTime;
     }
 
-    /** Where the robot was at {@code time}, interpolating between the samples either side of it. */
-    private double[] positionAt(double time) {
+    /** {x, y, heading} at {@code time}, interpolating between the samples either side of it. */
+    private double[] poseAt(double time) {
         int newer = -1;
         for (int age = 1; age <= historyCount; age++) {
             int index = (historyNext - age + HISTORY_SIZE) % HISTORY_SIZE;
             if (historyTime[index] <= time) {
                 if (newer < 0) {
-                    return new double[] {historyX[index], historyY[index]};
+                    return new double[] {historyX[index], historyY[index], historyHeading[index]};
                 }
                 double span = historyTime[newer] - historyTime[index];
                 double fraction = span > 0 ? (time - historyTime[index]) / span : 0;
                 return new double[] {
                         historyX[index] + fraction * (historyX[newer] - historyX[index]),
                         historyY[index] + fraction * (historyY[newer] - historyY[index]),
+                        historyHeading[index]
+                                + fraction * Pose2d.wrap(historyHeading[newer] - historyHeading[index]),
                 };
             }
             newer = index;
         }
         // Older than everything we kept, or no history at all.
-        return newer < 0 ? new double[] {x, y} : new double[] {historyX[newer], historyY[newer]};
+        return newer < 0
+                ? new double[] {x, y, heading}
+                : new double[] {historyX[newer], historyY[newer], historyHeading[newer]};
     }
 }

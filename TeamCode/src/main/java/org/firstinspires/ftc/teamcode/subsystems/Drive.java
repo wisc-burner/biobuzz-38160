@@ -20,10 +20,13 @@ public final class Drive {
     private final DcMotorEx left;
     private final DcMotorEx right;
     private final IMU imu;
+    private double forward;
 
     public Drive(HardwareMap hardwareMap) {
-        left = hardwareMap.get(DcMotorEx.class, Constants.LEFT_DRIVE);
-        right = hardwareMap.get(DcMotorEx.class, Constants.RIGHT_DRIVE);
+        // The intake end is the front, so the motor configured as leftDrive is on the robot's right.
+        // Flipping the front without swapping sides would leave turns backwards for the IMU.
+        left = hardwareMap.get(DcMotorEx.class, Constants.RIGHT_DRIVE);
+        right = hardwareMap.get(DcMotorEx.class, Constants.LEFT_DRIVE);
         right.setDirection(DcMotor.Direction.REVERSE);
         for (DcMotorEx motor : new DcMotorEx[] {left, right}) {
             motor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -36,6 +39,7 @@ public final class Drive {
 
     /** @param turn counter-clockwise positive */
     public void arcade(double forward, double turn) {
+        this.forward = forward;
         double leftPower = forward - turn;
         double rightPower = forward + turn;
         double scale = Math.max(1, Math.max(Math.abs(leftPower), Math.abs(rightPower)));
@@ -45,6 +49,11 @@ public final class Drive {
 
     public void stop() {
         arcade(0, 0);
+    }
+
+    /** The forward power last asked for. */
+    public double forwardPower() {
+        return forward;
     }
 
     /** Average distance driven since init. Does not change when turning on the spot. */

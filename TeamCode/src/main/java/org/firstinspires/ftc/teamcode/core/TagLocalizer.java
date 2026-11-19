@@ -75,12 +75,12 @@ public final class TagLocalizer {
             boolean steady = Math.abs(estimator.turnRate()) < Math.toRadians(FIX_MAX_TURN_DEG_PER_SEC);
             boolean heightMakesSense = Math.abs(target.height - Field.OPENING_Z) < FIX_HEIGHT_TOLERANCE_IN;
             if (sighting.isRaised() && steady && heightMakesSense && range < FIX_MAX_RANGE_IN) {
-                Pose2d fix = robotPosition(target, estimator.pose().heading, sighting.cell);
+                Pose2d fix = robotPosition(target, estimator.headingAt(sighting.frameTime), sighting.cell);
                 if (!estimator.isTrusted() && !inFrontOf(fix, sighting.cell)) {
                     // A raised Cell can only be seen from in front of its opening. The guessed
                     // heading must be the wrong way round: the robot was set down facing the other wall.
                     estimator.setHeading(estimator.pose().heading + Math.PI);
-                    fix = robotPosition(target, estimator.pose().heading, sighting.cell);
+                    fix = robotPosition(target, estimator.headingAt(sighting.frameTime), sighting.cell);
                 }
                 estimator.addFix(sighting.frameTime, fix.x, fix.y, FIX_GAIN * sighting.percentVisible / 100.0);
             }

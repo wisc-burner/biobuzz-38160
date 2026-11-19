@@ -2,14 +2,19 @@ package org.firstinspires.ftc.teamcode.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.Constants;
 import org.firstinspires.ftc.teamcode.MatchState;
 import org.firstinspires.ftc.teamcode.Robot;
+import org.firstinspires.ftc.teamcode.ShotLog;
 import org.firstinspires.ftc.teamcode.Snap;
 import org.firstinspires.ftc.teamcode.core.Alliance;
 import org.firstinspires.ftc.teamcode.core.Field;
 import org.firstinspires.ftc.teamcode.core.Pose2d;
+import org.firstinspires.ftc.teamcode.core.ShotTable;
+import org.firstinspires.ftc.teamcode.core.SlewLimiter;
+import org.firstinspires.ftc.teamcode.core.SnapGoals;
 
 /**
  * One-driver teleop. Buttons match REV's starter code, and the additions are marked.
@@ -28,10 +33,15 @@ import org.firstinspires.ftc.teamcode.core.Pose2d;
  *   Right stick btn NEW robot square to the audience/rear walls, either way round: reset heading
  *
  * While in INIT, press B for red or X for blue. Auto's choice carries over if it ran.
+ *
+ * Every shot is logged with the distance the robot believed it was at. See {@link ShotLog}.
  */
 @TeleOp(name = "Main TeleOp", group = "Match")
 public class MainTeleOp extends LinearOpMode {
     private Robot robot;
+    private final ShotLog shotLog = new ShotLog();
+    private final SlewLimiter forwardLimiter = new SlewLimiter(Constants.DRIVER_MAX_ACCEL);
+    private final ElapsedTime loopTimer = new ElapsedTime();
     private boolean wasReady;
     private boolean warned60;
     private boolean warned20;
@@ -73,8 +83,14 @@ public class MainTeleOp extends LinearOpMode {
             robot.update();
             drive();
             launcherAndIntake();
+            shotLog.update(robot, getRuntime());
             poker();
             matchCues();
+            double distance = SnapGoals.shotDistance(robot.pose(), robot.targetCell());
+            telemetry.addData("Goal distance", "%.1f in%s, table says %.0f",
+                    distance, robot.estimator.isTrusted() ? "" : " (NOT TRUSTED)",
+                    ShotTable.velocityFor(distance));
+            shotLog.addTelemetry(telemetry);
             robot.addTelemetry(telemetry);
             telemetry.update();
         }
@@ -86,6 +102,8 @@ public class MainTeleOp extends LinearOpMode {
     }
 
     private void drive() {
+        double dt = loopTimer.seconds();
+        loopTimer.reset();
         Snap.Goal wanted = Snap.Goal.NONE;
         if (gamepad1.left_trigger_pressed) {
             wanted = Snap.Goal.SCORE;
@@ -96,12 +114,13 @@ public class MainTeleOp extends LinearOpMode {
         }
 
         if (wanted != Snap.Goal.NONE && robot.snap.hold(wanted)) {
+            forwardLimiter.reset(robot.drive.forwardPower()); // So letting go does not lurch.
             return;
         }
         if (wanted == Snap.Goal.NONE) {
             robot.snap.release();
         }
-        double forward = shape(-gamepad1.left_stick_y);
+        double forward = forwardLimiter.calculate(shape(-gamepad1.left_stick_y), dt);
         double turn = -shape(gamepad1.left_stick_x) * Constants.DRIVER_TURN_SCALE;
         robot.drive.arcade(forward, turn);
     }
@@ -122,6 +141,9 @@ public class MainTeleOp extends LinearOpMode {
         // While self-driving, holding launch waits until the robot has arrived and is aimed.
         boolean aimed = !snappingToScore || robot.snap.atGoal();
         boolean feeding = launch && aimed && robot.shooter.readyToFeed(tolerance);
+        if (!launch) {
+            robot.shooter.holdFire();
+        }
 
         if (feeding || gamepad1.dpad_up) {
             robot.shooter.feed(1);
@@ -131,7 +153,7 @@ public class MainTeleOp extends LinearOpMode {
             robot.shooter.feed(0);
         }
 
-        if (feeding || gamepad1.right_bumper) {
+        if (gamepad1.right_bumper) {
             robot.intake.in();
         } else if (gamepad1.right_trigger_pressed) {
             robot.intake.out();

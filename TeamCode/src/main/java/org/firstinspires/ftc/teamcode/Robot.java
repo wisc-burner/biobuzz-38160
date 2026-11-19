@@ -78,7 +78,7 @@ public final class Robot {
 
     public double shotVelocity() {
         if (!estimator.isTrusted()) {
-            return Constants.DEFAULT_FLYWHEEL_VELOCITY;
+            return ShotTable.atShotSpot();
         }
         return ShotTable.velocityFor(SnapGoals.shotDistance(pose(), targetCell()));
     }

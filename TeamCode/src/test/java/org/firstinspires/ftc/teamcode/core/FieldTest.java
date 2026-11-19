@@ -88,4 +88,15 @@ public class FieldTest {
         double midpoint = (table[0][0] + table[1][0]) / 2;
         assertEquals((table[0][1] + table[1][1]) / 2, ShotTable.velocityFor(midpoint), 1e-9);
     }
+
+    @Test
+    public void shotTableCoversTheShotSpot() {
+        double[][] table = Constants.SHOT_TABLE;
+        for (int i = 1; i < table.length; i++) {
+            assertTrue("rows must be shortest distance first", table[i][0] > table[i - 1][0]);
+        }
+        assertTrue("measure a row closer than the shot spot", table[0][0] < Constants.SHOT_DISTANCE_IN);
+        assertTrue("measure a row farther than the shot spot",
+                table[table.length - 1][0] > Constants.SHOT_DISTANCE_IN);
+    }
 }
